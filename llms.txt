@@ -105,6 +105,7 @@ Independent research on space systems, robotics and space law, with interactive 
 - Email: civfarmer@gmail.com
 - LinkedIn: https://www.linkedin.com/in/civfarmer
 - GitHub: https://github.com/civfarmer
+- ORCID: https://orcid.org/0009-0009-4995-2516
 - Location: Geneva, Switzerland (Swiss B permit — work-authorised, no sponsorship needed)
 - Phone: +33 6 82 91 37 80 (mobile; French number, Geneva-based)
 - Contact file (vCard): https://civfarmer.github.io/christopher-farmer.vcf
