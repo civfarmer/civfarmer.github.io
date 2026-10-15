@@ -56,9 +56,9 @@ Autonomous systems and the law of the machine:
 
 - Regulating Robots by Owning Them (2026, manuscript) — https://civfarmer.github.io/publications/manuscripts/regulating-robots-by-owning-them.pdf
 - Holding a Civil Reserve by Owning It Rather Than by Requiring It — submission to the Swiss Confederation, filed 6 August 2026 — https://civfarmer.github.io/publications/manuscripts/swiss-submission-retained-interest.pdf
-- A Robot Left in a Field Is a Mine the Law Cannot See (2026, preprint, under submission) — DOI 10.5281/zenodo.21971256 — https://civfarmer.github.io/publications/manuscripts/a-robot-left-in-a-field.pdf
-- The Interval, Not the Autonomy (2026, preprint, under submission) — DOI 10.5281/zenodo.21970778 — https://civfarmer.github.io/publications/manuscripts/the-interval-not-the-autonomy.pdf
-- Holding Ground with Machines That Do Not Move (2026, manuscript) — https://civfarmer.github.io/publications/manuscripts/holding-ground-with-machines-that-do-not-move.pdf
+- A Robot Left in a Field Is a Mine the Law Cannot See (2026, preprint; version 2 with a postscript of 15 October 2026) — DOI 10.5281/zenodo.21971255 (all versions; version 1: 10.5281/zenodo.21971256) — https://civfarmer.github.io/publications/manuscripts/a-robot-left-in-a-field-v2.pdf
+- The Interval, Not the Autonomy (2026, preprint; version 2 with a postscript of 15 October 2026) — DOI 10.5281/zenodo.21970777 (all versions; version 1: 10.5281/zenodo.21970778) — https://civfarmer.github.io/publications/manuscripts/the-interval-not-the-autonomy-v2.pdf
+- The Emplaced Machine: Energy, Detection, Recall and Control in Closed Ground-Denial Systems (2026, engineering preprint, v2.12.4 of 15 October 2026; earlier versions circulated as Holding Ground with Machines That Do Not Move) — https://civfarmer.github.io/publications/manuscripts/the-emplaced-machine-v2.12.4.pdf — reproducibility archive https://civfarmer.github.io/publications/manuscripts/the-emplaced-machine-reproducibility-v2.12.2.zip
 
 Space law and orbital conduct:
 
