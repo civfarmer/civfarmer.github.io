@@ -4631,8 +4631,8 @@ const TRIAGE_SIGNALS = [
 ];
 
 // ─────────────────────────────────────────────────────────────────────────────
-// CLEAR-CUT INTERNAL PROCESSES — the "there may be a clear-cut process" the owner
-// described. These are ILLUSTRATIVE example runbooks the sandbox surfaces for
+// CLEAR-CUT INTERNAL PROCESSES — the "there may be a clear-cut process" verdict
+// path. These are ILLUSTRATIVE example runbooks the sandbox surfaces for
 // "defined-process" / "handle-simply" verdicts so the user gets concrete next
 // steps, not just a verdict. They are generic good-practice templates, NOT legal
 // advice, and each real organisation should replace them with its own approved
@@ -4840,7 +4840,7 @@ function normaliseSize(companySize) {
 // ── Step 1 — resolve the jurisdiction set ────────────────────────────────────
 // regions = unique(businessBase ∪ tradesWhere ∪ employsWhere). Selecting a US
 // state implies the US federal context; selecting the Geneva canton implies CH.
-// Empty selection ⇒ ALL covered codes + showAllGrouped=true (the owner's
+// Empty selection ⇒ ALL covered codes + showAllGrouped=true (the
 // "omitted → show everything, grouped by jurisdiction" fallback).
 const ALL_REGION_CODES = uniq(FRAMEWORKS.flatMap((f) => f.appliesInRegions));
 
@@ -23846,8 +23846,8 @@ async function regSandbox(panel) {
     return compare();
   }
   // Auto-detect: rank ALL real regulations by textual similarity to the pasted
-  // policy and present the top matches, each pick-able. This is the owner's
-  // favourite path — paste, click, and let the tool point at the right law.
+  // policy and present the top matches, each pick-able. This is the
+  // quickest path — paste, click, and let the tool point at the right law.
   async function suggest() {
     findingsBox.replaceChildren();
     suggestBox.replaceChildren(card('Detecting applicable regulations…', {}, skeleton(120)));

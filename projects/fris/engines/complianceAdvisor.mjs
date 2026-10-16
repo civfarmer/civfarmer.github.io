@@ -127,7 +127,7 @@ function normaliseSize(companySize) {
 // ── Step 1 — resolve the jurisdiction set ────────────────────────────────────
 // regions = unique(businessBase ∪ tradesWhere ∪ employsWhere). Selecting a US
 // state implies the US federal context; selecting the Geneva canton implies CH.
-// Empty selection ⇒ ALL covered codes + showAllGrouped=true (the owner's
+// Empty selection ⇒ ALL covered codes + showAllGrouped=true (the
 // "omitted → show everything, grouped by jurisdiction" fallback).
 const ALL_REGION_CODES = uniq(FRAMEWORKS.flatMap((f) => f.appliesInRegions));
 

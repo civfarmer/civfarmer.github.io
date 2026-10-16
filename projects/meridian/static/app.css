@@ -205,7 +205,7 @@ td small { color: var(--ink-soft); }
 .chip::before { content: "●"; content: "●" / ""; color: var(--chue, var(--unv));
   font-size: .68em; margin-right: .38em; position: relative; top: -.07em; }
 .chip-region { border-radius: 5px; } /* shape distinguishes kind, not colour */
-/* session 12: clickable filter chips (country toggles on /universe) */
+/* Clickable filter chips (country toggles on /universe) */
 a.chip { text-decoration: none; cursor: pointer; margin: 0 .18rem .3rem 0; }
 a.chip:hover { border-color: var(--accent, var(--ink)); }
 .chip-on { border-width: 2px; font-weight: 700;
@@ -296,7 +296,7 @@ q { quotes: "«" "»"; color: var(--ink); background: color-mix(in srgb, var(--a
 .poster-limits { color: var(--ink-soft); border-top: 1px dashed var(--line);
   padding-top: .35rem; }
 
-/* --- Brand crest (session 13, owner-supplied artwork) ------------------
+/* --- Brand crest -----------------------------------------------------
    logo-crest.png is the gold linework extracted from "logo mock up 1.png"
    (navy background + baked wordmark removed — the header text carries the
    name; the img is decorative, alt="" aria-hidden). Self-hosted static

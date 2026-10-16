@@ -1,5 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Meridian">
-  <!-- session 13: recoloured to the owner-supplied crest palette (deep navy
+  <!-- Recoloured to the crest palette (deep navy
        field, gold meridian linework) so the crisp vector favicon matches the
        raster crest used in the header, watermark and PWA icons. Geometry
        unchanged - an intricate crest does not survive 16-32 px rendering,

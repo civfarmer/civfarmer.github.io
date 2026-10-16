@@ -645,8 +645,8 @@ async function regSandbox(panel) {
     return compare();
   }
   // Auto-detect: rank ALL real regulations by textual similarity to the pasted
-  // policy and present the top matches, each pick-able. This is the owner's
-  // favourite path — paste, click, and let the tool point at the right law.
+  // policy and present the top matches, each pick-able. This is the
+  // quickest path — paste, click, and let the tool point at the right law.
   async function suggest() {
     findingsBox.replaceChildren();
     suggestBox.replaceChildren(card('Detecting applicable regulations…', {}, skeleton(120)));

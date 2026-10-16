@@ -1554,8 +1554,8 @@ export const TRIAGE_SIGNALS = [
 ];
 
 // ─────────────────────────────────────────────────────────────────────────────
-// CLEAR-CUT INTERNAL PROCESSES — the "there may be a clear-cut process" the owner
-// described. These are ILLUSTRATIVE example runbooks the sandbox surfaces for
+// CLEAR-CUT INTERNAL PROCESSES — the "there may be a clear-cut process" verdict
+// path. These are ILLUSTRATIVE example runbooks the sandbox surfaces for
 // "defined-process" / "handle-simply" verdicts so the user gets concrete next
 // steps, not just a verdict. They are generic good-practice templates, NOT legal
 // advice, and each real organisation should replace them with its own approved
