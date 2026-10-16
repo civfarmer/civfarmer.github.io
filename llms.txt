@@ -38,7 +38,7 @@ Eight working platforms read as case studies in regulatory judgement. Each names
 
 ## Publications
 
-28 works, 2024–2026: international law, economics, engineering. Preprints and manuscripts; several are submitted and pending peer review; the reports are grey literature awaiting Zenodo deposit. Nothing here is legal advice. Index: https://civfarmer.github.io/publications/index.html — relationship map: https://civfarmer.github.io/publications/map.html
+26 works, 2024–2026: international law, economics, engineering. Preprints and manuscripts; several are submitted and pending peer review; the practitioner handbook is grey literature awaiting Zenodo deposit. Nothing here is legal advice. Index: https://civfarmer.github.io/publications/index.html — relationship map: https://civfarmer.github.io/publications/map.html
 
 Economic warfare and the privatisation of hostile power (a nine-paper sequence, written to be read in order):
 
@@ -80,11 +80,9 @@ Applied systems and forecasting:
 - Mapping Real-Time Regulatory Impacts to Asset Vulnerability Under Strict API Budgets (2026, submitted, arXiv cs.CY) — https://civfarmer.github.io/publications/phase1-preprints/meridian-regulatory-impact-mapping.html
 - Comparative Efficacy of Holt-Winters, ETS and Croston Methods in Multi-Industry Rolling-Origin Backtesting (2026, submitted) — https://civfarmer.github.io/publications/phase1-preprints/vantage-forecasting-backtesting.html
 
-Reports and advisory case studies (grey literature; Zenodo deposit pending):
+Practitioner handbook (grey literature; Zenodo deposit pending):
 
-- Insolvency Avoidance and Executive Crisis Intervention Model — a simulated charity-governance case study — https://civfarmer.github.io/publications/zenodo-reports/hvoss-coverpage.html
-- Compliance-Led Operational Architecture — a legal and compliance operating model for publicly-funded education delivery (redacted) — https://civfarmer.github.io/publications/zenodo-reports/rsl-coverpage.html
-- Project Finance and Structuring Advisory — a utility-scale PV project on a Philippine island province — https://civfarmer.github.io/publications/zenodo-reports/keystonesolar-coverpage.html
+- Nobody Else Is Coming: An Operator's Playbook for Crisis, Compliance and Capital (first edition, October 2026) — a method for taking charge of a problem nobody owns in a small organisation, applied to crisis and cash, compliance architecture and project finance; its worked cases are invented illustrations, not records — https://civfarmer.github.io/publications/nobody-else-is-coming.html
 
 ## Research Lab
 
