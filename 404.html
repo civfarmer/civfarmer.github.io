@@ -64,6 +64,14 @@ try{var t=localStorage.getItem('cf-theme');if(!t&&window.matchMedia&&matchMedia(
 </main>
 <script>
   document.getElementById('theme').addEventListener('click',function(){var h=document.documentElement,n=h.getAttribute('data-theme')==='light'?'dark':'light';h.setAttribute('data-theme',n);try{localStorage.setItem('cf-theme',n)}catch(e){}});
+  /* Old links to the three withdrawn advisory reports land here: say so, and point to the playbook that replaced them. */
+  (function(){if(!/\/(hvoss|rsl|keystonesolar)\.pdf$|\/zenodo-reports\//i.test(location.pathname))return;
+    var c=document.querySelector('.card'),n=c.querySelector('.links'),a=document.createElement('a');
+    c.querySelector('.code').textContent='Withdrawn';
+    c.querySelector('h1').textContent='That report has been withdrawn.';
+    c.querySelector('p').textContent='The three illustrative advisory reports that were here have been withdrawn. The playbook that replaces them covers the same ground: crisis, compliance and capital.';
+    a.className='btn gold';a.href='publications/nobody-else-is-coming.html';a.textContent='The playbook';
+    n.querySelector('a[href="index.html"]').classList.remove('gold');n.insertBefore(a,n.firstChild);})();
 </script>
 </body>
 </html>
