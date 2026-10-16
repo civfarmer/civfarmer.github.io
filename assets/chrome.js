@@ -73,10 +73,7 @@
       for(var c=0;c<clouds.length;c++){ var cl=clouds[c]; if(!reduce){ cl.x+=cl.s/1000; if(cl.x>1.15) cl.x=-0.2; } cloud(cl.x*w, cl.y, cl.sc, T.ink); }
       ctx.globalAlpha=T.light?0.85:0.36; city(T.light?'#8b8f7f':T.ink);
       ctx.globalAlpha=0.18; ctx.fillStyle=T.accent; ctx.fillRect(0,h-18,w,18);
-      var jx=w*0.74; ctx.globalAlpha=0.4; ctx.strokeStyle=T.accent; ctx.lineWidth=1.6;
-      ctx.beginPath(); ctx.moveTo(jx,h-16); ctx.quadraticCurveTo(jx+2,h-72,jx+5,h-120); ctx.stroke();
-      ctx.globalAlpha=0.14; ctx.beginPath(); ctx.moveTo(jx,h-14); ctx.lineTo(jx,h-4); ctx.stroke();
-      ctx.globalAlpha=1;
+      /* the Jet d'Eau is the spray alone: no drawn stem */
       for(var i=0;i<particles.length;i++){ var p=particles[i]; if(!reduce){ p.update(); if(p.age>=p.life||p.y>h-14) p.reset(); } p.draw(T.accent); }
       ctx.globalAlpha=1; }
     function prewarm(){ for(var s=0;s<40;s++){ for(var i2=0;i2<particles.length;i2++){ var q=particles[i2]; q.update(); if(q.age>=q.life||q.y>h-14) q.reset(); } } }

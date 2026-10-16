@@ -133,15 +133,15 @@
     .pubnav{display:none}
     .cfside{position:fixed;left:0;top:0;bottom:0;width:264px;z-index:30;display:flex;flex-direction:column;gap:18px;
       padding:24px 20px;background:linear-gradient(180deg,color-mix(in oklab,var(--bg2) 86%,transparent),color-mix(in oklab,var(--bg) 86%,transparent));backdrop-filter:blur(7px);-webkit-backdrop-filter:blur(7px);border-right:1px solid var(--line);overflow-y:auto;scrollbar-width:none}
+    .lede{padding-top:64px}   /* with the top bar gone the title needs its own clearance, level with the other pages' headings */
     .top{display:none}   /* the sidebar carries the brand, the way home and the theme switch, exactly as on the home page */
     .cfside::-webkit-scrollbar{display:none}   /* it can still scroll on a short window, without a bar down the middle of the page */
-    @media(max-height:720px){aside.cfside{gap:12px;padding:18px 20px} aside.cfside nav{gap:1px} aside.cfside nav a{padding:7px 12px} aside.cfside .cffoot{gap:8px}}   /* short windows: tighter, and it scrolls invisibly if it still has to */
   }
   .cfside .cfbrand{display:flex;align-items:center;gap:12px}
   .cfside .cfbrand img{width:44px;height:44px;border-radius:50%;object-fit:cover;flex:0 0 auto}
   .cfside .cfbrand .nm{font-family:var(--font-display);font-weight:700;font-size:17px;letter-spacing:.02em;color:var(--ink);line-height:1.05}
-  .cfside .cfbrand .rl{font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-top:3px;line-height:1.5}
-  .cfside nav{display:flex;flex-direction:column;gap:2px}
+  .cfside .cfbrand .rl{font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-top:3px;line-height:1.6}
+  .cfside nav{display:flex;flex-direction:column;gap:2px;margin-top:2px}
   .cfside nav a{display:flex;align-items:center;gap:12px;padding:9px 12px;border-radius:10px;color:var(--ink2);font-size:14px;font-weight:500;border:1px solid transparent;text-decoration:none}
   .cfside nav a svg{width:18px;height:18px;flex:0 0 auto}
   .cfside nav a:hover{background:var(--surface);color:var(--ink)}
@@ -392,6 +392,15 @@
   .herobg video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 50%;opacity:.72}
   html[data-theme="light"] .herobg video{opacity:.6}
   .herobg-wash{position:absolute;inset:0;background:linear-gradient(90deg,color-mix(in oklab,var(--bg) 92%,transparent) 0%,color-mix(in oklab,var(--bg) 55%,transparent) 34%,color-mix(in oklab,var(--bg) 14%,transparent) 66%,transparent 100%),linear-gradient(180deg,color-mix(in oklab,var(--bg) 58%,transparent) 0%,transparent 26%,transparent 60%,var(--bg) 100%)}
+  /* Publications runs its text the full width, so the city sits further back here than on the other pages,
+     and the section chips and the start-here list sit on the page colour so they read over any frame */
+  .herobg video{opacity:.5}
+  html[data-theme="light"] .herobg video{opacity:.4}
+  .herobg-wash{background:linear-gradient(90deg,color-mix(in oklab,var(--bg) 90%,transparent) 0%,color-mix(in oklab,var(--bg) 74%,transparent) 42%,color-mix(in oklab,var(--bg) 62%,transparent) 100%),linear-gradient(180deg,color-mix(in oklab,var(--bg) 40%,transparent) 0%,transparent 28%,transparent 55%,var(--bg) 100%)}
+  nav.jump a{background:color-mix(in oklab,var(--surface) 94%,transparent);border-color:var(--line2);color:var(--ink)}
+  nav.jump .n{color:var(--ink2)}
+  ul.starthere{background:color-mix(in oklab,var(--bg) 88%,transparent);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);border:1px solid var(--line);border-radius:12px;padding:12px 16px}
+  .starthere .when,.starthere .why{color:var(--ink2)}
   main.wrap{position:relative;z-index:1}
 </style>
   <link rel="stylesheet" href="../assets/fonts.css">

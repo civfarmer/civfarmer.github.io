@@ -92,7 +92,7 @@
   .lead{color:var(--ink2);font-size:clamp(15px,1.5vw,17px);max-width:66ch}
 
   .hero{position:relative;padding-top:clamp(38px,7vw,88px);padding-bottom:clamp(26px,4vw,44px)}
-  .hero h1{font-size:clamp(28px,4.1vw,44px);letter-spacing:-.015em;line-height:1.13;margin-top:22px;max-width:19em}
+  .hero h1{font-size:clamp(24px,3.4vw,34px);letter-spacing:-.01em;line-height:1.15;margin-top:22px;max-width:22em}
   .hero .htag{display:block;font-size:clamp(14.5px,1.5vw,17.5px);color:var(--gold);font-family:var(--font-display);font-weight:600;margin-top:12px}
   .wrap.hero{position:relative;overflow:hidden}
   /* Skyline as a backdrop on inner pages */
@@ -291,12 +291,21 @@
      and Contact views (one element, shared; hidden for the other views). Dimmed and washed towards the page colour
      on the text side, but legible. Phones keep the poster only. Source: Pexels, free licence — see assets/video/CREDITS.txt */
   .view.on{position:relative;z-index:1}
-  body[data-view="experience"] .herobg,body[data-view="warroom"] .herobg,body[data-view="expertise"] .herobg,body[data-view="credentials"] .herobg{display:none}
+  body[data-view="experience"] .herobg:not(.herobg-alt),body[data-view="warroom"] .herobg:not(.herobg-alt),body[data-view="expertise"] .herobg:not(.herobg-alt),body[data-view="credentials"] .herobg:not(.herobg-alt){display:none}
+  /* The other four views each get their own Geneva clip (Experience: the quai and the Rade; Crisis playbook: the jet
+     backlit from the Bains des Pâquis jetty; Expertise: the rooftops towards the Salève; Credentials: the jet from the
+     lake with a boat passing). Only the clip for the view on screen is shown, loaded and played. Their text runs
+     the full width, so the wash is heavier than behind the overview hero. */
+  .herobg-alt{display:none}
+  body[data-view="experience"] .herobg-alt[data-for="experience"],body[data-view="warroom"] .herobg-alt[data-for="warroom"],body[data-view="expertise"] .herobg-alt[data-for="expertise"],body[data-view="credentials"] .herobg-alt[data-for="credentials"]{display:block}
   .herobg{position:absolute;left:0;right:0;top:0;height:clamp(420px,64vh,700px);z-index:0;overflow:hidden;pointer-events:none}
   .herobg video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 42%;opacity:.72}
   html[data-theme="light"] .herobg video{opacity:.6}
   .herobg-wash{position:absolute;inset:0;background:linear-gradient(90deg,color-mix(in oklab,var(--bg) 92%,transparent) 0%,color-mix(in oklab,var(--bg) 55%,transparent) 34%,color-mix(in oklab,var(--bg) 14%,transparent) 66%,transparent 100%),linear-gradient(180deg,color-mix(in oklab,var(--bg) 58%,transparent) 0%,transparent 26%,transparent 60%,var(--bg) 100%)}
   #v-overview .wrap.hero{z-index:1}
+  .herobg-alt video{opacity:.55}
+  html[data-theme="light"] .herobg-alt video{opacity:.45}
+  .herobg-alt .herobg-wash{background:linear-gradient(90deg,color-mix(in oklab,var(--bg) 88%,transparent) 0%,color-mix(in oklab,var(--bg) 68%,transparent) 45%,color-mix(in oklab,var(--bg) 50%,transparent) 100%),linear-gradient(180deg,color-mix(in oklab,var(--bg) 40%,transparent) 0%,transparent 28%,transparent 55%,var(--bg) 100%)}
   /* Portrait: a short natural loop that settles on the still */
   .heroframe{position:relative;width:clamp(160px,16vw,224px);height:clamp(160px,16vw,224px);border-radius:50%;overflow:hidden;background:var(--surface);border:3px solid color-mix(in oklab,var(--gold) 55%,transparent);box-shadow:0 14px 44px rgba(0,0,0,.28);cursor:pointer}
   .heroframe .herophoto,.heroframe .herophoto-v{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;border-radius:50%;display:block}
@@ -533,6 +542,23 @@ html[data-theme="light"] .skyline-canvas.cf-fixed{opacity:.38}
     <!-- the washed clip behind the Overview, Projects and Contact views (one element, shared) -->
     <div class="herobg" aria-hidden="true">
       <video class="herobg-v" muted loop playsinline preload="none" poster="assets/video/hero-backdrop-poster.jpg" data-mp4="assets/video/hero-backdrop.mp4" data-webm="assets/video/hero-backdrop.webm" tabindex="-1"></video>
+      <div class="herobg-wash"></div>
+    </div>
+    <!-- one clip each for Experience, Crisis playbook, Expertise and Credentials (only the one on screen is loaded) -->
+    <div class="herobg herobg-alt" data-for="experience" aria-hidden="true">
+      <video class="herobg-v2" muted loop playsinline preload="none" data-poster="assets/video/hero-backdrop-exp-poster.jpg" data-mp4="assets/video/hero-backdrop-exp.mp4" data-webm="assets/video/hero-backdrop-exp.webm" tabindex="-1" style="object-position:50% 55%"></video>
+      <div class="herobg-wash"></div>
+    </div>
+    <div class="herobg herobg-alt" data-for="warroom" aria-hidden="true">
+      <video class="herobg-v2" muted loop playsinline preload="none" data-poster="assets/video/hero-backdrop-war-poster.jpg" data-mp4="assets/video/hero-backdrop-war.mp4" data-webm="assets/video/hero-backdrop-war.webm" tabindex="-1" style="object-position:50% 50%"></video>
+      <div class="herobg-wash"></div>
+    </div>
+    <div class="herobg herobg-alt" data-for="expertise" aria-hidden="true">
+      <video class="herobg-v2" muted loop playsinline preload="none" data-poster="assets/video/hero-backdrop-expertise-poster.jpg" data-mp4="assets/video/hero-backdrop-expertise.mp4" data-webm="assets/video/hero-backdrop-expertise.webm" tabindex="-1" style="object-position:50% 45%"></video>
+      <div class="herobg-wash"></div>
+    </div>
+    <div class="herobg herobg-alt" data-for="credentials" aria-hidden="true">
+      <video class="herobg-v2" muted loop playsinline preload="none" data-poster="assets/video/hero-backdrop-cred-poster.jpg" data-mp4="assets/video/hero-backdrop-cred.mp4" data-webm="assets/video/hero-backdrop-cred.webm" tabindex="-1" style="object-position:50% 50%"></video>
       <div class="herobg-wash"></div>
     </div>
     <div class="topbar">
@@ -1390,6 +1416,26 @@ html[data-theme="light"] .skyline-canvas.cf-fixed{opacity:.38}
     _attachSources(v);
     function play(){ var p=v.play(); if(p&&p.catch) p.catch(function(){}); }
     if('IntersectionObserver' in window){ new IntersectionObserver(function(es){ es.forEach(function(e){ if(e.isIntersecting) play(); else v.pause(); }); },{threshold:.05}).observe(v); } else play();
+  })();
+
+  /* The per-view backdrops: the poster is set only when its view first shows; the clip is attached and played only
+     on desktop without reduced motion or data saver, and paused when its view is hidden or it scrolls off screen. */
+  (function(){
+    var alts=[].slice.call(document.querySelectorAll('.herobg-alt')); if(!alts.length) return;
+    var moving=!(_reduceMotion||_saveData||(window.matchMedia&&window.matchMedia('(max-width:820px)').matches));
+    var seen=new WeakMap(), io=('IntersectionObserver' in window)?new IntersectionObserver(function(es){ es.forEach(function(e){ var v=e.target; if(e.isIntersecting&&v.closest('.herobg-alt').offsetParent!==null){ var p=v.play(); if(p&&p.catch) p.catch(function(){}); } else v.pause(); }); },{threshold:.05}):null;
+    function sync(){
+      var view=document.body.getAttribute('data-view');
+      alts.forEach(function(el){
+        var v=el.querySelector('video'); if(!v) return;
+        if(el.getAttribute('data-for')===view){
+          if(!v.getAttribute('poster')) v.setAttribute('poster', v.getAttribute('data-poster'));
+          if(moving){ _attachSources(v); if(!seen.get(v)){ seen.set(v,1); if(io) io.observe(v); } var p=v.play(); if(p&&p.catch) p.catch(function(){}); }
+        } else if(!v.paused) v.pause();
+      });
+    }
+    new MutationObserver(sync).observe(document.body,{attributes:true,attributeFilter:['data-view']});
+    sync();
   })();
 
   /* Hero stats & impact chips open a popup that explains the number, then offer a jump to the source */

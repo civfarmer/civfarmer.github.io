@@ -4,5 +4,10 @@ https://www.pexels.com/license/). Credited anyway, with thanks. Re-encoded for t
   hero-backdrop-lab.*    the same clip, mirrored, from a later start
   hero-backdrop-pubs.*   Geneva Switzerland Aerial Mont Blanc Bridge — The4KTravelChannel Travel — https://www.pexels.com/video/17242140/
   hero-backdrop-cases.*  Drone Footage of Geneva Switzerland — SwissHumanity Stories — https://www.pexels.com/video/7798070/
+  hero-backdrop-exp.*        (Experience) Drone Footage of an Ocean and Buildings — the quai and the Rade — SwissHumanity Stories — https://www.pexels.com/video/9113160/
+  hero-backdrop-war.*        (Crisis playbook) Drone Footage of a Water Fountain on Geneva Lake — Mahir Abbas — https://www.pexels.com/video/10890148/
+  hero-backdrop-expertise.*  (Expertise) Drone Footage of Buildings in the Old Town of Geneva City — Mahir Abbas — https://www.pexels.com/video/10881678/
+                             (cropped to the rooftops and the Salève)
+  hero-backdrop-cred.*       (Credentials) Jet d'Eau Fountain Geneva – Passing boat — The4KTravelChannel Travel — https://www.pexels.com/video/17242188/
 
 profile-loop.*  Christopher's own footage (the phone shot and the enhanced close-up), cropped and looped.
