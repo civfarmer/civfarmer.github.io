@@ -27,7 +27,10 @@
  * A KYC/AML programme runs FOUR screening lists (sanctions / PEP / adverse-media /
  * internal). An entry can belong to MORE THAN ONE, so each carries a `lists`
  * ARRAY rather than a single value:
- *   - Every entry is on `sanctions` (they are all real sanctions designations).
+ *   - Every entry is on `sanctions` (they are all real sanctions designations),
+ *     except one delisted record: WL-0035 (Tornado Cash), which OFAC removed
+ *     from the SDN List on 21 March 2025, carries a `delistingDate` and sits on
+ *     `adverse-media` only.
  *   - `pep` is added to PERSONS who hold or held a prominent public function
  *     (heads of state/government, ministers, senior officials, central-bank
  *     governors, senior military/security) and close family/associates the
@@ -42,6 +45,8 @@
  *
  * All entries carry `data_classification: 'real-public-source'`.
  * Snapshot date: 2026-07-06.
+ * v3.0.1 (16 Oct 2026): WL-0035 (Tornado Cash) marked delisted, following OFAC's
+ * removal of Tornado Cash from the SDN List on 21 March 2025.
  */
 
 /* eslint-disable max-len */
@@ -97,7 +102,8 @@ export const BAND_BY_CODE = Object.fromEntries(BANDS.map((b) => [b.code, b]));
 // Field notes:
 //   id            stable WL-* identifier.
 //   lists         string[] of LIST_TYPES codes the entry belongs to (>=1; always
-//                 includes 'sanctions'). An entry counts toward EACH list it is in.
+//                 includes 'sanctions', except on a delisted record). An entry
+//                 counts toward EACH list it is in.
 //   kind          'person' | 'organisation' | 'wallet' | 'vessel'.
 //   name          the primary listed name (or wallet address for kind:wallet).
 //   aliases       officially-listed aka's / transliterations (subset).
@@ -107,15 +113,18 @@ export const BAND_BY_CODE = Object.fromEntries(BANDS.map((b) => [b.code, b]));
 //   authorities   string[] when the SAME party is listed by more than one body.
 //   program       the sanctions programme / regime under which listed.
 //   listingDate   the real designation / listing date (YYYY-MM-DD).
+//   delistingDate the date the designation was lifted (YYYY-MM-DD), on a delisted
+//                 record only; such a record is no longer on 'sanctions'.
 //   description   the official reason-for-listing, paraphrased (1-2 sentences).
 //   note          mirror of `description` (the engine reads `note`).
 //   address       wallet address (kind:wallet).
 //   imo           IMO number (kind:vessel), where public.
 //   sourceUrl     link to the official list or designation announcement.
-//   additionalSources  extra official links when a party is multiply-listed.
+//   additionalSources  extra official links when a party is multiply-listed (on a
+//                 delisted record, the official delisting notices).
 // ------------------------------------------------------------------
 
-/** @typedef {{ id:string, lists:Array<'sanctions'|'pep'|'adverse-media'|'internal'>, kind:'person'|'organisation'|'wallet'|'vessel', name:string, aliases?:string[], dob?:string, country?:string, authority:string, authorities?:string[], program:string, listingDate:string, description:string, note:string, address?:string, imo?:string, sourceUrl:string, additionalSources?:string[], data_classification:'real-public-source' }} WatchlistEntry */
+/** @typedef {{ id:string, lists:Array<'sanctions'|'pep'|'adverse-media'|'internal'>, kind:'person'|'organisation'|'wallet'|'vessel', name:string, aliases?:string[], dob?:string, country?:string, authority:string, authorities?:string[], program:string, listingDate:string, delistingDate?:string, description:string, note:string, address?:string, imo?:string, sourceUrl:string, additionalSources?:string[], data_classification:'real-public-source' }} WatchlistEntry */
 
 /** @type {WatchlistEntry[]} */
 export const WATCHLIST_ENTRIES = [
@@ -858,7 +867,6 @@ export const WATCHLIST_ENTRIES = [
   {
     "id": "WL-0035",
     "lists": [
-      "sanctions",
       "adverse-media"
     ],
     "kind": "wallet",
@@ -870,10 +878,15 @@ export const WATCHLIST_ENTRIES = [
     "authority": "OFAC",
     "program": "Malicious Cyber-Enabled Activities (E.O. 13694)",
     "listingDate": "2022-08-08",
-    "description": "Virtual-currency mixer designated for laundering more than USD 7 billion, including hundreds of millions stolen by the DPRK Lazarus Group. (Address is one of the SDN-listed donation contracts.)",
-    "note": "Virtual-currency mixer designated for laundering more than USD 7 billion, including hundreds of millions stolen by the DPRK Lazarus Group. (Address is one of the SDN-listed donation contracts.)",
+    "delistingDate": "2025-03-21",
+    "description": "Delisted on 21 March 2025, when OFAC removed Tornado Cash from the SDN List: no longer a sanctions designation, and kept here only as a record, on the adverse-media list. Virtual-currency mixer designated for laundering more than USD 7 billion, including hundreds of millions stolen by the DPRK Lazarus Group. (Address was one of the SDN-listed donation contracts.)",
+    "note": "Delisted on 21 March 2025, when OFAC removed Tornado Cash from the SDN List: no longer a sanctions designation, and kept here only as a record, on the adverse-media list. Virtual-currency mixer designated for laundering more than USD 7 billion, including hundreds of millions stolen by the DPRK Lazarus Group. (Address was one of the SDN-listed donation contracts.)",
     "address": "0x8589427373D6D84E98730D7795D8f6f8731FDA16",
     "sourceUrl": "https://home.treasury.gov/news/press-releases/jy0916",
+    "additionalSources": [
+      "https://home.treasury.gov/news/press-releases/sb0057",
+      "https://ofac.treasury.gov/recent-actions/20250321"
+    ],
     "data_classification": "real-public-source"
   },
   {
@@ -3684,13 +3697,13 @@ export const SCREENING_SOURCES = [
   }
 ];
 
-export const SCREENING_DISCLAIMER = "Screening & Watchlist matches a typed name / entity / wallet against a DATED, ILLUSTRATIVE SUBSET of REAL public sanctions lists (OFAC SDN, UN Security Council Consolidated List, EU Consolidated List, UK OFSI), captured on 2026-07-06. Every entry is a genuine public designation; the PEP and adverse-media tags sit on those same real sanctioned parties (nothing is fabricated). Sanctions lists change frequently (additions, amendments, delistings); this subset is for demonstration and is NOT complete or live. For any operational sanctions / PEP / adverse-media decision you MUST screen against the live official sources. This is NOT a sanctions-compliance system of record and is not legal advice. Matches are surfaced for review; a human disposition (confirm / false-positive) with a reason is always required.";
+export const SCREENING_DISCLAIMER = "Screening & Watchlist matches a typed name / entity / wallet against a DATED, ILLUSTRATIVE SUBSET of REAL public sanctions lists (OFAC SDN, UN Security Council Consolidated List, EU Consolidated List, UK OFSI), captured on 2026-07-06. Every entry is a genuine public designation; one, Tornado Cash, has been lifted (OFAC removed it from the SDN List on 21 March 2025) and is kept as a delisted record on the adverse-media list only. The PEP and adverse-media tags sit on those same real parties (nothing is fabricated). Sanctions lists change frequently (additions, amendments, delistings); this subset is for demonstration and is NOT complete or live. For any operational sanctions / PEP / adverse-media decision you MUST screen against the live official sources. This is NOT a sanctions-compliance system of record and is not legal advice. Matches are surfaced for review; a human disposition (confirm / false-positive) with a reason is always required.";
 
 /** Count entries that belong to a given list code (membership, not exclusive). */
 function countByList(code) { return WATCHLIST_ENTRIES.filter((e) => Array.isArray(e.lists) && e.lists.includes(code)).length; }
 
 export const WATCHLIST_VERSION = {
-  version: '3.0.0',
+  version: '3.0.1',
   snapshotDate: SCREENING_SNAPSHOT_DATE,
   researchedOn: SCREENING_SNAPSHOT_DATE,
   sourceKind: 'real-public-source',

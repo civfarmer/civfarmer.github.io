@@ -473,7 +473,7 @@ class Component extends DCLogic {
       const tied = stout.onHand * (stout.price - stout.unitMargin);
       out.push({ tone: 'blue', head: `Overstock — ${stout.name}`, body: `Cover is ${stout.cover.toFixed(1)} ${pu} at the seasonal low — about ${this.fmtMoney(tied)} of cash tied up. Shelf life ${stout.shelfLifeMonths} months, so hold for winter or run a taproom promo; don't reorder yet.` });
     }
-    out.push({ tone: 'green', head: 'Model check — Solstice Saison', body: `The engine picked Seasonal-naive over Croston here: the "intermittent" zeros are a regular seasonal release, not random demand. Croston is kept as a challenger and re-tested when new data lands.` });
+    out.push({ tone: 'amber', head: 'Model check — Solstice Saison', body: `The engine picked Croston over Seasonal-naive here, on absolute error, because no demand fell in the six test weeks. The zeros are partly a scheduled off-season and partly random in-season gaps: once the test window covers a full year, the July–October off-season included, Seasonal-naive wins. Croston's flat weekly rate also runs on into the off-season weeks of the current forecast. Seasonal-naive is kept as a challenger and re-tested when new data lands.` });
     return out;
   }
 

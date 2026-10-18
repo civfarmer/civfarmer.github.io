@@ -2,7 +2,7 @@
 
 **Christopher I. V. Farmer, LL.M. (University of Worcester) · Independent Researcher · civfarmer@gmail.com**
 
-*Preprint — submitted; pending peer review. Phase II Theory Paper. July 2026.*
+*Preprint; not yet peer reviewed. Phase II Theory Paper. July 2026.*
 
 > **Scope note.** This is a general engineering paper on the attitude dynamics and control of a *very large, flexible, high-inertia space structure* — the generic class that includes large space-based solar-power platforms, kilometre-scale radio-astronomy apertures and interferometers, and large Earth- or space-observation platforms. It treats one narrow physical question: how such a structure can be reoriented and stabilised propellantlessly by *magnetorquers* interacting with the geomagnetic field, and why the physics makes this slow. The analysis is deliberately platform-agnostic — the attitude-control physics derived here depends only on the structure's mass distribution, flexibility, and orbit, not on its payload or purpose. The paper contains no weapon, launcher, projectile, munition, firing, or targeting/vectoring content of any kind, describes no such system, and is not a study of any weapons platform. All numerical examples are explicitly labelled *illustrative calculations*: they use representative parameters to establish orders of magnitude and are not measurements, mission data, or claimed results.
 

@@ -127,7 +127,8 @@ const OFFSHORE = [
 // returns a strong sanctions match against the real public-sanctions subset
 // (watchlists.mjs). These are genuine OFAC/UN designations reproduced for the demo.
 const SANCTIONED_FRONTS = ['Bank Melli Iran', 'Sovcomflot', 'Wagner Group'];
-// A real designated crypto address (the OFAC-listed Tornado Cash contract).
+// A real crypto address: a Tornado Cash contract, formerly OFAC-listed (designated 8 August 2022;
+// delisted 21 March 2025). The watchlist keeps it as a delisted record on the adverse-media list.
 const SANCTIONED_WALLET = '0x8589427373D6D84E98730D7795D8f6f8731FDA16';
 // Shell name particles (fictional).
 const SHELL_HEADS = ['Meridian', 'Silverpeak', 'Northgate', 'Aurelia', 'Peregrine', 'Halcyon', 'Cascadia', 'Verano', 'Obsidian', 'Kestrel', 'Lyra', 'Solstice'];
@@ -386,8 +387,8 @@ export function simulate(spec = {}) {
         hopTx.push(pushTx(fromW.id, toW.id, Math.round(Number(h.forwarded) * MINOR), tms, { hop: h.hop, pattern: 'peel', trace_id: trace }));
         pushTx(fromW.id, destW.id, Math.round(Number(h.peel) * MINOR), tms + 1000, { hop: h.hop, pattern: 'peel', trace_id: trace });
       }
-      // Plant a designated (sanctioned) cash-out address so screening trips on-chain too.
-      const sancW = ensureW(SANCTIONED_WALLET, 'wallet', 'Designated cash-out address (synthetic)');
+      // Plant the real, formerly designated Tornado Cash address as a cash-out so screening trips on-chain too.
+      const sancW = ensureW(SANCTIONED_WALLET, 'wallet', 'Cash-out address: real Tornado Cash contract, formerly OFAC-listed (designated 8 Aug 2022; delisted 21 Mar 2025)');
       sanctionedWalletIds.push(sancW.id);
       screenSubjects.push({ name: SANCTIONED_WALLET, kind: 'wallet', stageId });
       // The peel chain peels cash-outs + fees away; the on-chain RESIDUAL is what
@@ -626,7 +627,7 @@ function runAllDetectors(ctx) {
       }
     } catch { /* ignore */ }
   }
-  mark('screening', screenHits, screenHits ? `${screenHits} synthetic watchlist hit(s): ${screenDetail.slice(0, 3).join('; ')}.` : 'No watchlist match on any generated subject.', screenAlerts);
+  mark('screening', screenHits, screenHits ? `${screenHits} watchlist hit(s) on screening fixtures: ${screenDetail.slice(0, 3).join('; ')}.` : 'No watchlist match on any generated subject.', screenAlerts);
 
   // 4) Ownership-structure opacity (the real graph engine), per shell chain.
   let opaqueChains = 0; const opacityDetail = [];

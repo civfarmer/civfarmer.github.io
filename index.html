@@ -197,6 +197,16 @@
   .wcard .go{font-size:12.5px;font-weight:600;color:var(--accent-ink);display:inline-flex;align-items:center;gap:6px}
   .wcard .wic svg{width:22px;height:22px}
   .wcard .go svg{width:15px;height:15px}
+  /* Example deliverables under the playbook chapters: the same cards, led by a thumbnail of page 1 */
+  .exrow{margin-top:34px;padding-top:22px;border-top:1px solid var(--line)}
+  .exrow .exhead{font-size:clamp(18px,2vw,21px);display:block}
+  .exrow .exnote{margin:8px 0 0;font-size:13.5px;color:var(--ink2);max-width:76ch}
+  .exrow .wgrid{margin-top:18px}
+  .wcard.ex .exthumb{display:block;width:100%;height:auto;aspect-ratio:16/10;object-fit:cover;object-position:top center;
+    border-radius:10px;border:1px solid var(--line);margin:0 0 14px;background:#fff}
+  .wcard.ex button.go{align-self:flex-start;background:none;border:0;padding:0;margin:0;font:inherit;font-size:12.5px;font-weight:600;
+    color:var(--accent-ink);cursor:pointer}
+  .wcard.ex button.go:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:4px}
 
   /* Generic cards */
   .grid2{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:24px}
@@ -1007,6 +1017,33 @@ html[data-theme="light"] .skyline-canvas.cf-fixed{opacity:.38}
             <span class="go">Open the playbook <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14"/><path d="M13 6l6 6-6 6"/></svg></span>
           </div>
         </div>
+        <div class="exrow">
+          <h3 class="exhead">Example deliverables</h3>
+          <p class="exnote">Three documents of the kind the method produces, kept apart from the playbook&rsquo;s invented cases: a simulated crisis plan, the controls I ran at Red Spark Learning with confidential details redacted, and a project-finance advisory with client and place names removed. Each PDF is an image of the page; the card carries its text.</p>
+          <div class="wgrid exgrid">
+            <div class="wcard ex" onclick="openDoc('publications/examples/example-charity-crisis-intervention.pdf','Insolvency Avoidance and Crisis Intervention — simulated worked example')">
+              <img class="exthumb" src="publications/examples/example-charity-crisis-intervention.webp" alt="" width="640" height="926" loading="lazy" decoding="async">
+              <div class="scen">Simulated worked example · 7 pages</div>
+              <h3>Insolvency Avoidance and Crisis Intervention</h3>
+              <p>A crisis-intervention plan for a charity facing a &pound;450k structural deficit after two senior executives left suddenly: the trustees&rsquo; duties, emergency governance and controls, a thirteen-week cash plan and the board&rsquo;s options appraisal. The organisation and every figure in it are invented.</p>
+              <button type="button" class="go">Open the PDF <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14"/><path d="M13 6l6 6-6 6"/></svg></button>
+            </div>
+            <div class="wcard ex" onclick="openDoc('publications/examples/example-operating-model-red-spark.pdf','Red Spark Learning C.I.C. — Operational Scaling: Portfolio Brief')">
+              <img class="exthumb" src="publications/examples/example-operating-model-red-spark.webp" alt="" width="640" height="926" loading="lazy" decoding="async">
+              <div class="scen">Real controls, redacted · 4 pages</div>
+              <h3>Red Spark Learning C.I.C. &mdash; Operational Scaling</h3>
+              <p>A representation of the documentation of the compliance and operating controls I ran as Director and Head of Legal &amp; Compliance at Red Spark Learning C.I.C., 2018&ndash;2024 (statutory director from July 2021): eight sites moved to remote learning, funding assurance, safeguarding and data protection. Not simulated: the figures are real, and confidential details are redacted.</p>
+              <button type="button" class="go">Open the PDF <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14"/><path d="M13 6l6 6-6 6"/></svg></button>
+            </div>
+            <div class="wcard ex" onclick="openDoc('publications/examples/example-solar-project-finance.pdf','Project Finance and Structuring Advisory: a utility-scale solar project')">
+              <img class="exthumb" src="publications/examples/example-solar-project-finance.webp" alt="" width="640" height="926" loading="lazy" decoding="async">
+              <div class="scen">Worked example, names removed · 5 pages</div>
+              <h3>Project Finance and Structuring Advisory</h3>
+              <p>A project-finance and structuring worked example for a utility-scale solar project in a Philippine island province: the technical claims normalised, the foreign-ownership and land-lease rules, the project vehicle and contract stack, and financing routes other than venture capital. Client and place names are removed.</p>
+              <button type="button" class="go">Open the PDF <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14"/><path d="M13 6l6 6-6 6"/></svg></button>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -1272,27 +1309,27 @@ html[data-theme="light"] .skyline-canvas.cf-fixed{opacity:.38}
   window.closeApp=function(){ if(avtimer) clearTimeout(avtimer); appv.classList.remove('on'); avframe.src='about:blank'; document.body.style.overflow='';_bgInert(false);_restoreFocus(); };
   appv.addEventListener('click', function(e){ if(e.target===appv) closeApp(); });
 
-  var NOTE = { groundtruth:'Runs air-gapped \u00b7 BACI, GLEIF, Find Case Law, Retraction Watch', sanctions:'Runs air-gapped · OpenSanctions snapshot, CC BY-NC 4.0', fris:'Runs offline · synthetic data', meridian:'Runs offline · frozen real dataset (2026-07-19)', vantage:'Runs offline · synthetic data', helm:'Runs offline · synthetic data', frontier:'Runs offline · decision-support, not legal advice', sentinel:'Runs offline · decision-support, not legal advice', morris:'Client build · design & estimator preview with demo data' };
+  var NOTE = { groundtruth:'Runs air-gapped \u00b7 BACI, GLEIF, Find Case Law, Retraction Watch', sanctions:'Runs air-gapped · OpenSanctions snapshot, CC BY-NC 4.0', fris:'Runs offline · synthetic data', meridian:'Runs offline · frozen real dataset (31 July 2026 export)', vantage:'Runs offline · synthetic data', helm:'Runs offline · synthetic data', frontier:'Runs offline · decision-support, not legal advice', sentinel:'Runs offline · decision-support, not legal advice', morris:'Client build · design & estimator preview with demo data' };
   var TECH = { groundtruth:{title:"Ground Truth \u2014 how it's built",icon:"assets/img/groundtruth-crest.svg",html:"<p>Three instruments over one idea: check the claim against the register, with the network off. A Python pipeline reduces four open corpora into deterministic packs \u2014 BACI 2024 bilateral trade at HS 6-digit (11,250,411 flows), the GLEIF Level 1 and Level 2 golden copy, the Find Case Law citation index, and the Retraction Watch corpus \u2014 and three single-file browser tools read those packs and never touch the network again.</p><p><b>Chokepoint</b> scores exposure as concentration multiplied by difficulty of substitution, where difficulty takes the worst of global supply grip, insufficient residual capacity, and concentration of the alternatives. It is deliberately not a weighted average: a weighted average lets a comfortable reading on one measure buy off a dangerous one. <b>Veritas</b> canonicalises neutral citations so the same judgment written five ways gives one key, and distinguishes \u2018absent from the corpus\u2019 from \u2018does not exist\u2019 \u2014 a verifier that calls <i>Donoghue v Stevenson</i> false teaches its user to ignore it. <b>Lineage</b> walks filed consolidation relationships, guarding against the cycles that real registry data contains.</p><p><b>Stack:</b> Python 3 with numpy and pandas at build time \u00b7 vanilla JavaScript at run time \u00b7 no framework, no CDN, no runtime dependency. 71 self-tests run inside the pages themselves.</p>"}, sanctions:{title:"Sanctions Suite — how it's built",icon:"assets/img/sanctions-crest.svg",html:"<p>A Python builder streams two dated OpenSanctions collections — sanctions (292,861 entities) and crime (522,965) — into deterministic data packs holding 308,597 distinct targets drawn from 147 source datasets; four single-file browser tools read those packs and never touch the network again. The build stamp comes from the data rather than the clock, so the same snapshot reproduces byte-identical packs, and the builder aborts rather than emit a short pack if a row count disagrees with the snapshot's own index.</p><p>Matching is deterministic token-set overlap after Unicode normalisation, with one rule shared by the builder and all four tools so the suite cannot give two answers for the same pair of names. A lone token may only carry a match if it is rare in the corpus — that is what separates a designated <i>Rosneft</i> subsidiary from a coincidental surname.</p><p><b>Stack:</b> Python 3 (standard library only) · vanilla JavaScript · no framework, no CDN, no runtime dependency. 104 self-tests run inside the pages themselves.</p>"},
     fris:{ title:"FRIS — how it’s built", icon:'assets/img/fris-crest.png', html:
       '<span class="mine">Built by me · vanilla JS · runs offline</span>'+
       '<p>No framework and no network — FRIS runs entirely in the browser.</p>'+
       '<p>It is the practical counterpart to my LL.M. research on sanctions and proxy finance — built to trace value through the third parties formal regimes struggle to reach.</p>'+
       '<ul><li><b>23 pure analysis engines</b> — AML screening &amp; adverse-media, beneficial-ownership &amp; asset-tracing graphs, deterministic peel-chain simulation, country/vendor risk, surveillance and an insolvency <b>liquidation-waterfall</b>.</li>'+
-      '<li><b>Money handled as BigInt</b> — values reconcile exactly (initial = residual + peeled + fees); no floating-point drift.</li>'+
+      '<li><b>Money handled as BigInt</b> in the engines that trace or distribute value — a peel-chain trace reconciles exactly (initial = residual + peeled + fees).</li>'+
       '<li>A fetch-shim runs the identical UI against a Node server <i>or</i> a fully in-memory dataset.</li>'+
-      '<li>A headless self-verification harness checks every view and workflow before release.</li>'+
+      '<li>A headless self-verification harness exercises the views and critical workflows before release; it is not published with the browser build.</li>'+
       '<li>A single-author codebase — ~20,000 lines of JavaScript.</li></ul>' },
     meridian:{ title:"Meridian — how it’s built", icon:'assets/img/meridian-crest.png', html:
       '<span class="mine">Built by me · Python + SQLite</span>'+
       '<p>A truthfulness-first regulatory &amp; market-intelligence platform.</p>'+
       '<ul><li>Python server + SQLite with scheduled ingestion under a fixed API budget.</li>'+
       '<li>Each figure is written with the <b>timestamp and provenance label</b> it was captured under — real and synthetic data are never silently mixed.</li>'+
-      '<li>Embedded here as the <b>full platform on a frozen local dataset (identity and market records to 2026-07-19; static export generated 2026-08-07)</b> — no live API calls by design; server-side search, ingestion and admin idle in this copy.</li></ul>' },
+      '<li>Embedded here as the <b>full platform on a frozen local dataset (the 2026-07-31 07:45Z export, from data retrieved up to 2026-07-30; its Companies and Calendar pages were re-rendered from the same data on 2026-08-07)</b> — no live API calls by design; server-side search, ingestion and admin idle in this copy.</li></ul>' },
     vantage:{ title:"Vantage — how it’s built", icon:'assets/img/vantage-crest.png', html:
       '<span class="mine">Built by me · dependency-free engine</span>'+
       '<p>A forecasting engine wrapped in five industry skins.</p>'+
-      '<ul><li>Engine: <b>Holt-Winters, ETS, Croston, seasonal-naive and OLS regression</b>, chosen per series by lowest <b>back-tested</b> error on rolling origins (MAE / RMSE / MAPE / bias).</li>'+
+      '<ul><li>Engine: <b>Holt-Winters, ETS, Croston, seasonal-naive and OLS regression</b>, chosen per series by lowest <b>back-tested</b> error on rolling origins (ranked on MAE, with RMSE breaking ties; WAPE, sMAPE and bias reported alongside).</li>'+
       '<li>One engine, five sectors (brewery, DTC, education, manufacturing, SaaS) plus a free sandbox.</li>'+
       '<li>The engine is self-contained and dependency-free. The version embedded here is the <b>live app</b> — the engine&rsquo;s real forecasts, charts and 80% prediction intervals, computed in-browser on a locally-vendored React 18 runtime, so it runs fully offline.</li></ul>' },
     helm:{ title:"Helm — how it’s built", icon:'assets/img/helm-crest.png', html:
@@ -1307,14 +1344,14 @@ html[data-theme="light"] .skyline-canvas.cf-fixed{opacity:.38}
       '<ul><li><b>Three regimes in one engine</b> — EU GDPR Chapter V, the Swiss revFADP (Arts 16&ndash;18) and UK GDPR — resolving adequacy (Art 45), Art 46 tools (SCCs 2021/914, BCRs, the UK IDTA) and Art 49 derogations, plus the Swiss &ldquo;Swiss-finish&rdquo; and UK-US Data Bridge interplay.</li>'+
       '<li>A <b>Schrems II Transfer Impact Assessment</b>: government-access, rule of law, redress and onward-transfer are scored, sensitivity-uplifted, and mapped to a verdict — <i>lawful</i> / <i>lawful-with-safeguards</i> / <i>unlawful-as-configured</i> — with the required technical, contractual and organisational measures.</li>'+
       '<li><b>Provenance-first &amp; honest</b>: every line is tagged <b>legal fact</b> vs <b>reasoned assessment</b>, the encoded lists are dated (July 2026) and labelled &ldquo;verify current&rdquo;, and the contested EU/UK-US Data Privacy Framework (Latombe appeal; <i>Trump v Slaughter</i>) is flagged as fragile, not asserted as safe.</li>'+
-      '<li>Produces an <b>audit-ready control record</b> — exportable to self-contained HTML, JSON or print/PDF. No framework, no network: pure HTML/CSS/JS that runs from <span class="mono">file://</span>. Decision-support, not legal advice.</li></ul>' },
+      '<li>Produces an <b>audit-ready control record</b> — exportable to self-contained HTML, JSON or print/PDF. No framework, and the engine makes no network calls: pure HTML/CSS/JS that runs from <span class="mono">file://</span>. Decision-support, not legal advice.</li></ul>' },
     sentinel:{ title:"Sentinel — how it’s built", icon:'assets/img/sentinel-crest.svg', html:
       '<span class="mine">Built by me · vanilla JS · runs offline</span>'+
       '<p>The governance tool for the AI systems everyone is now shipping — it answers, in one pass, <b>is it lawful to build and use</b> and <b>is it lawful to move</b>. I did the legal analysis and then wrote it out as deterministic rules.</p>'+
-      '<ul><li><b>EU AI Act classifier</b> — sorts a deployment into prohibited (Art 5), high-risk (Annex III / Annex I), limited (Art 50) or minimal, with the exact provider/deployer obligations and a GPAI (Arts 53&ndash;55) overlay; the timeline is dated to the 2025&ndash;26 <b>Digital Omnibus</b> (Annex III high-risk moved to 2 Dec 2027).</li>'+
+      '<ul><li><b>EU AI Act classifier</b> — sorts a deployment into prohibited (Art 5), high-risk (Annex III / Annex I), limited (Art 50) or minimal, with the exact provider/deployer obligations and a GPAI (Arts 53&ndash;55) overlay; the timeline follows the <b>Digital Omnibus on AI</b> (Regulation (EU) 2026/1744, in force since 27 July 2026), which moved Annex III high-risk to 2 Dec 2027.</li>'+
       '<li><b>Dual-use export screen</b> — EU Regulation 2021/821 (Art 5 cyber-surveillance catch-all + Art 4), Wassenaar Cat 3/4/5 (intrusion software, IP-network surveillance, cryptography, advanced compute), with an honest flag where US <b>ITAR/EAR</b> may also bite.</li>'+
       '<li><b>Meaningful human control &amp; auditability</b> — human-in-command / in-the-loop measures matched to the autonomy level, plus Art 12/26 logging, FRIA/DPIA and post-market monitoring — the &ldquo;regulated by design&rdquo; ethos (human authority, auditability, export screening) from my own robotics venture.</li>'+
-      '<li><b>Honest &amp; dated</b>: nothing is asserted without a label — <b>legal fact</b> or <b>reasoned assessment</b> — and the encoded law carries its July 2026 date and a standing instruction to verify. The output is an <b>audit-ready control record</b> in HTML, JSON or print/PDF. Plain HTML/CSS/JS, no framework and no network, so it opens straight from <span class="mono">file://</span>. It supports a decision; it does not give legal advice.</li></ul>' },
+      '<li><b>Honest &amp; dated</b>: every reason carries a label — <b>legal fact</b>, <b>assessment</b>, <b>verify</b> or <b>action</b> — and the encoded law carries its date (October 2026) and a standing instruction to verify. The output is an <b>audit-ready control record</b> in HTML, JSON or print/PDF. Plain HTML/CSS/JS with no framework, and the engine makes no network calls, so it opens straight from <span class="mono">file://</span>. It supports a decision; it does not give legal advice.</li></ul>' },
     morris:{ title:"Morris Anderson — how it&rsquo;s built", icon:'assets/img/morris-mark.svg', html:
       '<span class="mine">Client build · Next.js 15 · preview with demo data</span>'+
       '<p>A commercial website, build-cost estimator and client portal for a UK construction firm — my work end to end. What you see here is the same system running on demonstration data rather than the client&rsquo;s own records.</p>'+

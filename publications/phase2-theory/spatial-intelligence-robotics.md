@@ -2,7 +2,7 @@
 
 **Christopher I. V. Farmer, LL.M. (University of Worcester) · Independent Researcher · civfarmer@gmail.com**
 
-*Preprint — submitted; pending peer review. Phase II systems-architecture / theory paper. Version 1.0, July 2026.*
+*Preprint; not yet peer reviewed. Phase II systems-architecture / theory paper. Version 1.0, July 2026.*
 
 > **Scope and responsibility note.** This paper describes a *software and control-layer* architecture — a perception, tracking, contact-recovery and governance runtime intended to run on commercially available robot hardware. It does not describe, specify, or endorse any weapon, munition, or autonomous use of force against persons. Throughout, physical response is treated as *human-authorised, bounded, and non-kinetic* (inspect, escort, interpose, block a path, illuminate, alarm, retreat, and summon a human team). The reference demonstrator, sensor cadences, and latency figures are engineering *targets* and vendor-published capabilities, clearly labelled as such; **no measured benchmark, telemetry value, or performance result is claimed anywhere in this paper.** Any figure presented is an illustration of method, not evidence of outcome. Governance — meaningful human authority, auditability, standards conformance, and export/dual-use control — is treated as a first-class layer of the product, not a disclaimer appended to it.
 
@@ -527,7 +527,7 @@ Zhang, J., & Singh, S. (2014). LOAM: Lidar Odometry and Mapping in Real-Time. *R
 
 ---
 
-*Preprint — submitted; pending peer review. This paper describes a software and control-layer architecture for responsible, human-governed, contact-capable robotics. It contains no weapon, munition, or autonomous-use-of-force content of any kind; all physical responses discussed are bounded, non-kinetic, and human-authorised. All latency figures, sensor cadences, and proof metrics are engineering targets or vendor-published capabilities, clearly labelled; no measured benchmark or performance result is claimed.*
+*Preprint; not yet peer reviewed. This paper describes a software and control-layer architecture for responsible, human-governed, contact-capable robotics. It contains no weapon, munition, or autonomous-use-of-force content of any kind; all physical responses discussed are bounded, non-kinetic, and human-authorised. All latency figures, sensor cadences, and proof metrics are engineering targets or vendor-published capabilities, clearly labelled; no measured benchmark or performance result is claimed.*
 
 
 ---

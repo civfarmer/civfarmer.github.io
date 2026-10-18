@@ -20,12 +20,15 @@
  * ── DATA-HONESTY POSTURE (read this) ─────────────────────────────────────────
  * This is a TRAINING / SIMULATION SANDBOX. Every generated entity, shell, wallet,
  * invoice, transaction and asset is 100% FICTIONAL and produced deterministically
- * from a fixed seed. The typology METHODS mirror REAL, well-known, publicly-
+ * from a fixed seed, except two screening fixtures: a real, publicly-designated
+ * trade counterparty, and a real Tornado Cash address, formerly OFAC-listed
+ * (designated 8 August 2022; delisted 21 March 2025), used as a cash-out wallet.
+ * The typology METHODS mirror REAL, well-known, publicly-
  * documented FATF / public methodology (structuring / smurfing, funnel accounts,
  * shell-company layering, crypto peel chains, trade-based over/under-invoicing, mule
  * networks, real-estate integration, loan-backs) — the METHODS are legitimate public
- * knowledge, the DATA is invented. Nothing here names or implicates any real person,
- * company or wallet. This is NOT operational advice, NOT a detection system of record,
+ * knowledge, the DATA is invented. Beyond those two fixtures, nothing here names or
+ * implicates any real person, company or wallet. This is NOT operational advice, NOT a detection system of record,
  * and NOT a how-to: it is a red-team / detector-validation lab that shows how money is
  * hidden AND how you would catch it. Do not rely on it for any real determination.
  *
@@ -39,7 +42,7 @@
 export const TYPOLOGY_STUDIO_VERSION = Object.freeze({ version: '1.0', asOf: '2026-07-01', schema: 'typology-studio/1' });
 
 export const TYPOLOGY_STUDIO_DISCLAIMER =
-  'The Laundering / Illicit-Finance Typology Studio is a TRAINING / SIMULATION SANDBOX. Every generated entity, shell, wallet, invoice, transaction and asset is 100% SYNTHETIC and deterministic; the one exception is that a sanctions-evasion trade stage names a real, publicly-designated party as the counterparty so the screening detector fires (the invoice and flow are invented). The typology methods mirror REAL, publicly-documented laundering methodology (placement / layering / integration, structuring & smurfing, shell-company layering, crypto peel chains, trade-based over/under-invoicing, mule networks, real-estate integration, loan-backs) — the methods are legitimate public knowledge, the data is invented. Nothing here names or implicates any real person, company or wallet. This is NOT operational advice, NOT a how-to and NOT a detection system of record; it is a red-team / detector-validation lab showing how money is hidden and how you would catch it.';
+  'The Laundering / Illicit-Finance Typology Studio is a TRAINING / SIMULATION SANDBOX. Every generated entity, shell, wallet, invoice, transaction and asset is 100% SYNTHETIC and deterministic, with two exceptions, both there so the screening detector fires: a sanctions-evasion trade stage names a real, publicly-designated party as the counterparty, and the crypto peel-chain stage cashes out to a real address of Tornado Cash, formerly OFAC-listed (designated 8 August 2022; delisted 21 March 2025). The invoices, flows and transactions around them are invented. The typology methods mirror REAL, publicly-documented laundering methodology (placement / layering / integration, structuring & smurfing, shell-company layering, crypto peel chains, trade-based over/under-invoicing, mule networks, real-estate integration, loan-backs) — the methods are legitimate public knowledge, the data is invented. Beyond those two fixtures, nothing here names or implicates any real person, company or wallet. This is NOT operational advice, NOT a how-to and NOT a detection system of record; it is a red-team / detector-validation lab showing how money is hidden and how you would catch it.';
 
 // ── The three canonical laundering phases ────────────────────────────────────
 // The universally-taught money-laundering model. Each phase carries an accent so

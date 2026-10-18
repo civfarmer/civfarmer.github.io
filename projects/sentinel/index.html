@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230b0f17'/%3E%3Ctext x='32' y='43' font-family='Georgia,serif' font-size='27' font-weight='700' fill='%23d4b24c' text-anchor='middle'%3ECF%3C/text%3E%3C/svg%3E">
 <title>Sentinel — AI-Governance &amp; Export-Control Readiness Assessor</title>
 <meta name="description" content="Sentinel classifies an AI / autonomous-system deployment under the EU AI Act (prohibited / high-risk / limited / minimal), screens it for dual-use export exposure (EU Regulation 2021/821 cyber-surveillance catch-all, Wassenaar Cat 3/4/5, with an honest US ITAR/EAR flag), sets out the human-authority and auditability controls needed, and exports an audit-ready control record. Decision-support, not legal advice. Built by Christopher Farmer.">
 <style>
@@ -101,6 +102,9 @@
   .chk.sens{color:var(--gold-soft)}
   html[data-theme="light"] .chk.sens{color:var(--gold)}
   .subhead{font-family:var(--font-mono);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin:4px 0 8px}
+  .subq{margin-top:10px;padding:10px 12px;border:1px dashed var(--line2);border-radius:10px;display:grid;gap:7px}
+  .subq[hidden]{display:none}
+  .subq .subq-h{font-size:11.5px;line-height:1.45;color:var(--muted)}
   .two{display:grid;grid-template-columns:1fr 1fr;gap:12px}
   .presets{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:6px}
   .preset{font-size:11.6px;color:var(--accent-ink);background:transparent;border:1px dashed var(--line2);border-radius:8px;padding:6px 9px;cursor:pointer;text-align:left}
@@ -226,7 +230,7 @@
       <div class="sub">AI-governance &amp; export-control readiness</div>
     </div>
     <div class="topsp">
-      <span class="pill" id="asofPill"><span class="full">Law as-of 2026-07 · verify</span><span class="short">as-of 2026-07</span></span>
+      <span class="pill" id="asofPill"><span class="full">Law as-of 2026-10 · verify</span><span class="short">as-of 2026-10</span></span>
       <button class="iconbtn" id="theme" title="Toggle theme" aria-label="Toggle light / dark theme" aria-pressed="true">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg></button>
     </div>
@@ -244,7 +248,7 @@
   <p>Sentinel fuses the two questions a regulated AI programme has to answer at once: <b>is it lawful to build and use</b> (EU AI Act risk tier and the obligations it triggers), and <b>is it lawful to move</b> (dual-use export controls on surveillance, intrusion, cryptography and advanced compute). It then names the <b>meaningful-human-control</b> and <b>logging / auditability</b> measures that make the answer defensible &mdash; regulated by design: human authority, auditability, export screening.</p>
   <div class="disc">
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M12 8v5"/><path d="M12 16h.01"/></svg>
-    <p><b>Decision-support, not legal advice.</b> The AI Act timeline is moving: prohibitions apply from <b>2 Feb 2025</b>, GPAI duties from <b>2 Aug 2025</b>, Art 50 transparency from <b>2 Aug 2026</b>, and the <b>Digital Omnibus</b> (adopted by the European Parliament 16 Jun and Council 29 Jun 2026, final act signed 8 Jul 2026) <b>moves Annex III high-risk obligations to 2 Dec 2027</b> and adds a new Art 5 prohibition on AI that generates non-consensual intimate imagery or CSAM (from 2 Dec 2026) — adopted but <b>not yet in force</b>: awaiting Official-Journal publication (then in force three days later), so confirm before you rely on it. Control lists and sanctions change too. Positions are dated <b>July 2026</b> and labelled <b>legal fact</b> vs <b>reasoned assessment</b>; confirm current sources before you rely on them.</p>
+    <p><b>Decision-support, not legal advice.</b> The AI Act timeline is moving: prohibitions apply from <b>2 Feb 2025</b>, GPAI duties from <b>2 Aug 2025</b>, Art 50 transparency from <b>2 Aug 2026</b>, and the <b>Digital Omnibus on AI</b> (Regulation (EU) 2026/1744, OJ L 24.7.2026, <b>in force since 27 July 2026</b>) <b>moves Annex III high-risk obligations to 2 Dec 2027</b> and adds two Art 5 prohibitions, Art 5(1)(ba) and (bb), on AI systems that generate or manipulate non-consensual intimate material or CSAM (from <b>2 Dec 2026</b>). Control lists and sanctions change too. Positions are dated <b>October 2026</b>, and each reason is labelled <b>legal fact</b>, <b>assessment</b>, <b>verify</b> or <b>action</b>; confirm current sources before you rely on them.</p>
   </div>
 </div>
 
@@ -334,6 +338,12 @@
           <label class="chk"><input type="checkbox" id="secMil"> Military / defence end-use</label>
           <label class="chk"><input type="checkbox" id="secExport"> Exported / used cross-border</label>
         </div>
+        <div class="subq" id="ipQ" role="group" aria-labelledby="ipQLbl" hidden>
+          <div class="subq-h" id="ipQLbl">IP-network monitoring is a listed item (5A001.j) only if the first two statements are true and the third is not. Tick what applies:</div>
+          <label class="chk"><input type="checkbox" id="ipCarrier"> On a carrier-class IP network (e.g. a national backbone) it analyses traffic at the application layer, extracts selected metadata and content (voice, video, messages, attachments) and indexes what it extracts</label>
+          <label class="chk"><input type="checkbox" id="ipSelectors"> It is specially designed to search on &ldquo;hard selectors&rdquo; (a person&rsquo;s name, e-mail, street address, phone number or group affiliation) and to map the relational network of a person or group</label>
+          <label class="chk"><input type="checkbox" id="ipExcluded"> It is specially designed for marketing, network quality of service (QoS) or quality of experience (QoE)</label>
+        </div>
       </div>
 
       <div class="fld">
@@ -359,7 +369,7 @@
 </div>
 
 <div class="wrap foot">
-  <span>Sentinel &mdash; built by <b>Christopher Farmer</b> · runs fully offline, no network calls · decision-support tool.</span>
+  <span>Sentinel &mdash; built by <b>Christopher Farmer</b> · the engine runs in your browser and makes no network calls (the site loads analytics only with your consent) · decision-support tool.</span>
   <span class="mono">Project 6 · portfolio</span>
 </div>
 <div class="toast" id="toast"></div>
@@ -369,7 +379,7 @@
 (function(){
 var root = (typeof window!=='undefined')?window:(typeof globalThis!=='undefined'?globalThis:this);
 
-/* ============================ REFERENCE DATA (as-of 2026-07) ============================ */
+/* ============================ REFERENCE DATA (as-of 2026-10) ============================ */
 var CAP=[
   ['bioId','Biometric identification (1:N matching)'],
   ['bioVerify','Biometric verification (1:1 authentication)'],
@@ -444,13 +454,13 @@ var TODO={
   manual:{ t:'Get certainty first.', s:'The description is incomplete; confirm the missing facts and re-run before relying on this.' }
 };
 var SOURCES=[
-  'Regulation (EU) 2024/1689 (EU AI Act) &mdash; Art 5 prohibitions applicable 2 Feb 2025; GPAI (Art 53-55) applicable 2 Aug 2025; Art 50 transparency 2 Aug 2026; new Art 5 prohibition on AI generating non-consensual intimate imagery / CSAM applicable 2 Dec 2026 (added by the Digital Omnibus).',
-  'Digital Omnibus on AI (Commission proposal 19 Nov 2025; provisional agreement May 2026; adopted by the European Parliament 16 Jun 2026 and the Council 29 Jun 2026; final act signed 8 Jul 2026) &mdash; Annex III high-risk obligations moved to 2 Dec 2027; product-embedded (Annex I) to 2 Aug 2028. Awaiting Official-Journal publication (in force three days after); confirm entry into force before relying on the revised dates.',
-  'European Commission Guidelines on prohibited AI practices (4 Feb 2025) and on high-risk classification.',
+  'Regulation (EU) 2024/1689 (EU AI Act) &mdash; Art 5 prohibitions applicable 2 Feb 2025; GPAI (Art 53-55) applicable 2 Aug 2025; Art 50 transparency 2 Aug 2026; two new Art 5 prohibitions, Art 5(1)(ba) and (bb), on AI systems that generate or manipulate non-consensual intimate material / CSAM, applicable 2 Dec 2026 (inserted by Regulation (EU) 2026/1744, the Digital Omnibus on AI).',
+  'Digital Omnibus on AI (Commission proposal 19 Nov 2025; provisional agreement May 2026; adopted by the European Parliament 16 Jun 2026 and the Council 29 Jun 2026; final act signed 8 Jul 2026) &mdash; Annex III high-risk obligations moved to 2 Dec 2027; product-embedded (Annex I) to 2 Aug 2028. Regulation (EU) 2026/1744, OJ L, 2026/1744, 24.7.2026; in force 27 July 2026.',
+  'European Commission Guidelines on prohibited AI practices (4 Feb 2025); draft Commission guidelines on the classification of high-risk AI systems (published 19 May 2026).',
   'Penalties: up to &euro;35m / 7% turnover for Art 5 breaches; up to &euro;15m / 3% for GPAI provider breaches (Art 99, 101).',
-  'Regulation (EU) 2021/821 (recast Dual-Use) &mdash; Art 4 general catch-all; Art 5 cyber-surveillance catch-all; Annex I control lists (Cat 0-9).',
+  'Regulation (EU) 2021/821 (recast Dual-Use) &mdash; Art 4 end-use catch-all; Art 5 cyber-surveillance catch-all; Annex I control lists (Cat 0-9), as replaced by Delegated Regulation (EU) 2025/2003 (OJ L, 14.11.2025), including 5A001.j (IP-network communications surveillance).',
   'Commission Recommendation (EU) 2024/2659 (11 Oct 2024) &mdash; guidelines / due-diligence for the export of cyber-surveillance items under Art 5 of Reg. (EU) 2021/821.',
-  'Wassenaar Arrangement Control List &mdash; Cat 3 (electronics), Cat 4 (computers; intrusion software 4A005/4D004/4E001), Cat 5 Pt 1 (IP-network surveillance 5A001.j), Cat 5 Pt 2 (information security); intrusion &amp; IP-surveillance controls updated at the Dec 2024 plenary.',
+  'Wassenaar Arrangement Control List, WA-LIST (25) 1 Corr. (December 2025 Plenary) &mdash; Cat 3 (electronics), Cat 4 (computers; intrusion software 4A005/4D004/4E001), Cat 5 Pt 1 (IP-network surveillance 5A001.j), Cat 5 Pt 2 (information security); the December 2024 and December 2025 Plenaries changed Cat 4 and Cat 5 Pt 1 only editorially.',
   'US EAR (BIS, 15 CFR) incl. advanced-computing ECCNs 3A090/4A090 &amp; Foreign Direct Product rules; US ITAR (DDTC, 22 CFR, USML) for defence articles &mdash; may apply extraterritorially.'
 ];
 
@@ -468,7 +478,7 @@ function classifyAIAct(input){
   /* Art 2(3): AI used exclusively for military / defence / national-security is outside the AI Act — surface this in every tier, not just the low ones. */
   if(sec==='defence') out.reasons.push(reason('verify','<b>Defence / national-security use.</b> The EU AI Act does not apply to AI placed on the market or put into service exclusively for military, defence or national-security purposes (Art 2(3)) &mdash; for such use the class below is indicative only and governance shifts to export &amp; defence-trade law (see the screen below). Dual civil/defence use is not excluded.'));
 
-  /* ---- Article 5 PROHIBITED practices (applicable 2 Feb 2025; unchanged by the Digital Omnibus) ---- */
+  /* ---- Article 5 PROHIBITED practices (points (c)-(h), applicable 2 Feb 2025 and unchanged by the Digital Omnibus on AI; its new points (ba) and (bb), with paras 1a-1b, apply from 2 Dec 2026 and are handled in the generative branches below) ---- */
   var proh=[];
   if(cap==='socialScore') proh.push(['Art 5(1)(c)','Social scoring — evaluating or classifying people over time from social behaviour or predicted personal characteristics, leading to detrimental or disproportionate treatment.']);
   if(cap==='crimePredict' && !s.placeBased) proh.push(['Art 5(1)(d)','Predicting the risk of a person committing a criminal offence based solely on profiling or personality traits. (Area/location crime forecasting that does not profile identified individuals is not caught.)']);
@@ -501,12 +511,13 @@ function classifyAIAct(input){
   if(hi.length){
     out.tier='high';
     hi.forEach(function(x){ out.reasons.push(reason('fact','<b>High-risk trigger.</b> '+x)); out.triggers.push('high-risk'); });
-    out.reasons.push(reason('assess','Article 6(3) carve-out: a system in a listed area is <i>not</i> high-risk if it performs only a narrow procedural task, improves the result of prior human activity, or flags patterns without replacing human judgement — but it stays high-risk whenever it profiles individuals. Confirm which side of that line this sits.'));
+    out.reasons.push(reason('assess','Article 6(3) carve-out: a system in a listed area is <i>not</i> high-risk if it performs only a narrow procedural task, improves the result of prior human activity, flags patterns without replacing human judgement, or performs a preparatory task to an assessment in that area — but it stays high-risk whenever it profiles individuals. Confirm which side of that line this sits.'));
     if(cap==='emotion'||cap==='bioCat') out.reasons.push(reason('fact','<b>Plus Art 50(3) transparency.</b> Even as a high-risk system, people exposed to an emotion-recognition or biometric-categorisation system must be informed that it is operating.'));
     /* Art 50 is cumulative with the high-risk tier: a generative system in a high-risk setting still owes the marking and disclosure duties */
     if(cap==='genai'||cap==='gpai'){
       out.reasons.push(reason('fact','<b>Plus Art 50(1)-(2) transparency.</b> Even as a high-risk system, content it generates must be marked as artificially generated or manipulated, and people must be told when they are interacting with AI — these duties sit alongside the Chapter III obligations.'));
-      out.reasons.push(reason('verify','<b>New Art 5 prohibition (Digital Omnibus).</b> A generative system must not have the purpose of producing non-consensual intimate imagery or child sexual abuse material, and providers must build in reasonable safeguards against it &mdash; a prohibited practice from 2 Dec 2026. Confirm adequate safeguards are in place.'));
+      out.reasons.push(reason('fact','<b>New Art 5 prohibitions (Digital Omnibus on AI).</b> From 2 Dec 2026, Art 5(1)(ba) and (bb) prohibit placing on the market or putting into service a system that generates or manipulates non-consensual intimate material or child sexual abuse material where that is its intended purpose, or where its design or capabilities make it a reasonably foreseeable and reproducible outcome and it lacks reasonable and adequate technical safety measures and other safeguards to reliably prevent it; a deployer may not use such a system for that purpose (Art 5(1a)).'));
+      out.reasons.push(reason('action','Confirm adequate safeguards are in place.'));
       out.triggers.push('transparency');
     }
     gpaiOverlay(out,input);
@@ -522,7 +533,10 @@ function classifyAIAct(input){
     out.tier='limited';
     lim.forEach(function(x){ out.reasons.push(reason('fact','<b>Transparency obligation.</b> '+x)); });
     out.triggers.push('transparency');
-    if(cap==='genai'||cap==='gpai') out.reasons.push(reason('verify','<b>New Art 5 prohibition (Digital Omnibus).</b> A generative system must not have the purpose of producing non-consensual intimate imagery or child sexual abuse material, and providers must build in reasonable safeguards against it &mdash; a prohibited practice from 2 Dec 2026. Confirm adequate safeguards are in place.'));
+    if(cap==='genai'||cap==='gpai'){
+      out.reasons.push(reason('fact','<b>New Art 5 prohibitions (Digital Omnibus on AI).</b> From 2 Dec 2026, Art 5(1)(ba) and (bb) prohibit placing on the market or putting into service a system that generates or manipulates non-consensual intimate material or child sexual abuse material where that is its intended purpose, or where its design or capabilities make it a reasonably foreseeable and reproducible outcome and it lacks reasonable and adequate technical safety measures and other safeguards to reliably prevent it; a deployer may not use such a system for that purpose (Art 5(1a)).'));
+      out.reasons.push(reason('action','Confirm adequate safeguards are in place.'));
+    }
     gpaiOverlay(out,input);
     return out;
   }
@@ -570,7 +584,7 @@ function aiActObligations(out,input){
       out.obl.deployer.push('Art 50(4): label deepfakes and AI-generated text published to inform the public on matters of public interest.');
       out.timeline.push('Article 50 transparency duties apply from 2 August 2026 (with transitional relief for the Art 50(2) marking of generative systems already on the market, to 2 December 2026) — earlier than the high-risk dates below.');
     }
-    out.timeline.push('Annex III (use-case) high-risk obligations apply from 2 December 2027 — moved from 2 Aug 2026 by the Digital Omnibus (adopted by the European Parliament 16 Jun and Council 29 Jun 2026, signed 8 Jul 2026; not yet in force — awaiting Official-Journal publication). The Commission may bring the date forward once harmonised standards are ready.');
+    out.timeline.push('Annex III (use-case) high-risk obligations apply from 2 December 2027 — moved from 2 Aug 2026 by the Digital Omnibus on AI (Regulation (EU) 2026/1744, in force since 27 July 2026). The adopted text fixes this date and gives no power to bring it forward.');
     out.timeline.push('High-risk AI embedded in products already covered by EU harmonisation law (Annex I) applies from 2 August 2028.');
     return;
   }
@@ -612,14 +626,21 @@ function exportScreen(input){
   var listed=false, high=false, catchall=false;
   x.crossBorder=isCrossBorder(input);
 
+  /* 5A001.j lists IP-network surveillance only when every criterion is met and no excluded purpose applies */
+  var ipListed=!!(sc.ipMonitor && sc.ipCarrier && sc.ipSelectors && !sc.ipExcluded);
   if(sc.ipMonitor){
-    listed=true;
-    x.reasons.push(reason('fact','<b>IP-network communications surveillance.</b> Systems, equipment and software for IP-network communications surveillance are a listed dual-use item (Annex I 5A001.j, mirroring Wassenaar) and a cyber-surveillance item within Art 2(20) of Reg. (EU) 2021/821.'));
-    add('EU 2021/821','Annex I Cat 5 Pt 1 · 5A001.j + Art 5','Listed IP-network surveillance item: export authorisation required; the Art 5 human-rights due diligence (Rec. (EU) 2024/2659) applies on top.');
-    add('Wassenaar','Cat 5 Pt 1 · 5A001.j','IP-network communications surveillance systems; controls updated at the Dec 2024 plenary.');
+    x.reasons.push(reason('fact','<b>IP-network communications surveillance: what Annex I 5A001.j lists.</b> Systems or equipment that, on a carrier-class IP network (e.g. a national-grade backbone), analyse traffic at the application layer, extract selected metadata and content (voice, video, messages, attachments) and index what they extract, <i>and</i> that are specially designed to search on &ldquo;hard selectors&rdquo; (data about a person, such as a name, e-mail, street address, phone number or group affiliation) and to map the relational network of a person or group. Systems specially designed for marketing, network quality of service (QoS) or quality of experience (QoE) are excluded.'));
+    if(ipListed){
+      listed=true;
+      x.reasons.push(reason('assess','As you describe it, the system meets every 5A001.j criterion and is not designed for an excluded purpose, so it is a listed dual-use item (Annex I 5A001.j, mirroring Wassenaar 5.A.1.j) and a cyber-surveillance item within Art 2(20) of Reg. (EU) 2021/821.'));
+      add('EU 2021/821','Annex I Cat 5 Pt 1 · 5A001.j + Art 5','Listed IP-network surveillance item: export authorisation required; the Art 5 human-rights due diligence (Rec. (EU) 2024/2659) applies on top.');
+      add('Wassenaar','Cat 5 Pt 1 · 5A001.j','IP-network communications surveillance systems.');
+    } else {
+      x.reasons.push(reason('assess','As you describe it, the system '+(sc.ipExcluded?'is specially designed for an excluded purpose':'does not meet every 5A001.j criterion')+', so 5A001.j does not list it. If it is nonetheless specially designed for the covert surveillance of natural persons, also tick &ldquo;Covert surveillance capability&rdquo;: the Art 5 catch-all may then apply. Mobile-network interception equipment is listed separately (5A001.f), which this screen does not assess.'));
+    }
     x.itar=true;
   }
-  if(sc.covertSurveil && !sc.ipMonitor){
+  if(sc.covertSurveil && !ipListed){
     catchall=true;
     x.reasons.push(reason('assess','<b>Covert surveillance capability (visual, biometric or location).</b> Not an Annex I control-list entry in itself. It is a “cyber-surveillance item” under Art 2(20) of Reg. (EU) 2021/821 only if it is specially designed for covert surveillance of natural persons by monitoring, extracting, collecting or analysing data from information and telecommunication systems — that turns on the design. If it is, the Art 5 catch-all and the Rec. (EU) 2024/2659 due diligence apply to any export; if not, the human-rights due diligence is still expected practice.'));
     add('EU 2021/821','Art 5 catch-all · Rec. (EU) 2024/2659','Non-listed cyber-surveillance items: authorisation required where the competent authority informs the exporter — or the exporter is aware from its own due diligence — that the item is or may be intended for internal repression or serious human-rights violations.');
@@ -627,8 +648,8 @@ function exportScreen(input){
   }
   if(sc.intrusion){
     listed=true;
-    x.reasons.push(reason('fact','<b>Intrusion / offensive-cyber tooling.</b> Software that covertly gains access to devices to extract/modify data or alter execution is caught by the intrusion-software controls.'));
-    add('Wassenaar','Cat 4 · 4A005/4D004/4E001','Systems, software &amp; technology for generating, operating, delivering or communicating with intrusion software (updated Dec 2024).');
+    x.reasons.push(reason('fact','<b>Intrusion / offensive-cyber tooling.</b> Systems and software for generating, delivering or commanding “intrusion software” (software that evades a device’s monitoring tools or protective countermeasures to extract or modify data, or to alter a program’s execution), and technology for developing it, are caught by the intrusion-software controls.'));
+    add('Wassenaar','Cat 4 · 4A005/4D004/4E001','Systems, equipment and software specially designed or modified for the generation, command and control, or delivery of intrusion software (4A005, 4D004), and technology for its development (4E001.c).');
     add('EU 2021/821','Annex I Cat 4','Mirrors the Wassenaar intrusion-software controls; export authorisation required.');
     x.itar=true;
   }
@@ -637,6 +658,7 @@ function exportScreen(input){
     x.reasons.push(reason('fact','<b>Strong cryptography / cryptanalysis.</b> Information-security functionality is controlled; some mass-market items are decontrolled by note but may still need classification / notification.'));
     add('Wassenaar','Cat 5 Pt 2 · 5A002/5D002','Information-security items using controlled cryptography.');
     add('EU 2021/821','Annex I Cat 5 Pt 2','Cryptographic "information security" items.');
+    x.itar=true;
   }
   if(sc.hpCompute){
     high=true;
@@ -647,8 +669,8 @@ function exportScreen(input){
   }
   if(sc.military){
     high=true;
-    x.reasons.push(reason('verify','<b>Military / defence / national-security end-use.</b> This can move the item off the dual-use list into munitions / defence-trade controls, and takes the deployment outside the EU AI Act (Art 2(3)).'));
-    add('EU 2021/821','Art 4 general catch-all','Military end-use / embargoed-destination catch-all — authorisation may be required even for non-listed items.');
+    x.reasons.push(reason('verify','<b>Military / defence / national-security end-use.</b> This can move the item off the dual-use list into munitions / defence-trade controls and, where the system is used exclusively for military, defence or national-security purposes, takes it outside the EU AI Act (Art 2(3)).'));
+    add('EU 2021/821','Art 4 end-use catch-all','Military end-use where the buying or destination country is under an arms embargo (Art 4(1)(b)) — authorisation may be required even for non-listed items.');
     x.itar=true;
   }
   if(sc.repression){
@@ -745,7 +767,7 @@ function decideVerdict(ai,xp,input){
 
 function assess(input){
   input=input||{}; input.sens=input.sens||{}; input.security=input.security||{}; input.dataCats=input.dataCats||[];
-  var out={ ref:input.ref||'', asOf:'2026-07', input:input, sources:SOURCES };
+  var out={ ref:input.ref||'', asOf:'2026-10', input:input, sources:SOURCES };
   var ai=classifyAIAct(input); aiActObligations(ai,input);
   var xp=exportScreen(input);
   var hc=humanControls(input,ai,xp);
@@ -774,7 +796,7 @@ function tierBlurb(t){ return t==='prohibited'?'Article 5 prohibited practice �
   : 'Minimal-risk — no mandatory AI Act obligations.'; }
 function dcLabel(id){ var r=id; DATACATS.forEach(function(d){ if(d[0]===id) r=plain(d[1]); }); return r; }
 function sensLabel(s){ var a=[]; if(s.special)a.push('special-category'); if(s.infersSensitive)a.push('infers-sensitive'); if(s.realTime)a.push('real-time'); if(s.publicSpace)a.push('public-space'); if(s.placeBased)a.push('place-based'); if(s.largeScale)a.push('large-scale'); if(s.children)a.push('children/vulnerable'); if(s.safetyComponent)a.push('safety-component'); return a.length?a.join(', '):'none flagged'; }
-function secLabel(sc){ var a=[]; if(sc.covertSurveil)a.push('covert surveillance'); if(sc.intrusion)a.push('intrusion/offensive-cyber'); if(sc.ipMonitor)a.push('IP-network monitoring'); if(sc.crypto)a.push('cryptography'); if(sc.hpCompute)a.push('advanced compute'); if(sc.repression)a.push('repression/HR risk'); if(sc.military)a.push('military end-use'); if(sc.exportable)a.push('cross-border'); return a.length?a.join(', '):'none flagged'; }
+function secLabel(sc){ var a=[]; if(sc.covertSurveil)a.push('covert surveillance'); if(sc.intrusion)a.push('intrusion/offensive-cyber'); if(sc.ipMonitor)a.push('IP-network monitoring (5A001.j questions: carrier-class analysis, extraction and indexing '+(sc.ipCarrier?'yes':'no')+'; hard-selector search and network mapping '+(sc.ipSelectors?'yes':'no')+'; designed for marketing / QoS / QoE '+(sc.ipExcluded?'yes':'no')+')'); if(sc.crypto)a.push('cryptography'); if(sc.hpCompute)a.push('advanced compute'); if(sc.repression)a.push('repression/HR risk'); if(sc.military)a.push('military end-use'); if(sc.exportable)a.push('cross-border'); return a.length?a.join(', '):'none flagged'; }
 function roleLabel(r){ return r==='provider'?'Provider (builds / places on market)':r==='deployer'?'Deployer (uses)':'Provider &amp; deployer'; }
 /* Obligation blocks in the order the chosen role needs them: yours first, the other role's list labelled as information. */
 function oblBlocks(ai,role){
@@ -822,6 +844,9 @@ function val(id){ return document.getElementById(id).value; }
 function setCx(id,v){ document.getElementById(id).checked=!!v; }
 function setVal(id,v){ document.getElementById(id).value=v; }
 function setChecks(sel,vals){ vals=vals||[]; document.querySelectorAll(sel).forEach(function(x){ x.checked=vals.indexOf(x.value)>=0; }); }
+/* the 5A001.j questions show only while "IP-network / intercept monitoring" is ticked */
+function syncIpQ(){ var q=document.getElementById('ipQ'); if(q) q.hidden=!cx('secIp'); }
+document.getElementById('secIp').addEventListener('change',syncIpQ);
 
 function collectInput(){
   var dcv=[]; document.querySelectorAll('.dc:checked').forEach(function(x){ dcv.push(x.value); });
@@ -834,7 +859,7 @@ function collectInput(){
     sens:{ special:cx('cxSpecial'), infersSensitive:cx('cxInfer'), realTime:cx('cxRealtime'), publicSpace:cx('cxPublic'), placeBased:cx('cxPlace'), largeScale:cx('cxLarge'), children:cx('cxChildren'), safetyComponent:cx('cxSafety') },
     autonomy:autonomyVal, oversight:val('oversight'),
     buildJur:val('buildJur'), useRegion:val('useRegion'),
-    security:{ covertSurveil:cx('secSurveil'), intrusion:cx('secIntrusion'), ipMonitor:cx('secIp'), crypto:cx('secCrypto'), hpCompute:cx('secCompute'), repression:cx('secRepress'), military:cx('secMil'), exportable:cx('secExport') },
+    security:{ covertSurveil:cx('secSurveil'), intrusion:cx('secIntrusion'), ipMonitor:cx('secIp'), ipCarrier:cx('ipCarrier'), ipSelectors:cx('ipSelectors'), ipExcluded:cx('ipExcluded'), crypto:cx('secCrypto'), hpCompute:cx('secCompute'), repression:cx('secRepress'), military:cx('secMil'), exportable:cx('secExport') },
     descTxt:(document.getElementById('descTxt').value||'').trim()
   };
 }
@@ -883,7 +908,7 @@ function render(res){
     h+='<div style="font-size:12.6px;color:var(--ink2);margin:12px 0 10px">'+ai.obl.head+'</div>';
     oblBlocks(ai,i.role).forEach(function(b){ h+=sgBlock(b.name,b.color,b.items); });
   } else if(ai.obl){ h+='<div style="font-size:12.6px;color:var(--ink2);margin:10px 0 0">'+ai.obl.head+'</div>'; }
-  if(ai.timeline.length){ h+='<div style="margin-top:10px">'; ai.timeline.forEach(function(x){ h+='<div class="reason"><span class="tag verify">TIMELINE</span><div>'+x+'</div></div>'; }); h+='</div>'; }
+  if(ai.timeline.length){ h+='<div style="margin-top:10px">'; ai.timeline.forEach(function(x){ h+='<div class="reason"><span class="tag fact">TIMELINE</span><div>'+x+'</div></div>'; }); h+='</div>'; }
   h+='</div>';
 
   /* 2 — Export screening */
@@ -927,8 +952,9 @@ function render(res){
   /* 5 — provenance */
   h+='<div class="prov"><h4>Provenance &amp; sources</h4>'
     +'<p style="margin:0 0 8px"><span class="tag fact" style="min-width:0;display:inline-block">LEGAL FACT</span> = statutory rule / control-list entry (dated). '
-    +'<span class="tag assess" style="min-width:0;display:inline-block">ASSESSMENT</span> = reasoned inference. '
-    +'<span class="tag verify" style="min-width:0;display:inline-block">VERIFY</span> = confirm before relying.</p><ul>';
+    +'<span class="tag assess" style="min-width:0;display:inline-block">ASSESSMENT</span> = reasoned application of the law to your description. '
+    +'<span class="tag verify" style="min-width:0;display:inline-block">VERIFY</span> = confirm before relying. '
+    +'<span class="tag action" style="min-width:0;display:inline-block">ACTION</span> = a step to take.</p><ul>';
   res.sources.forEach(function(s){ h+='<li>'+s+'</li>'; });
   h+='</ul><p style="margin-top:9px;color:var(--muted)">Sentinel is decision-support, not legal advice, and not an official export-control classification or licence determination. Confirm the current AI Act text (post-Omnibus), the EU dual-use control lists, Wassenaar updates and applicable US controls, and take qualified advice before you build, deploy or export.</p></div>';
 
@@ -984,7 +1010,7 @@ function summaryText(res){
   L.push('   Auditability & logging:'); hc.audit.forEach(function(x){ L.push('     - '+strip(x)); });
   if(hc.xport.length){ L.push('   Export-control operations:'); hc.xport.forEach(function(x){ L.push('     - '+strip(x)); }); }
   L.push('');
-  L.push('Provenance: LEGAL FACT = statute/control-list (dated); ASSESSMENT = reasoned inference; VERIFY = confirm before relying.');
+  L.push('Provenance: LEGAL FACT = statute/control-list (dated); ASSESSMENT = reasoned application of the law to the description; VERIFY = confirm before relying; ACTION = a step to take.');
   L.push('Decision-support, not legal advice, and not an official export-control classification. Confirm current AI Act (post-Omnibus), EU dual-use lists, Wassenaar & US controls.');
   L.push('Generated offline by Sentinel — built by Christopher Farmer.');
   return L.join('\n');
@@ -1078,6 +1104,7 @@ function applyPreset(p){
   setAutonomy(p.autonomy); setVal('oversight',p.oversight);
   setVal('buildJur',p.buildJur); setVal('useRegion',p.useRegion);
   setCx('secSurveil',p.security.covertSurveil); setCx('secIntrusion',p.security.intrusion); setCx('secIp',p.security.ipMonitor); setCx('secCrypto',p.security.crypto);
+  setCx('ipCarrier',p.security.ipCarrier); setCx('ipSelectors',p.security.ipSelectors); setCx('ipExcluded',p.security.ipExcluded); syncIpQ();
   setCx('secCompute',p.security.hpCompute); setCx('secRepress',p.security.repression); setCx('secMil',p.security.military); setCx('secExport',p.security.exportable);
   document.getElementById('descTxt').value=p.descTxt||'';
   run();

@@ -11,7 +11,7 @@
 <meta property="og:url" content="https://civfarmer.github.io/case-studies/meridian.html">
 <meta property="og:type" content="article">
 <style>
-  /* Offline-first: font families fall back to system fonts. No network requests, no CDN. */
+  /* Offline-first: font families fall back to system fonts. No CDN; analytics load only with consent. */
   :root{
     --bg:#0b0f17; --bg2:#0e1420; --surface:#131b2a; --surface2:#182133;
     --ink:#e9eef7; --ink2:#aab7cc; --muted:#7d8ba3; --line:#233145; --line2:#2c3d54;
@@ -251,7 +251,7 @@
 
       <section class="sec">
         <h2><span class="secno">02</span>What I built</h2>
-        <p>Meridian is a <b>Python + SQLite</b> platform with scheduled ingestion under a fixed API budget, tracking real issuers drawn from the <b>SIX Swiss Exchange directory</b> and officially published index constituents, against regulatory and sanctions sources including EUR-Lex/CELLAR, Fedlex, FINMA, SECO, legislation.gov.uk, the EU consolidated financial-sanctions list, UK OFSI, US OFAC and SEC EDGAR, and the UN Security Council consolidated list.</p>
+        <p>Meridian is a <b>Python + SQLite</b> platform with scheduled ingestion under a fixed API budget, tracking real issuers drawn from the <b>SIX Swiss Exchange directory</b> and benchmark-index constituent lists published on Wikipedia, against regulatory and sanctions sources including EUR-Lex/CELLAR, Fedlex, FINMA, SECO, legislation.gov.uk, the EU consolidated financial-sanctions list, UK OFSI, US OFAC and SEC EDGAR, and the UN Security Council consolidated list.</p>
         <ul>
           <li><b>Provenance per value:</b> every sourced row stores its source key, canonical URL, retrieval and publication timestamps, an immutable raw artifact, a SHA-256 content hash and the parser version.</li>
           <li><b>Six value classes</b> — Source Fact, Company Disclosure, Official Regulatory Fact, Calculated Metric, Evidence-Based Inference, Unverified — so an inference is never presented as a disclosed fact.</li>
@@ -273,7 +273,7 @@
 
       <div class="status">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M12 9v4"/><path d="M12 17h.01"/><path d="M10.3 3.9L2.4 18a2 2 0 0 0 1.7 3h15.8a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z"/></svg>
-        <div><span class="k">Status &amp; data</span><b>Embedded here as the full platform on a dated, frozen real dataset — no live API calls by design.</b> Every value keeps its own as-of timestamp and provenance label; search, ingestion and admin idle in this copy, and real and synthetic data are never silently mixed. The data &amp; methodology paper is a <b>preprint (submitted; not yet peer-reviewed)</b>. Meridian is a research instrument, and nothing in it is investment or legal advice.</div>
+        <div><span class="k">Status &amp; data</span><b>Embedded here as the full platform on a dated, frozen real dataset — no live API calls by design.</b> Every value keeps its own as-of timestamp and provenance label; search, ingestion and admin idle in this copy, and real and synthetic data are never silently mixed. The data &amp; methodology paper is a <b>preprint (not yet peer reviewed)</b>. Meridian is a research instrument, and nothing in it is investment or legal advice.</div>
       </div>
 
       <nav class="pager" aria-label="Case study navigation">

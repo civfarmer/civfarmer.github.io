@@ -187,7 +187,7 @@ if(q==="light"||q==="dark")document.documentElement.setAttribute("data-theme",q)
     c1: "CR1: the share of this economy's imports held by its single largest supplier",
     h: "HHI: Herfindahl-Hirschman index of supplier shares, 0 to 1",
     g: "Grip: the leading supplier's share of world exports of the product — whether a substitute exists at all",
-    a: "ASR, alternative supply ratio: rest-of-world exports of the product, excluding the leader, as a multiple of what this economy buys; below 1 the loss could not be covered in the reference year",
+    a: "ASR, alternative supply ratio: exports of the product by every exporter other than the leader that holds at least 1 per cent of world exports (this economy's own exports included), as a multiple of what this economy buys; below 1 the loss could not be covered in the reference year",
     e: "Exposure: concentration multiplied by the difficulty of substituting, 0 to 1"
   };
   function tip(key){ return TIPS[key] ? ' title="' + esc(TIPS[key]) + '"' : ""; }
@@ -203,7 +203,7 @@ if(q==="light"||q==="dark")document.documentElement.setAttribute("data-theme",q)
   // An exposure score is a ranking device, not a verdict. The wording below is
   // deliberately about what can be said from trade data alone.
   function band(e){
-    if(e >= 0.7) return "severe — concentrated supply with no physical substitute in the reference year";
+    if(e >= 0.7) return "severe — concentrated supply, and the leader dominates world exports or other suppliers could not cover the loss in the reference year";
     if(e >= 0.5) return "serious — concentrated supply, substitution constrained";
     if(e >= 0.3) return "material — concentration present, substitution possible at cost";
     return "low — supply is dispersed or readily substitutable";
@@ -425,9 +425,9 @@ if(q==="light"||q==="dark")document.documentElement.setAttribute("data-theme",q)
       'is concentrated <em>and</em> the gap cannot be filled.</p>' +
       '<table><tbody>' +
       mrow("CR1","Share held by the single largest supplier of this product to this economy.") +
-      mrow("HHI","Herfindahl-Hirschman index of supplier shares, 0 to 1. Reported through the concentration term, which takes the greater of CR1 and HHI so a line cannot look safe merely because the leader is under half while the remainder is a duopoly.") +
+      mrow("HHI","Herfindahl-Hirschman index of supplier shares, 0 to 1. Shown to describe the buyer&rsquo;s purchasing; it does no work in the score, because on shares that sum to one it never exceeds CR1, so the concentration term is CR1.") +
       mrow("Grip","The leading supplier's share of <em>world</em> exports of the product. This, not the buyer's own purchasing, decides whether a substitute exists at all. A buyer taking 100 per cent from a state holding four per cent of world supply can re-source within a quarter. A buyer taking 60 per cent from a state holding 85 per cent cannot re-source at any price.") +
-      mrow("ASR","Alternative supply ratio: exportable capacity of the rest of the world, excluding the leader, as a multiple of what this economy buys. Below 1, no combination of other suppliers could physically cover the loss within the reference year.") +
+      mrow("ASR","Alternative supply ratio: the exports, to all destinations, of every exporter other than the leader that holds at least 1 per cent of world exports of the product, as a multiple of what this economy buys. This economy&rsquo;s own exports are not excluded: where it is one of those exporters, they count. Below 1, no combination of other suppliers could physically cover the loss within the reference year.") +
       mrow("RCR","Replacement concentration: the HHI of that alternative set. Alternatives that all sit in one other state substitute one dependency for another.") +
       mrow("Exposure","concentration &times; difficulty, where difficulty is the <em>worst</em> of global grip, insufficient residual capacity, and concentration of the alternatives. Those are not compensating conditions; a buyer facing any one of them is stuck.") +
       '</tbody></table>' +

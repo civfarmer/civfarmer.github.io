@@ -11,7 +11,7 @@
 <meta property="og:url" content="https://civfarmer.github.io/case-studies/fris.html">
 <meta property="og:type" content="article">
 <style>
-  /* Offline-first: font families fall back to system fonts. No network requests, no CDN. */
+  /* Offline-first: font families fall back to system fonts. No CDN; analytics load only with consent. */
   :root{
     --bg:#0b0f17; --bg2:#0e1420; --surface:#131b2a; --surface2:#182133;
     --ink:#e9eef7; --ink2:#aab7cc; --muted:#7d8ba3; --line:#233145; --line2:#2c3d54;
@@ -253,9 +253,9 @@
         <h2><span class="secno">02</span>What I built</h2>
         <p>FRIS is roughly <b>20,000 lines of vanilla JavaScript</b> — no framework, and in the browser build no network — behind a single investigative interface: <b>23 pure analysis engines</b> spanning sanctions &amp; AML screening with adverse-media, beneficial-ownership and asset-tracing graphs, deterministic crypto <b>peel-chain simulation</b>, country and vendor risk, transaction surveillance and monitoring, onboarding and typology tooling, enforcement and GRC views, and an insolvency <b>liquidation waterfall</b>.</p>
         <ul>
-          <li><b>Money is handled as BigInt</b>, so every trace reconciles exactly: initial = residual + peeled + fees, with no floating-point drift.</li>
+          <li>In the engines that trace or distribute value, <b>money is handled as BigInt</b>, so every peel-chain trace reconciles exactly: initial = residual + peeled + fees.</li>
           <li>A <b>fetch-shim</b> lets the identical UI run against a Node server or a fully in-memory dataset — the browser build answers its own API calls locally.</li>
-          <li>A <b>headless self-verification harness</b> renders all 18 views and runs the 8 critical workflows before release; the latest run passes 18/18 and 8/8.</li>
+          <li>A <b>headless self-verification harness</b> renders the application&rsquo;s views and runs its critical workflows before release. The harness is not published with the browser build, so its results are the project&rsquo;s own statement, not an independent benchmark.</li>
           <li>The <b>Regulatory Horizon</b> module is built on 47 real, publicly-sourced instruments, each linked to its official source — kept strictly separate from the synthetic case data.</li>
         </ul>
       </section>
@@ -272,7 +272,7 @@
 
       <div class="status">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M12 9v4"/><path d="M12 17h.01"/><path d="M10.3 3.9L2.4 18a2 2 0 0 0 1.7 3h15.8a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z"/></svg>
-        <div><span class="k">Status &amp; data</span><b>Runs here in the portfolio, entirely in the browser and entirely offline — no data leaves the page.</b> All private-party data is <b>synthetic</b>, apart from seven screening fixtures that carry the names of real, publicly-designated sanctioned parties &mdash; their names are real, nothing attached to them is, and they are badged as fixtures wherever they appear; the Regulatory Horizon module's 47 instruments are real, dated and source-linked. The peel-chain method is written up in a <b>preprint (submitted; not yet peer-reviewed)</b>. FRIS is expressly <b>not a system of record and not legal advice</b>.</div>
+        <div><span class="k">Status &amp; data</span><b>Runs here in the portfolio, entirely in the browser and entirely offline — no data leaves the page.</b> All private-party data is <b>synthetic</b>, apart from seven screening fixtures that carry the names of real, publicly-designated sanctioned parties &mdash; their names are real, nothing attached to them is, and they are badged as fixtures wherever they appear, and one real Tornado Cash address (formerly OFAC-listed; delisted on 21 March 2025), labelled as the typology lab&rsquo;s cash-out wallet; the Regulatory Horizon module's 47 instruments are real, dated and source-linked. The peel-chain method is written up in a <b>preprint (not yet peer reviewed)</b>. FRIS is expressly <b>not a system of record and not legal advice</b>.</div>
       </div>
 
       <nav class="pager" aria-label="Case study navigation">

@@ -15,7 +15,8 @@
 //
 // Honest posture: a TRAINING / SIMULATION SANDBOX. Everything generated is 100%
 // SYNTHETIC and deterministic; the methods mirror real, publicly-documented FATF /
-// public methodology; nothing names or implicates a real party. Renders in-page
+// public methodology; beyond two screening fixtures (see the banner), nothing names
+// or implicates a real party. Renders in-page
 // within the shell (never a viewport takeover), accessible (colour ALWAYS paired
 // with a text label), DOM-light. No SVG geometry / getBBox / getBoundingClientRect
 // dependence — the money-flow is hand-built stepped panels, not measured layout.
@@ -46,7 +47,7 @@ export async function typology(root, parts) {
   root.append(el('div', { class: 'intro', role: 'note', style: { marginTop: '10px', '--mc': ACCENT } },
     el('span', { class: 'ico' }, icon('info', 18)),
     el('div', { class: 't' }, el('b', {}, 'Training / simulation sandbox — synthetic; not operational advice. '),
-      'Every generated entity, shell, wallet, invoice, transaction and asset is 100% FICTIONAL and produced deterministically from a fixed seed (the one exception: a sanctions-evasion trade stage names a real, publicly-designated party as the counterparty so the screening detector fires — the invoice and flow are invented). The typology METHODS mirror REAL, well-known, publicly-documented FATF / public methodology (placement / layering / integration, structuring & smurfing, shell-company layering, crypto peel chains, trade-based over/under-invoicing, mule networks, real-estate integration, loan-backs) — the methods are legitimate public knowledge, the data is invented. Nothing here names or implicates any real person, company or wallet. This is NOT operational advice, NOT a how-to and NOT a detection system of record; it is a detector-validation lab showing how money is hidden and how you would catch it.')));
+      'Every generated entity, shell, wallet, invoice, transaction and asset is 100% FICTIONAL and produced deterministically from a fixed seed, with two exceptions so the screening detector fires: a sanctions-evasion trade stage names a real, publicly-designated party as the counterparty, and the crypto peel-chain stage cashes out to a real Tornado Cash address, formerly OFAC-listed (designated 8 August 2022; delisted 21 March 2025) — the invoices, flows and transactions are invented. The typology METHODS mirror REAL, well-known, publicly-documented FATF / public methodology (placement / layering / integration, structuring & smurfing, shell-company layering, crypto peel chains, trade-based over/under-invoicing, mule networks, real-estate integration, loan-backs) — the methods are legitimate public knowledge, the data is invented. Beyond those two fixtures, nothing here names or implicates any real person, company or wallet. This is NOT operational advice, NOT a how-to and NOT a detection system of record; it is a detector-validation lab showing how money is hidden and how you would catch it.')));
 
   const body = el('div', { class: 'mt' });
   root.append(body);

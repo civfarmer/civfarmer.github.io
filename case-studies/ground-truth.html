@@ -5,13 +5,13 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230b0f17'/%3E%3Ctext x='32' y='43' font-family='Georgia,serif' font-size='27' font-weight='700' fill='%23d4b24c' text-anchor='middle'%3ECF%3C/text%3E%3C/svg%3E">
 <title>Ground Truth — three offline verification instruments | Christopher Farmer</title>
-<meta name="description" content="Case study: Ground Truth, three offline instruments — Chokepoint, Veritas, Lineage — that check where supply is concentrated, whether a cited authority exists, and who consolidates whom, against four open registers with no network call.">
+<meta name="description" content="Case study: Ground Truth, three offline instruments — Chokepoint, Veritas, Lineage — that check where supply is concentrated, whether a cited authority exists, and who consolidates whom, against four open registers, with no network call once the data has loaded.">
 <meta property="og:title" content="Ground Truth — three offline verification instruments | Christopher Farmer">
-<meta property="og:description" content="Case study: Ground Truth, three offline instruments — Chokepoint, Veritas, Lineage — that check where supply is concentrated, whether a cited authority exists, and who consolidates whom, against four open registers with no network call.">
+<meta property="og:description" content="Case study: Ground Truth, three offline instruments — Chokepoint, Veritas, Lineage — that check where supply is concentrated, whether a cited authority exists, and who consolidates whom, against four open registers, with no network call once the data has loaded.">
 <meta property="og:url" content="https://civfarmer.github.io/case-studies/ground-truth.html">
 <meta property="og:type" content="article">
 <style>
-  /* Offline-first: font families fall back to system fonts. No network requests, no CDN. */
+  /* Offline-first: font families fall back to system fonts. No CDN; analytics load only with consent. */
   :root{
     --bg:#0b0f17; --bg2:#0e1420; --surface:#131b2a; --surface2:#182133;
     --ink:#e9eef7; --ink2:#aab7cc; --muted:#7d8ba3; --line:#233145; --line2:#2c3d54;
@@ -232,7 +232,7 @@
     <article class="case">
       <div class="eyebrow">Case study 08 &middot; Verification &amp; economic security</div>
       <h1>Ground Truth &mdash; three instruments that check a claim against the register, offline</h1>
-      <p class="pos">Where is an economy&rsquo;s supply concentrated and could anyone replace it; does a cited authority exist and is it what the citation says; who consolidates whom. Three questions, four open registers, and no network call at any point.</p>
+      <p class="pos">Where is an economy&rsquo;s supply concentrated and could anyone replace it; does a cited authority exist and is it what the citation says; who consolidates whom. Three questions, four open registers, and no network call once the data has loaded.</p>
       <div class="chips"><span class="chip">323,929 trade cells</span><span class="chip">479,762 control relationships</span><span class="chip">65,357 retractions</span><span class="chip">71 in-page assertions</span><span class="chip">Vanilla JS &middot; air-gapped</span></div>
       <div class="cta">
         <a class="plink" href="../projects/ground-truth/index.html" target="_blank" rel="noopener">Open the suite <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7"/><path d="M8 7h9v9"/></svg></a>
@@ -250,7 +250,7 @@
       <p>That last constraint is not incidental. The moment a verification tool calls an API it has told somebody what you are checking, which for a counterparty screen, a pre-action citation check or a takeover target is the most sensitive fact in the transaction. It also stops working in exactly the conditions where verification matters most: a network that is down, restricted, or not trusted.</p>
 
       <h2>What was built</h2>
-      <p><b>Chokepoint</b> scores exposure to economic coercion in a single traded good. It reduces 11,250,411 bilateral flows from the CEPII BACI database &mdash; $22.94 trillion of 2024 trade &mdash; into 323,929 importer-product cells, and for each one measures the share held by the largest supplier, the concentration of the whole supplier set, the leading supplier&rsquo;s grip on <i>world</i> exports, and whether the rest of the world exported enough of that good, anywhere, to cover the loss.</p>
+      <p><b>Chokepoint</b> scores exposure to economic coercion in a single traded good. It reduces 11,250,411 bilateral flows from the CEPII BACI database &mdash; $22.94 trillion of 2024 trade &mdash; into 323,929 importer-product cells, and for each one measures the share held by the largest supplier, the concentration of the whole supplier set, the leading supplier&rsquo;s grip on <i>world</i> exports, and whether the other exporters &mdash; every supplier except the leader that holds at least one per cent of world exports &mdash; shipped enough of that good, anywhere, to cover the loss.</p>
       <p>Exposure is the product of a concentration term and a difficulty-of-substitution term, not a weighted average of several measures. That is a deliberate choice: a weighted average lets a comfortable reading on one measure buy off a dangerous reading on another, which is what makes most composite indices useless for decision. The difficulty term takes the <i>worst</i> of global grip, insufficient residual capacity, and concentration of the alternatives, because those are not compensating conditions. A buyer facing any one of them is stuck.</p>
       <p>It also computes the mirror. Coercion is a two-sided game, and a vulnerability assessment that ignores the retaliation set is half an assessment. The leverage view lists the lines in which a chosen economy is the largest supplier to importers who are themselves exposed &mdash; what it could withhold, not what it would.</p>
       <p><b>Veritas</b> answers whether a cited authority exists. It holds a citation index built from Find Case Law &mdash; neutral citation, case name, court and date, metadata only, harvested under a computational-analysis permission granted by the National Archives &mdash; and the Retraction Watch corpus of 65,357 records &mdash; retractions, expressions of concern, corrections and reinstatements &mdash; distributed by Crossref. Paste a bibliography, a table of authorities or a whole filing; it extracts every neutral citation and DOI and returns one of four verdicts.</p>

@@ -225,7 +225,15 @@ export function normaliseDate(v) {
     if (!Number.isNaN(dd.getTime())) return dd.toISOString().slice(0, 10);
   }
   const d = new Date(s);
-  if (!Number.isNaN(d.getTime())) return d.toISOString().slice(0, 10);
+  if (!Number.isNaN(d.getTime())) {
+    // A date written without a time zone ("10 March 2026") is parsed in the host's local time, so
+    // its day is read back in local time: the day recorded is the day written, on any host.
+    // ISO year or year-month forms, and dates that carry a zone or an offset, keep their UTC day.
+    const absolute = /^[+-]?\d{4,6}(-\d{2})?$/.test(s) || /\b(?:UTC?|GMT|Z|[ECMP][SD]T)\b/i.test(s)
+      || /(?:\s|:\d{2}(?:\.\d+)?)[+-]\d{2}:?\d{2}(?:\s*\([^)]*\))?$/.test(s) || /:\d{2}(?:\.\d+)?Z$/i.test(s);
+    if (!absolute) return `${String(d.getFullYear()).padStart(4, '0')}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`;
+    return d.toISOString().slice(0, 10);
+  }
   return null;
 }
 

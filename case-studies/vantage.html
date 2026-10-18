@@ -11,7 +11,7 @@
 <meta property="og:url" content="https://civfarmer.github.io/case-studies/vantage.html">
 <meta property="og:type" content="article">
 <style>
-  /* Offline-first: font families fall back to system fonts. No network requests, no CDN. */
+  /* Offline-first: font families fall back to system fonts. No CDN; analytics load only with consent. */
   :root{
     --bg:#0b0f17; --bg2:#0e1420; --surface:#131b2a; --surface2:#182133;
     --ink:#e9eef7; --ink2:#aab7cc; --muted:#7d8ba3; --line:#233145; --line2:#2c3d54;
@@ -253,15 +253,15 @@
         <h2><span class="secno">02</span>What I built</h2>
         <p>Vantage is a <b>self-contained, dependency-free forecasting engine</b> wrapped in five industry skins — brewery, direct-to-consumer, education, manufacturing and SaaS — plus a free sandbox for your own numbers.</p>
         <ul>
-          <li>The engine implements <b>Holt-Winters, ETS, Croston</b> (for intermittent demand), <b>seasonal-naive and OLS regression</b>, and selects the model per series by the <b>lowest back-tested error on rolling origins</b> — WAPE (the selection metric), with MAE, RMSE, MAPE and bias, all evaluated on data the model was not fitted to.</li>
-          <li>Every forecast ships with <b>80% and 95% prediction intervals</b> (stock plans use the 95% band), and horizons are planned in operationally sensible weekly or monthly steps.</li>
+          <li>The engine implements <b>Holt-Winters, ETS, Croston</b> (for intermittent demand), <b>seasonal-naive and OLS regression</b>, and selects the model per series by the <b>lowest back-tested error on rolling origins</b> — ranked on mean absolute error, with RMSE breaking ties (the same order as WAPE wherever WAPE is defined, and WAPE is the score shown), with sMAPE and bias reported alongside, all evaluated on data the model was not fitted to.</li>
+          <li>Every forecast ships with <b>80% and 95% prediction intervals</b>, widened with the horizon by a stated heuristic factor (stock plans use the 95% band), and horizons are planned in operationally sensible weekly or monthly steps.</li>
           <li>The embedded version is the <b>live app</b>: the engine's real forecasts, charts and intervals are computed in the browser on a locally-vendored React 18 runtime, so it runs fully offline.</li>
         </ul>
       </section>
 
       <section class="sec">
         <h2><span class="secno">03</span>A lawyer's scepticism about expert numbers</h2>
-        <p>Vantage encodes a lawyer's scepticism about expert numbers. <b>Rolling-origin back-testing is the fair trial</b>: a model is judged only on observations it had not seen, repeatedly, from multiple starting points — the quantitative equivalent of testing a witness on facts they were not coached on. <b>The seasonal-naive baseline keeps every claim falsifiable</b>: if a sophisticated method cannot beat &ldquo;same as last season&rdquo;, the engine says so and uses the simpler model — accuracy is earned, never presumed. And <b>prediction intervals replace false precision</b>: a decision-maker is told the range the method actually supports, not a single confident number. This is the same posture a model-validation function, an auditor or a cross-examining counsel takes towards any quantitative evidence — documented method, measured error, honest uncertainty — built into the tool instead of bolted on after the challenge arrives.</p>
+        <p>Vantage encodes a lawyer's scepticism about expert numbers. <b>Rolling-origin back-testing is the fair trial</b>: a model is judged only on observations it had not seen, repeatedly, from multiple starting points — the quantitative equivalent of testing a witness on facts they were not coached on. <b>The seasonal-naive baseline keeps every claim falsifiable</b>: if a sophisticated method cannot beat &ldquo;same as last season&rdquo;, the engine says so and uses the simpler model — accuracy is earned, never presumed. And <b>prediction intervals replace false precision</b>: a decision-maker is given a range, and the rule that sets it, not a single confident number. This is the same posture a model-validation function, an auditor or a cross-examining counsel takes towards any quantitative evidence — documented method, measured error, honest uncertainty — built into the tool instead of bolted on after the challenge arrives.</p>
       </section>
 
       <section class="sec">
@@ -271,7 +271,7 @@
 
       <div class="status">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M12 9v4"/><path d="M12 17h.01"/><path d="M10.3 3.9L2.4 18a2 2 0 0 0 1.7 3h15.8a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z"/></svg>
-        <div><span class="k">Status &amp; data</span><b>The working app, running in the browser with no network; every scenario is built on synthetic data.</b> Each one is an illustration — nothing in Vantage is a measured business result or a prediction about any real organisation. The forecasting and back-testing method is written up in a <b>preprint (submitted; not yet peer-reviewed)</b>. Use it to support a decision, not as advice.</div>
+        <div><span class="k">Status &amp; data</span><b>The working app, running in the browser with no network; every scenario is built on synthetic data.</b> Each one is an illustration — nothing in Vantage is a measured business result or a prediction about any real organisation. The forecasting and back-testing method is written up in a <b>preprint (not yet peer reviewed)</b>. Use it to support a decision, not as advice.</div>
       </div>
 
       <nav class="pager" aria-label="Case study navigation">

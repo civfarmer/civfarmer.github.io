@@ -625,7 +625,7 @@ document.documentElement.setAttribute('data-theme',s);}catch(e){}})();</script>
         {key:"designation", name:"Designation issued", val:designationReach,
          cap: size===0 ? "No enacting jurisdiction" : (size+" jurisdiction"+(size>1?"s":"")+" · reach "+pct(designationReach)+"%")},
         {key:"market", name:"Market access", val:chMarket, cap:"Brussels-effect exclusion from indispensable markets"},
-        {key:"banking", name:"Dollar clearing & correspondent banking", val:chBanking, cap:"Secondary-sanctions pressure at the chokepoint"},
+        {key:"banking", name:"Dollar clearing & correspondent banking", val:chBanking, cap:"Designation risk and loss of correspondent access"},
         {key:"derisk", name:"Compliance de-risking", val:effFinancial, cap:"Over-compliant banks drop the client; others follow"},
         {key:"emulation", name:"Legislative emulation", val:chEmulation, cap:"Peer legislatures copy a working model"}
       ]
@@ -659,7 +659,7 @@ document.documentElement.setAttribute('data-theme',s);}catch(e){}})();</script>
     else out.push({tone:"con", text:"<b>Weak market reach.</b> The enacting jurisdictions are not central enough for market exclusion to hurt."});
 
     // Financial channel
-    if (ch.effFinancial >= 0.5) out.push({tone:"pro", text:"<b>The dollar-clearing chokepoint is decisive.</b> Secondary-sanctions exposure makes correspondent banks over-comply and de-risk, starving the target of the financial rails it exists to exploit."});
+    if (ch.effFinancial >= 0.5) out.push({tone:"pro", text:"<b>The dollar-clearing chokepoint is decisive.</b> Designation risk and correspondent-access exposure make banks over-comply and de-risk, starving the target of the financial rails it exists to exploit."});
     else out.push({tone:"con", text:"<b>Low financial exposure.</b> The target runs on informal, crypto or captive rails, so the correspondent-banking chokepoint has little grip."});
 
     // Emulation channel

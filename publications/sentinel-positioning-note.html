@@ -57,7 +57,7 @@
   .paper h2{font-size:clamp(20px,2.9vw,27px);margin:2.4rem 0 .9rem;padding-bottom:.35rem;border-bottom:1px solid var(--line)}
   .paper h3{font-size:clamp(17px,2.2vw,21px);margin:1.9rem 0 .7rem}
   .paper h4{font-size:16px;margin:1.5rem 0 .5rem;color:var(--ink2)}
-  .paper p{margin:0 0 1.05rem}
+  .paper p{margin:0 0 1.05rem;overflow-wrap:anywhere;word-break:break-word}
   .paper strong{color:var(--ink);font-weight:700}
   .paper em{color:inherit}
   /* Byline: first bold paragraph right after the title */
@@ -240,18 +240,18 @@ document.documentElement.setAttribute('data-theme',s);}catch(e){}})();</script>
     <article class="paper">
 <h1 id="sentinel-a-methods-positioning-note">Sentinel — A Methods &amp; Positioning Note</h1>
 <p><strong>Christopher I. V. Farmer, LL.M. (University of Worcester) · Independent Researcher · civfarmer@gmail.com</strong></p>
-<p><em>Positioning note. Version 1.0, July 2026. Companion to the Sentinel readiness assessor. Law stated as-of July 2026. Decision-support, not legal advice.</em></p>
+<p><em>Positioning note; not peer reviewed. Version 1.1, October 2026. Companion to the Sentinel readiness assessor. Law stated as-of 16 October 2026. Decision-support, not legal advice.</em></p>
 <blockquote>
 <p><strong>Scope note.</strong> This note explains what Sentinel is, how it reaches its conclusions, and — just as importantly — what it is <em>not</em>. Sentinel is an offline decision-support instrument, not a legal adviser and not an official export-control authority. Every position it takes is dated and labelled; none of it should be relied upon without confirming the current primary sources.</p>
 </blockquote>
 <hr>
 <h2 id="the-problem-two-legal-questions-answered-in-one-pass">The problem: two legal questions, answered in one pass</h2>
-<p>Any serious AI or autonomous-system programme has to satisfy two distinct bodies of law that are almost never assessed together. The first asks whether it is <strong>lawful to build and use</strong> the system — its risk tier under the EU AI Act (Regulation (EU) 2024/1689) and the obligations that tier triggers. The second asks whether it is <strong>lawful to move</strong> the system, its source, its model weights, or its underlying compute across a border — the EU Dual-Use Regulation (Regulation (EU) 2021/821) and the Wassenaar Arrangement control lists it implements, with US EAR/ITAR exposure layered on top.</p>
+<p>Any serious AI or autonomous-system programme has to satisfy two distinct bodies of law that are almost never assessed together. The first asks whether it is <strong>lawful to build and use</strong> the system — its risk tier under the EU AI Act (Regulation (EU) 2024/1689 [2024] OJ L, 2024/1689) and the obligations that tier triggers. The second asks whether it is <strong>lawful to move</strong> the system, its source, its model weights, or its underlying compute across a border — the EU Dual-Use Regulation (Regulation (EU) 2021/821 [2021] OJ L206/1) and the control lists of the Wassenaar Arrangement, one of the regimes its Annex I implements, with US EAR/ITAR exposure layered on top.</p>
 <p>In practice these are handled by different teams, different advisers, and different timelines, and the seam between them is exactly where a compliant-looking product becomes an unlawful export — or where an export-cleared item quietly breaches a prohibited-practice rule. Sentinel's premise is that the two questions draw on almost identical inputs — what the system does, its data and autonomy, its sectors, and the jurisdictions of build and use — and can therefore be answered together, in a single structured pass, early enough to change the design.</p>
 <h2 id="the-method-a-deterministic-rules-engine">The method: a deterministic rules engine</h2>
-<p>Sentinel is not a model and makes no probabilistic prediction. It is a <strong>deterministic rules engine</strong> — a set of pure functions that map a structured description of a deployment onto the applicable legal categories, byte-for-byte reproducibly and entirely offline, with no network calls. The AI Act classifier walks Article 5 (prohibited practices), Annex III and Annex I (high-risk), and Article 50 (limited-risk transparency), returning exactly one of four tiers — <em>prohibited</em>, <em>high-risk</em>, <em>limited-risk</em>, <em>minimal-risk</em> — together with the specific article or annex that fired. A parallel export screen tests the same facts against the Dual-Use Regulation's Article 4 general catch-all and Article 5 cyber-surveillance catch-all, the Annex I control-list categories, and the Wassenaar Category 3/4/5 controls, with an honest, unresolved flag wherever US EAR or ITAR could bite extraterritorially. The two results are combined into a single verdict — <em>deployable</em>, <em>deployable with controls</em>, <em>blocked</em>, or <em>more information needed</em> — plus an exportable, audit-ready control record.</p>
-<h3 id="every-line-is-tagged-and-dated">Every line is tagged — and dated</h3>
-<p>The engine's defining discipline is that <strong>no assertion is left unlabelled</strong>. Every reason it emits carries one of four tags, so the reader can always see where the law ends and the reasoning begins:</p>
+<p>Sentinel is not a model and makes no probabilistic prediction. It is a <strong>deterministic rules engine</strong> — a set of pure functions that map a structured description of a deployment onto the applicable legal categories, so the same description always yields the same classification, reasons and verdict (only the record's reference number and generation time vary). The engine makes no network calls and runs offline; the hosting site loads analytics only with the visitor's consent. The AI Act classifier walks Article 5 (prohibited practices), Annex III and Annex I (high-risk), and Article 50 (transparency obligations), returning exactly one of four tiers — <em>prohibited</em>, <em>high-risk</em>, <em>limited-risk</em>, <em>minimal-risk</em> — together with the specific article or annex that fired. A parallel export screen tests the same facts against the Dual-Use Regulation's Article 4 end-use catch-all and Article 5 cyber-surveillance catch-all, the Annex I control-list categories, and the Wassenaar Category 3/4/5 controls, with an honest, unresolved flag that US EAR or ITAR could bite extraterritorially, raised on the surveillance, intrusion, cryptography, compute and military paths. The two results are combined into a single verdict — <em>deployable</em>, <em>deployable with controls</em>, <em>blocked</em>, or <em>more information needed</em> — plus an exportable, audit-ready control record.</p>
+<h3 id="every-reason-is-tagged-and-dated">Every reason is tagged — and dated</h3>
+<p>The engine's defining discipline is that <strong>no reason is left unlabelled</strong>. Every reason line in its classification and export screens carries one of four tags, so the reader can always see where the law ends and the reasoning begins:</p>
 <div class="tablewrap"><table>
 <thead>
 <tr>
@@ -265,8 +265,8 @@ document.documentElement.setAttribute('data-theme',s);}catch(e){}})();</script>
 <td>A statement of what the instrument actually says — the article, annex, or control-list entry.</td>
 </tr>
 <tr>
-<td><strong>Reasoned assessment</strong></td>
-<td>An application of that law to the described facts — the author's judgement, not black-letter law.</td>
+<td><strong>Assessment</strong></td>
+<td>A reasoned application of that law to the described facts — the author's judgement, not black-letter law.</td>
 </tr>
 <tr>
 <td><strong>Verify</strong></td>
@@ -278,13 +278,15 @@ document.documentElement.setAttribute('data-theme',s);}catch(e){}})();</script>
 </tr>
 </tbody>
 </table></div>
-<p>Every position is dated to <strong>July 2026</strong> and pinned to the <strong>2025–26 Digital Omnibus</strong> — the amending package adopted by the European Parliament on 16 June and the Council on 29 June 2026 and signed on 8 July 2026, which moves the Annex III high-risk obligations to 2 December 2027 and adds a new Article 5 prohibition (AI generating non-consensual intimate imagery or CSAM) from 2 December 2026. Because that package was, as of writing, <em>adopted but not yet in force</em> — awaiting Official-Journal publication — the lines that depend on it are tagged <strong>verify</strong>, not <strong>legal fact</strong>. That is the whole point of the tagging: the tool refuses to launder a pending date into a settled rule.</p>
+<p>The obligation checklists and control measures that follow the reasons are untagged lists of steps, and the transparency and high-risk application dates appear as timeline lines, flagged in the same way as <strong>legal fact</strong>.</p>
+<p>Every position is dated to <strong>October 2026</strong> and pinned to the <strong>Digital Omnibus on AI</strong> (Regulation (EU) 2026/1744 [2026] OJ L, 2026/1744) — the amending Regulation adopted by the European Parliament on 16 June and the Council on 29 June 2026 and signed on 8 July 2026, which moves the high-risk obligations to 2 December 2027 for Annex III systems and to 2 August 2028 for Annex I systems, and inserts two new prohibitions into Article 5(1), points (ba) and (bb), on AI systems that generate or manipulate non-consensual intimate material or child sexual abuse material, applicable from 2 December 2026. The July 2026 version of the tool was written while the Regulation was <em>adopted but not yet in force</em> — awaiting Official-Journal publication — so the lines that depend on it were flagged <strong>verify</strong>, not <strong>legal fact</strong>. That is the whole point of the tagging: the tool refuses to launder a pending date into a settled rule. The Regulation was published in the Official Journal on 24 July 2026 and has been in force since 27 July 2026; the current version flags those lines <strong>legal fact</strong>, and the check that safeguards against the new prohibitions are in place is tagged <strong>action</strong>.</p>
 <h2 id="the-thesis-regulated-by-design">The thesis: regulated by design</h2>
 <p>Sentinel's normative claim is that governance is not a disclaimer appended to a finished product but a <strong>design layer built into it</strong> — <em>regulated by design</em>. The same engine that classifies the system also names the controls that make the answer defensible: <strong>meaningful human authority</strong> (a real override, pause, and stop authority proportionate to the system's autonomy — Art 14 / Art 26); <strong>immutable auditability</strong> (tamper-evident event logs, decision provenance, and, where triggered, a Fundamental Rights Impact Assessment under Art 27 or a GDPR DPIA under Art 35); and <strong>export screening wired into the control layer</strong> rather than bolted on at the loading dock. A system built this way is not merely compliant on the day it ships — it can <em>prove</em> it was governed, which is the question a regulator or a court actually asks after the fact.</p>
 <h2 id="scope-and-limits">Scope and limits</h2>
-<p>Sentinel is <strong>decision-support, not legal advice</strong>, and nothing it returns is an <strong>official control classification</strong>. It creates no lawyer–client relationship, binds no authority, and does not substitute for a formal export-control ruling (BIS / BAFA / ECJU) or a qualified legal opinion. Its outputs are only as good as the description entered; the law moves; and the <strong>verify</strong>-tagged lines mark exactly where the user must consult a primary source or a competent adviser before relying on the result. It is offered as a structured first pass — a way to see both legal questions at once, while the design can still be changed — not as the last word on either.</p>
+<p>Sentinel is <strong>decision-support, not legal advice</strong>, and nothing it returns is an <strong>official control classification</strong>. It creates no lawyer–client relationship, binds no authority, and does not substitute for a formal export-control ruling (BIS / BAFA / ECJU) or a qualified legal opinion. It screens export-control exposure, not data-transfer lawfulness: cross-border flows of personal data (under Chapter V of the EU and UK GDPR, or Articles 16 and 17 of the Swiss Federal Act on Data Protection) are outside its scope and need their own assessment. Its outputs are only as good as the description entered; the law moves; and the <strong>verify</strong>-tagged lines mark exactly where the user must consult a primary source or a competent adviser before relying on the result. It is offered as a structured first pass — a way to see both legal questions at once, while the design can still be changed — not as the last word on either.</p>
 <hr>
 <p>— <em>Christopher I. V. Farmer, LL.M. (University of Worcester) · Independent Researcher · civfarmer@gmail.com</em></p>
+<p><em>Suggested citation:</em> Christopher I. V. Farmer, 'Sentinel — A Methods &amp; Positioning Note' (positioning note, version 1.1, October 2026) &lt;<a href="https://civfarmer.github.io/publications/sentinel-positioning-note.html">https://civfarmer.github.io/publications/sentinel-positioning-note.html</a>&gt;. <em>Licence:</em> Creative Commons Attribution 4.0 International (CC BY 4.0).</p>
     </article>
     <footer class="paperfoot">
       <span>&copy; <span id="yr">2026</span> Christopher I. V. Farmer</span>
@@ -295,7 +297,7 @@ document.documentElement.setAttribute('data-theme',s);}catch(e){}})();</script>
       <span>&middot;</span>
       <a href="../privacy.html">Privacy</a>
       <span>&middot;</span>
-      <span class="mono">Preprint &mdash; submitted; pending peer review &middot; not legal advice</span>
+      <span class="mono">Positioning note; not peer reviewed &middot; not legal advice</span>
     </footer>
   </main>
 

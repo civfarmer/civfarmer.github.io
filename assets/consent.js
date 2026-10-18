@@ -69,6 +69,8 @@ window.CF_GA_ID = window.CF_GA_ID || 'G-48E4YLWR81';
       'html:not([data-theme]) .cf-consent p{color:#4c473e}html:not([data-theme]) .cf-consent a{color:#0a463f}'+
       'html:not([data-theme]) .cf-consent button{background:#faf7f2;color:#221e18;border-color:#d9d2c5}'+
       'html:not([data-theme]) .cf-consent button.allow{background:#0d5f57;border-color:#0d5f57;color:#fff}}'+
+      'html[data-theme="light"] .cf-consent a{color:var(--accent-ink,#0a463f)}'+
+      'html[data-theme="light"] .cf-consent button:not(.allow){background:var(--surface2,#faf7f2);color:var(--ink,#221e18);border-color:var(--line2,#d9d2c5)}'+
       '@media print{.cf-consent{display:none!important}}';
     document.head.appendChild(st);
   }

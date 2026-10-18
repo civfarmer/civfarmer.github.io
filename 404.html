@@ -20,9 +20,9 @@ var b=document.createElement('base');b.href=r;h.appendChild(b);
 try{var t=localStorage.getItem('cf-theme');if(!t&&window.matchMedia&&matchMedia('(prefers-color-scheme: light)').matches)t='light';if(t)document.documentElement.setAttribute('data-theme',t);}catch(e){}})();</script>
 <style>
   :root{--bg:#0b0f17;--bg2:#0e1420;--surface:#131b2a;--ink:#e9eef7;--ink2:#aab7cc;--muted:#7d8ba3;--line:#233145;--line2:#2c3d54;
-    --accent:#43b3a6;--gold:#d4b24c;--shadow:0 18px 50px -20px rgba(0,0,0,.7);
+    --accent:#43b3a6;--accent-ink:#84d6ca;--surface2:#182133;--gold:#d4b24c;--shadow:0 18px 50px -20px rgba(0,0,0,.7);
     --font-display:'Source Serif 4',Georgia,'Times New Roman',serif;--font-body:'Inter',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;--font-mono:'IBM Plex Mono',ui-monospace,Consolas,monospace}
-  html[data-theme="light"]{--bg:#f4f1ec;--bg2:#ebe6dd;--surface:#fff;--ink:#221e18;--ink2:#4c473e;--muted:#675f54;--line:#e7e1d6;--line2:#d9d2c5;--accent:#0d5f57;--gold:#836819;--shadow:0 18px 44px -24px rgba(15,30,60,.35)}
+  html[data-theme="light"]{--bg:#f4f1ec;--bg2:#ebe6dd;--surface:#fff;--ink:#221e18;--ink2:#4c473e;--muted:#675f54;--line:#e7e1d6;--line2:#d9d2c5;--accent:#0d5f57;--accent-ink:#0a463f;--surface2:#faf7f2;--gold:#836819;--shadow:0 18px 44px -24px rgba(15,30,60,.35)}
   *{box-sizing:border-box}
   body{margin:0;min-height:100vh;color:var(--ink);font-family:var(--font-body);line-height:1.6;-webkit-font-smoothing:antialiased;display:flex;flex-direction:column}
   a{color:inherit}
@@ -64,13 +64,24 @@ try{var t=localStorage.getItem('cf-theme');if(!t&&window.matchMedia&&matchMedia(
 </main>
 <script>
   document.getElementById('theme').addEventListener('click',function(){var h=document.documentElement,n=h.getAttribute('data-theme')==='light'?'dark':'light';h.setAttribute('data-theme',n);try{localStorage.setItem('cf-theme',n)}catch(e){}});
-  /* Old links to the three withdrawn advisory reports land here: say so, and point to the playbook that replaced them. */
+  /* Old links to the three advisory reports land here: they have moved, corrected and renamed, to sit beside the playbook as example deliverables. */
+  /* Superseded versions removed in October 2026 point to their successors. */
+  (function(){var m={'the-emplaced-machine-v2.12.4.pdf':['publications/manuscripts/the-emplaced-machine-v2.12.5.pdf','The Emplaced Machine, version 2.12.5'],
+    'Counterspace_Conduct_and_Outer_Space_Treaty_v1.1.0.pdf':['publications/drafts/Counterspace_Conduct_and_Outer_Space_Treaty_v1.2.0.pdf','Conventional Counterspace Conduct and the Outer Space Treaty, working draft v1.2.0'],
+    'Authorising_Planetary_Defence_v0.2.0.pdf':['publications/drafts/Authorising_Planetary_Defence_v0.3.0.pdf','Authorising Planetary Defence, working draft v0.3.0']};
+    var t=m[location.pathname.split('/').pop()];if(!t)return;
+    var c=document.querySelector('.card'),n=c.querySelector('.links'),a=document.createElement('a');
+    c.querySelector('.code').textContent='Superseded';
+    c.querySelector('h1').textContent='That version has been replaced.';
+    c.querySelector('p').textContent='This address held an earlier version, since corrected and replaced by '+t[1]+'.';
+    a.className='btn gold';a.href=t[0];a.textContent='The current version';
+    n.querySelector('a[href="index.html"]').classList.remove('gold');n.insertBefore(a,n.firstChild);})();
   (function(){if(!/\/(hvoss|rsl|keystonesolar)\.pdf$|\/zenodo-reports\//i.test(location.pathname))return;
     var c=document.querySelector('.card'),n=c.querySelector('.links'),a=document.createElement('a');
-    c.querySelector('.code').textContent='Withdrawn';
-    c.querySelector('h1').textContent='That report has been withdrawn.';
-    c.querySelector('p').textContent='The three illustrative advisory reports that were here have been withdrawn. The playbook that replaces them covers the same ground: crisis, compliance and capital.';
-    a.className='btn gold';a.href='publications/nobody-else-is-coming.html';a.textContent='The playbook';
+    c.querySelector('.code').textContent='Moved';
+    c.querySelector('h1').textContent='That report has moved.';
+    c.querySelector('p').textContent='The three reports that were here have moved. Revised in October 2026 and renamed, they are now available as example deliverables beside the playbook Nobody Else Is Coming, each with a description of what it is.';
+    a.className='btn gold';a.href='publications/nobody-else-is-coming.html#examples';a.textContent='The example deliverables';
     n.querySelector('a[href="index.html"]').classList.remove('gold');n.insertBefore(a,n.firstChild);})();
 </script>
 </body>

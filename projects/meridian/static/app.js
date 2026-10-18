@@ -1,4 +1,4 @@
-// Theme toggle (persisted) + PWA service-worker registration. No trackers.
+// Theme toggle (persisted).
 (function () {
   var KEY = "meridian-theme";
   var saved = null;
@@ -23,7 +23,13 @@
 (function () {
   var banner = document.querySelector(".static-banner");
   if (banner) {
-    banner.textContent = "Static export of Meridian — Christopher Farmer’s regulatory-impact market tracker — frozen at the 2026-07-19 snapshot; a demonstration, not a live service.";
+    // The Companies and Calendar pages were re-rendered from the same data on 2026-08-07;
+    // their own banner says so, and that clause is kept.
+    var rerender = /; (this page was re-rendered[^—]*?) —/.exec(banner.textContent);
+    banner.textContent = "Static export of Meridian — Christopher Farmer’s regulatory-impact market tracker — frozen at the 2026-07-31 07:45Z export, from data retrieved up to 2026-07-30" + (rerender ? "; " + rerender[1] : "") + "; a demonstration, not a live service.";
+    // Twelve sector pages were written with the banner two or three times; keep one.
+    var extra = document.querySelectorAll(".static-banner");
+    for (var e = 1; e < extra.length; e++) extra[e].parentNode.removeChild(extra[e]);
   }
 
   // The sidenav's four admin pages, and the match-detail pages the exporter trimmed

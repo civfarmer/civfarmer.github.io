@@ -11,7 +11,7 @@
 <meta property="og:url" content="https://civfarmer.github.io/case-studies/sentinel.html">
 <meta property="og:type" content="article">
 <style>
-  /* Offline-first: font families fall back to system fonts. No network requests, no CDN. */
+  /* Offline-first: font families fall back to system fonts. No CDN; analytics load only with consent. */
   :root{
     --bg:#0b0f17; --bg2:#0e1420; --surface:#131b2a; --surface2:#182133;
     --ink:#e9eef7; --ink2:#aab7cc; --muted:#7d8ba3; --line:#233145; --line2:#2c3d54;
@@ -241,19 +241,19 @@
 
       <figure class="shot" data-shot="sentinel">
         <img src="img/sentinel.png" alt="Sentinel workbench — deployment form and dated AI Act timeline advisory" loading="lazy" style="width:100%;height:auto;display:block;border-radius:12px;border:1px solid var(--line)">
-        <figcaption>Sentinel — readiness workbench of the live build: EU AI Act risk class plus dual-use export-control screen, with dated positions labelled legal fact vs reasoned assessment. Screenshot of the running assessor.</figcaption>
+        <figcaption>Sentinel — readiness workbench of the live build: EU AI Act risk class plus dual-use export-control screen, with dated positions and each reason labelled legal fact, assessment, verify or action. Screenshot of the running assessor.</figcaption>
       </figure>
 
       <section class="sec">
         <h2><span class="secno">01</span>The problem</h2>
-        <p>A serious AI or autonomous-system programme sits under two bodies of law that are almost never assessed together. The <b>EU AI Act</b> asks whether the system is lawful to build and use — its risk tier and the obligations that tier triggers. <b>Export control</b> asks whether it is lawful to move the system, its source, its model weights or its compute across a border — the EU Dual-Use Regulation 2021/821 and the Wassenaar lists it implements, with US EAR/ITAR exposure layered on top. In practice these are handled by different teams on different timelines, and <b>the seam between them is where a compliant-looking product becomes an unlawful export</b> — or an export-cleared item quietly breaches a prohibited-practice rule. Add a moving compliance calendar — staggered application dates, with the Digital Omnibus reshuffling Annex III timing — and most organisations are answering yesterday's question.</p>
+        <p>A serious AI or autonomous-system programme sits under two bodies of law that are almost never assessed together. The <b>EU AI Act</b> asks whether the system is lawful to build and use — its risk tier and the obligations that tier triggers. <b>Export control</b> asks whether it is lawful to move the system, its source, its model weights or its compute across a border — the EU Dual-Use Regulation 2021/821 and the control lists of the Wassenaar Arrangement, one of the regimes its Annex I implements, with US EAR/ITAR exposure layered on top. In practice these are handled by different teams on different timelines, and <b>the seam between them is where a compliant-looking product becomes an unlawful export</b> — or an export-cleared item quietly breaches a prohibited-practice rule. Add a moving compliance calendar — staggered application dates, with the Digital Omnibus on AI reshuffling Annex III timing — and most organisations are answering yesterday's question.</p>
       </section>
 
       <section class="sec">
         <h2><span class="secno">02</span>What I built</h2>
         <p>Sentinel takes a nine-input description of a deployment — capability, sector, data, sensitivity and context, autonomy level, oversight model, role, jurisdictions of build and use, and dual-use context — and returns both answers in one pass.</p>
         <ul>
-          <li><b>EU AI Act classifier:</b> prohibited (Art 5), high-risk (Annex III / Annex I), limited (Art 50) or minimal, with the exact provider/deployer obligations and a GPAI (Arts 53&ndash;55) overlay; the timeline is dated to the 2025&ndash;26 <b>Digital Omnibus</b>, including Annex III high-risk moving to 2 December 2027.</li>
+          <li><b>EU AI Act classifier:</b> prohibited (Art 5), high-risk (Annex III / Annex I), limited (Art 50) or minimal, with the exact provider/deployer obligations and a GPAI (Arts 53&ndash;55) overlay; the timeline follows the <b>Digital Omnibus on AI</b> (Regulation (EU) 2026/1744), including Annex III high-risk moving to 2 December 2027 and Annex I to 2 August 2028.</li>
           <li><b>Dual-use export screen:</b> EU Reg. 2021/821 — the Art 5 cyber-surveillance catch-all and Art 4 — plus Wassenaar Categories 3/4/5 (intrusion software, IP-network surveillance, cryptography, advanced compute), with an honest flag where US <b>ITAR/EAR</b> may also bite.</li>
           <li><b>Meaningful-human-control and auditability measures</b> matched to the autonomy level — human-in-command / in-the-loop, Art 12/26 logging, FRIA/DPIA, post-market monitoring — then a clear verdict and an <b>audit-ready control record</b> exportable to HTML, JSON or print/PDF.</li>
           <li>A <b>deterministic rules engine</b> — pure functions, no model, no probabilistic prediction — in plain HTML/CSS/JS that runs offline from <span class="mono">file://</span>.</li>
@@ -262,7 +262,7 @@
 
       <section class="sec">
         <h2><span class="secno">03</span>Two regimes, one set of facts</h2>
-        <p>Sentinel's premise is a piece of legal analysis: the AI Act question and the export-control question <b>draw on almost identical facts</b> — what the system does, its data and autonomy, its sectors, its jurisdictions — so they can and should be answered together, early enough to change the design. The control philosophy is <b>&ldquo;regulated by design&rdquo;</b>: human authority, auditability and export screening treated as properties of the system, not paperwork appended to it. The engine is deterministic because a governance conclusion must be <b>reproducible and explainable</b> — the same inputs always give the same, traceable answer. And it is scrupulous about the state of the law: every line is tagged <b>legal fact, reasoned assessment, verify or action</b>; positions are dated July 2026; and the Digital Omnibus is reported precisely as what it is — adopted but awaiting Official Journal publication, flagged &ldquo;confirm before you rely on it&rdquo; rather than asserted as in force.</p>
+        <p>Sentinel's premise is a piece of legal analysis: the AI Act question and the export-control question <b>draw on almost identical facts</b> — what the system does, its data and autonomy, its sectors, its jurisdictions — so they can and should be answered together, early enough to change the design. The control philosophy is <b>&ldquo;regulated by design&rdquo;</b>: human authority, auditability and export screening treated as properties of the system, not paperwork appended to it. The engine is deterministic because a governance conclusion must be <b>reproducible and explainable</b> — the same inputs always give the same, traceable answer. And it is scrupulous about the state of the law: every reason line is tagged <b>legal fact, assessment, verify or action</b>, and every position is dated. While the Digital Omnibus on AI awaited Official Journal publication, the lines that depend on it were tagged &ldquo;verify&rdquo; rather than asserted as law; it has been in force since 27 July 2026, and in the current build, dated October 2026, those lines are legal fact. The tool does not launder a pending date into a settled rule.</p>
       </section>
 
       <section class="sec">
@@ -272,7 +272,7 @@
 
       <div class="status">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M12 9v4"/><path d="M12 17h.01"/><path d="M10.3 3.9L2.4 18a2 2 0 0 0 1.7 3h15.8a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z"/></svg>
-        <div><span class="k">Status &amp; data</span><b>Open it here in the portfolio; it makes no network calls at all.</b> Worked examples are illustrative. Encoded law is dated July 2026, tagged legal-fact vs reasoned-assessment vs verify, and must be confirmed against current sources before reliance. Sentinel is <b>decision-support, not legal advice, and not an official export-control classification</b>. A companion <b>methods &amp; positioning note</b> (v1.0, July 2026) is on the publications page.</div>
+        <div><span class="k">Status &amp; data</span><b>Open it here in the portfolio; the engine makes no network calls (the site loads analytics only with your consent).</b> Worked examples are illustrative. Encoded law is dated October 2026, each reason tagged legal fact, assessment, verify or action, and must be confirmed against current sources before reliance. Sentinel is <b>decision-support, not legal advice, and not an official export-control classification</b>. A companion <b>methods &amp; positioning note</b> (version 1.1, October 2026) is on the publications page.</div>
       </div>
 
       <nav class="pager" aria-label="Case study navigation">

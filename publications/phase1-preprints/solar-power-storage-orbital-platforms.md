@@ -2,7 +2,7 @@
 
 **Christopher I. V. Farmer, LL.M. (University of Worcester) · Independent Researcher · civfarmer@gmail.com**
 
-*Preprint — submitted; pending peer review. Version 1.0, July 2026.*
+*Preprint; not yet peer reviewed. Version 1.0, July 2026.*
 
 ---
 
@@ -504,7 +504,7 @@ Powering a large orbital platform entirely from sunlight is an exercise in manag
 
 ---
 
-*Preprint — submitted; pending peer review. © 2026 Christopher I. V. Farmer. This manuscript is a drafting-stage scientific preprint; all system-level figures are explicitly labelled illustrative calculations built upon cited primary inputs, and no proprietary or classified data are used. Scope statement: this document concerns general large-platform power engineering only and contains no weapon, launcher, railgun/coilgun, projectile, or "firing" content; the large intermittent load is treated exclusively as generic utilisation (scientific instruments, electric propulsion, or communications transmitters).*
+*Preprint; not yet peer reviewed. © 2026 Christopher I. V. Farmer. This manuscript is a drafting-stage scientific preprint; all system-level figures are explicitly labelled illustrative calculations built upon cited primary inputs, and no proprietary or classified data are used. Scope statement: this document concerns general large-platform power engineering only and contains no weapon, launcher, railgun/coilgun, projectile, or "firing" content; the large intermittent load is treated exclusively as generic utilisation (scientific instruments, electric propulsion, or communications transmitters).*
 
 
 ---

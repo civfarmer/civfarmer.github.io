@@ -2565,7 +2565,15 @@ function normaliseDate(v) {
     if (!Number.isNaN(dd.getTime())) return dd.toISOString().slice(0, 10);
   }
   const d = new Date(s);
-  if (!Number.isNaN(d.getTime())) return d.toISOString().slice(0, 10);
+  if (!Number.isNaN(d.getTime())) {
+    // A date written without a time zone ("10 March 2026") is parsed in the host's local time, so
+    // its day is read back in local time: the day recorded is the day written, on any host.
+    // ISO year or year-month forms, and dates that carry a zone or an offset, keep their UTC day.
+    const absolute = /^[+-]?\d{4,6}(-\d{2})?$/.test(s) || /\b(?:UTC?|GMT|Z|[ECMP][SD]T)\b/i.test(s)
+      || /(?:\s|:\d{2}(?:\.\d+)?)[+-]\d{2}:?\d{2}(?:\s*\([^)]*\))?$/.test(s) || /:\d{2}(?:\.\d+)?Z$/i.test(s);
+    if (!absolute) return `${String(d.getFullYear()).padStart(4, '0')}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`;
+    return d.toISOString().slice(0, 10);
+  }
   return null;
 }
 
@@ -5547,7 +5555,10 @@ __mods["data/watchlists.mjs"] = function(exports, require){
  * A KYC/AML programme runs FOUR screening lists (sanctions / PEP / adverse-media /
  * internal). An entry can belong to MORE THAN ONE, so each carries a `lists`
  * ARRAY rather than a single value:
- *   - Every entry is on `sanctions` (they are all real sanctions designations).
+ *   - Every entry is on `sanctions` (they are all real sanctions designations),
+ *     except one delisted record: WL-0035 (Tornado Cash), which OFAC removed
+ *     from the SDN List on 21 March 2025, carries a `delistingDate` and sits on
+ *     `adverse-media` only.
  *   - `pep` is added to PERSONS who hold or held a prominent public function
  *     (heads of state/government, ministers, senior officials, central-bank
  *     governors, senior military/security) and close family/associates the
@@ -5562,6 +5573,8 @@ __mods["data/watchlists.mjs"] = function(exports, require){
  *
  * All entries carry `data_classification: 'real-public-source'`.
  * Snapshot date: 2026-07-06.
+ * v3.0.1 (16 Oct 2026): WL-0035 (Tornado Cash) marked delisted, following OFAC's
+ * removal of Tornado Cash from the SDN List on 21 March 2025.
  */
 
 /* eslint-disable max-len */
@@ -5617,7 +5630,8 @@ const BAND_BY_CODE = Object.fromEntries(BANDS.map((b) => [b.code, b]));
 // Field notes:
 //   id            stable WL-* identifier.
 //   lists         string[] of LIST_TYPES codes the entry belongs to (>=1; always
-//                 includes 'sanctions'). An entry counts toward EACH list it is in.
+//                 includes 'sanctions', except on a delisted record). An entry
+//                 counts toward EACH list it is in.
 //   kind          'person' | 'organisation' | 'wallet' | 'vessel'.
 //   name          the primary listed name (or wallet address for kind:wallet).
 //   aliases       officially-listed aka's / transliterations (subset).
@@ -5627,15 +5641,18 @@ const BAND_BY_CODE = Object.fromEntries(BANDS.map((b) => [b.code, b]));
 //   authorities   string[] when the SAME party is listed by more than one body.
 //   program       the sanctions programme / regime under which listed.
 //   listingDate   the real designation / listing date (YYYY-MM-DD).
+//   delistingDate the date the designation was lifted (YYYY-MM-DD), on a delisted
+//                 record only; such a record is no longer on 'sanctions'.
 //   description   the official reason-for-listing, paraphrased (1-2 sentences).
 //   note          mirror of `description` (the engine reads `note`).
 //   address       wallet address (kind:wallet).
 //   imo           IMO number (kind:vessel), where public.
 //   sourceUrl     link to the official list or designation announcement.
-//   additionalSources  extra official links when a party is multiply-listed.
+//   additionalSources  extra official links when a party is multiply-listed (on a
+//                 delisted record, the official delisting notices).
 // ------------------------------------------------------------------
 
-/** @typedef {{ id:string, lists:Array<'sanctions'|'pep'|'adverse-media'|'internal'>, kind:'person'|'organisation'|'wallet'|'vessel', name:string, aliases?:string[], dob?:string, country?:string, authority:string, authorities?:string[], program:string, listingDate:string, description:string, note:string, address?:string, imo?:string, sourceUrl:string, additionalSources?:string[], data_classification:'real-public-source' }} WatchlistEntry */
+/** @typedef {{ id:string, lists:Array<'sanctions'|'pep'|'adverse-media'|'internal'>, kind:'person'|'organisation'|'wallet'|'vessel', name:string, aliases?:string[], dob?:string, country?:string, authority:string, authorities?:string[], program:string, listingDate:string, delistingDate?:string, description:string, note:string, address?:string, imo?:string, sourceUrl:string, additionalSources?:string[], data_classification:'real-public-source' }} WatchlistEntry */
 
 /** @type {WatchlistEntry[]} */
 const WATCHLIST_ENTRIES = [
@@ -6378,7 +6395,6 @@ const WATCHLIST_ENTRIES = [
   {
     "id": "WL-0035",
     "lists": [
-      "sanctions",
       "adverse-media"
     ],
     "kind": "wallet",
@@ -6390,10 +6406,15 @@ const WATCHLIST_ENTRIES = [
     "authority": "OFAC",
     "program": "Malicious Cyber-Enabled Activities (E.O. 13694)",
     "listingDate": "2022-08-08",
-    "description": "Virtual-currency mixer designated for laundering more than USD 7 billion, including hundreds of millions stolen by the DPRK Lazarus Group. (Address is one of the SDN-listed donation contracts.)",
-    "note": "Virtual-currency mixer designated for laundering more than USD 7 billion, including hundreds of millions stolen by the DPRK Lazarus Group. (Address is one of the SDN-listed donation contracts.)",
+    "delistingDate": "2025-03-21",
+    "description": "Delisted on 21 March 2025, when OFAC removed Tornado Cash from the SDN List: no longer a sanctions designation, and kept here only as a record, on the adverse-media list. Virtual-currency mixer designated for laundering more than USD 7 billion, including hundreds of millions stolen by the DPRK Lazarus Group. (Address was one of the SDN-listed donation contracts.)",
+    "note": "Delisted on 21 March 2025, when OFAC removed Tornado Cash from the SDN List: no longer a sanctions designation, and kept here only as a record, on the adverse-media list. Virtual-currency mixer designated for laundering more than USD 7 billion, including hundreds of millions stolen by the DPRK Lazarus Group. (Address was one of the SDN-listed donation contracts.)",
     "address": "0x8589427373D6D84E98730D7795D8f6f8731FDA16",
     "sourceUrl": "https://home.treasury.gov/news/press-releases/jy0916",
+    "additionalSources": [
+      "https://home.treasury.gov/news/press-releases/sb0057",
+      "https://ofac.treasury.gov/recent-actions/20250321"
+    ],
     "data_classification": "real-public-source"
   },
   {
@@ -9204,13 +9225,13 @@ const SCREENING_SOURCES = [
   }
 ];
 
-const SCREENING_DISCLAIMER = "Screening & Watchlist matches a typed name / entity / wallet against a DATED, ILLUSTRATIVE SUBSET of REAL public sanctions lists (OFAC SDN, UN Security Council Consolidated List, EU Consolidated List, UK OFSI), captured on 2026-07-06. Every entry is a genuine public designation; the PEP and adverse-media tags sit on those same real sanctioned parties (nothing is fabricated). Sanctions lists change frequently (additions, amendments, delistings); this subset is for demonstration and is NOT complete or live. For any operational sanctions / PEP / adverse-media decision you MUST screen against the live official sources. This is NOT a sanctions-compliance system of record and is not legal advice. Matches are surfaced for review; a human disposition (confirm / false-positive) with a reason is always required.";
+const SCREENING_DISCLAIMER = "Screening & Watchlist matches a typed name / entity / wallet against a DATED, ILLUSTRATIVE SUBSET of REAL public sanctions lists (OFAC SDN, UN Security Council Consolidated List, EU Consolidated List, UK OFSI), captured on 2026-07-06. Every entry is a genuine public designation; one, Tornado Cash, has been lifted (OFAC removed it from the SDN List on 21 March 2025) and is kept as a delisted record on the adverse-media list only. The PEP and adverse-media tags sit on those same real parties (nothing is fabricated). Sanctions lists change frequently (additions, amendments, delistings); this subset is for demonstration and is NOT complete or live. For any operational sanctions / PEP / adverse-media decision you MUST screen against the live official sources. This is NOT a sanctions-compliance system of record and is not legal advice. Matches are surfaced for review; a human disposition (confirm / false-positive) with a reason is always required.";
 
 /** Count entries that belong to a given list code (membership, not exclusive). */
 function countByList(code) { return WATCHLIST_ENTRIES.filter((e) => Array.isArray(e.lists) && e.lists.includes(code)).length; }
 
 const WATCHLIST_VERSION = {
-  version: '3.0.0',
+  version: '3.0.1',
   snapshotDate: SCREENING_SNAPSHOT_DATE,
   researchedOn: SCREENING_SNAPSHOT_DATE,
   sourceKind: 'real-public-source',
@@ -16255,12 +16276,15 @@ __mods["data/typologyStudio.mjs"] = function(exports, require){
  * ── DATA-HONESTY POSTURE (read this) ─────────────────────────────────────────
  * This is a TRAINING / SIMULATION SANDBOX. Every generated entity, shell, wallet,
  * invoice, transaction and asset is 100% FICTIONAL and produced deterministically
- * from a fixed seed. The typology METHODS mirror REAL, well-known, publicly-
+ * from a fixed seed, except two screening fixtures: a real, publicly-designated
+ * trade counterparty, and a real Tornado Cash address, formerly OFAC-listed
+ * (designated 8 August 2022; delisted 21 March 2025), used as a cash-out wallet.
+ * The typology METHODS mirror REAL, well-known, publicly-
  * documented FATF / public methodology (structuring / smurfing, funnel accounts,
  * shell-company layering, crypto peel chains, trade-based over/under-invoicing, mule
  * networks, real-estate integration, loan-backs) — the METHODS are legitimate public
- * knowledge, the DATA is invented. Nothing here names or implicates any real person,
- * company or wallet. This is NOT operational advice, NOT a detection system of record,
+ * knowledge, the DATA is invented. Beyond those two fixtures, nothing here names or
+ * implicates any real person, company or wallet. This is NOT operational advice, NOT a detection system of record,
  * and NOT a how-to: it is a red-team / detector-validation lab that shows how money is
  * hidden AND how you would catch it. Do not rely on it for any real determination.
  *
@@ -16274,7 +16298,7 @@ __mods["data/typologyStudio.mjs"] = function(exports, require){
 const TYPOLOGY_STUDIO_VERSION = Object.freeze({ version: '1.0', asOf: '2026-07-01', schema: 'typology-studio/1' });
 
 const TYPOLOGY_STUDIO_DISCLAIMER =
-  'The Laundering / Illicit-Finance Typology Studio is a TRAINING / SIMULATION SANDBOX. Every generated entity, shell, wallet, invoice, transaction and asset is 100% SYNTHETIC and deterministic; the one exception is that a sanctions-evasion trade stage names a real, publicly-designated party as the counterparty so the screening detector fires (the invoice and flow are invented). The typology methods mirror REAL, publicly-documented laundering methodology (placement / layering / integration, structuring & smurfing, shell-company layering, crypto peel chains, trade-based over/under-invoicing, mule networks, real-estate integration, loan-backs) — the methods are legitimate public knowledge, the data is invented. Nothing here names or implicates any real person, company or wallet. This is NOT operational advice, NOT a how-to and NOT a detection system of record; it is a red-team / detector-validation lab showing how money is hidden and how you would catch it.';
+  'The Laundering / Illicit-Finance Typology Studio is a TRAINING / SIMULATION SANDBOX. Every generated entity, shell, wallet, invoice, transaction and asset is 100% SYNTHETIC and deterministic, with two exceptions, both there so the screening detector fires: a sanctions-evasion trade stage names a real, publicly-designated party as the counterparty, and the crypto peel-chain stage cashes out to a real address of Tornado Cash, formerly OFAC-listed (designated 8 August 2022; delisted 21 March 2025). The invoices, flows and transactions around them are invented. The typology methods mirror REAL, publicly-documented laundering methodology (placement / layering / integration, structuring & smurfing, shell-company layering, crypto peel chains, trade-based over/under-invoicing, mule networks, real-estate integration, loan-backs) — the methods are legitimate public knowledge, the data is invented. Beyond those two fixtures, nothing here names or implicates any real person, company or wallet. This is NOT operational advice, NOT a how-to and NOT a detection system of record; it is a red-team / detector-validation lab showing how money is hidden and how you would catch it.';
 
 // ── The three canonical laundering phases ────────────────────────────────────
 // The universally-taught money-laundering model. Each phase carries an accent so
@@ -16621,7 +16645,8 @@ const OFFSHORE = [
 // returns a strong sanctions match against the real public-sanctions subset
 // (watchlists.mjs). These are genuine OFAC/UN designations reproduced for the demo.
 const SANCTIONED_FRONTS = ['Bank Melli Iran', 'Sovcomflot', 'Wagner Group'];
-// A real designated crypto address (the OFAC-listed Tornado Cash contract).
+// A real crypto address: a Tornado Cash contract, formerly OFAC-listed (designated 8 August 2022;
+// delisted 21 March 2025). The watchlist keeps it as a delisted record on the adverse-media list.
 const SANCTIONED_WALLET = '0x8589427373D6D84E98730D7795D8f6f8731FDA16';
 // Shell name particles (fictional).
 const SHELL_HEADS = ['Meridian', 'Silverpeak', 'Northgate', 'Aurelia', 'Peregrine', 'Halcyon', 'Cascadia', 'Verano', 'Obsidian', 'Kestrel', 'Lyra', 'Solstice'];
@@ -16880,8 +16905,8 @@ function simulate(spec = {}) {
         hopTx.push(pushTx(fromW.id, toW.id, Math.round(Number(h.forwarded) * MINOR), tms, { hop: h.hop, pattern: 'peel', trace_id: trace }));
         pushTx(fromW.id, destW.id, Math.round(Number(h.peel) * MINOR), tms + 1000, { hop: h.hop, pattern: 'peel', trace_id: trace });
       }
-      // Plant a designated (sanctioned) cash-out address so screening trips on-chain too.
-      const sancW = ensureW(SANCTIONED_WALLET, 'wallet', 'Designated cash-out address (synthetic)');
+      // Plant the real, formerly designated Tornado Cash address as a cash-out so screening trips on-chain too.
+      const sancW = ensureW(SANCTIONED_WALLET, 'wallet', 'Cash-out address: real Tornado Cash contract, formerly OFAC-listed (designated 8 Aug 2022; delisted 21 Mar 2025)');
       sanctionedWalletIds.push(sancW.id);
       screenSubjects.push({ name: SANCTIONED_WALLET, kind: 'wallet', stageId });
       // The peel chain peels cash-outs + fees away; the on-chain RESIDUAL is what
@@ -17120,7 +17145,7 @@ function runAllDetectors(ctx) {
       }
     } catch { /* ignore */ }
   }
-  mark('screening', screenHits, screenHits ? `${screenHits} synthetic watchlist hit(s): ${screenDetail.slice(0, 3).join('; ')}.` : 'No watchlist match on any generated subject.', screenAlerts);
+  mark('screening', screenHits, screenHits ? `${screenHits} watchlist hit(s) on screening fixtures: ${screenDetail.slice(0, 3).join('; ')}.` : 'No watchlist match on any generated subject.', screenAlerts);
 
   // 4) Ownership-structure opacity (the real graph engine), per shell chain.
   let opaqueChains = 0; const opacityDetail = [];
@@ -25021,7 +25046,7 @@ async function renderWatchlists(root) {
     ].filter(Boolean))) : null;
 
   panel.replaceChildren(
-    card('Public sanctions watchlist (dated subset)', { sub: `${data.version.entries} real public designations · snapshot ${snap || 'n/a'} · v${data.version.version}`, actions: el('span', { class: 'badge sq neutral', title: 'Real designations reproduced from official consolidated lists' }, 'Real · public source') },
+    card('Public sanctions watchlist (dated subset)', { sub: `${data.version.entries} real public designations${data.version.entries > (data.version.byList.sanctions || 0) ? ` (${data.version.entries - (data.version.byList.sanctions || 0)} since delisted)` : ''} · snapshot ${snap || 'n/a'} · v${data.version.version}`, actions: el('span', { class: 'badge sq neutral', title: 'Real designations reproduced from official consolidated lists' }, 'Real · public source') },
       el('div', { class: 'small muted', style: { marginBottom: '6px' } }, 'A dated, illustrative subset of real designations from OFAC (SDN), the UN Security Council and the EU consolidated lists. Sanctions lists change frequently — screen against the live official sources for operational use.'),
       sourcesLine,
       countsLine,
@@ -29686,7 +29711,8 @@ __mods["views15.js"] = function(exports, require){
 //
 // Honest posture: a TRAINING / SIMULATION SANDBOX. Everything generated is 100%
 // SYNTHETIC and deterministic; the methods mirror real, publicly-documented FATF /
-// public methodology; nothing names or implicates a real party. Renders in-page
+// public methodology; beyond two screening fixtures (see the banner), nothing names
+// or implicates a real party. Renders in-page
 // within the shell (never a viewport takeover), accessible (colour ALWAYS paired
 // with a text label), DOM-light. No SVG geometry / getBBox / getBoundingClientRect
 // dependence — the money-flow is hand-built stepped panels, not measured layout.
@@ -29717,7 +29743,7 @@ async function typology(root, parts) {
   root.append(el('div', { class: 'intro', role: 'note', style: { marginTop: '10px', '--mc': ACCENT } },
     el('span', { class: 'ico' }, icon('info', 18)),
     el('div', { class: 't' }, el('b', {}, 'Training / simulation sandbox — synthetic; not operational advice. '),
-      'Every generated entity, shell, wallet, invoice, transaction and asset is 100% FICTIONAL and produced deterministically from a fixed seed (the one exception: a sanctions-evasion trade stage names a real, publicly-designated party as the counterparty so the screening detector fires — the invoice and flow are invented). The typology METHODS mirror REAL, well-known, publicly-documented FATF / public methodology (placement / layering / integration, structuring & smurfing, shell-company layering, crypto peel chains, trade-based over/under-invoicing, mule networks, real-estate integration, loan-backs) — the methods are legitimate public knowledge, the data is invented. Nothing here names or implicates any real person, company or wallet. This is NOT operational advice, NOT a how-to and NOT a detection system of record; it is a detector-validation lab showing how money is hidden and how you would catch it.')));
+      'Every generated entity, shell, wallet, invoice, transaction and asset is 100% FICTIONAL and produced deterministically from a fixed seed, with two exceptions so the screening detector fires: a sanctions-evasion trade stage names a real, publicly-designated party as the counterparty, and the crypto peel-chain stage cashes out to a real Tornado Cash address, formerly OFAC-listed (designated 8 August 2022; delisted 21 March 2025) — the invoices, flows and transactions are invented. The typology METHODS mirror REAL, well-known, publicly-documented FATF / public methodology (placement / layering / integration, structuring & smurfing, shell-company layering, crypto peel chains, trade-based over/under-invoicing, mule networks, real-estate integration, loan-backs) — the methods are legitimate public knowledge, the data is invented. Beyond those two fixtures, nothing here names or implicates any real person, company or wallet. This is NOT operational advice, NOT a how-to and NOT a detection system of record; it is a detector-validation lab showing how money is hidden and how you would catch it.')));
 
   const body = el('div', { class: 'mt' });
   root.append(body);
@@ -30300,7 +30326,7 @@ function about(root) {
       el('p', { class: 'about-p' }, 'The regulatory register is genuine. Regulatory Horizon is built on 47 real, publicly-sourced instruments \u2014 including the GDPR, MiCA, DORA, FINMA circulars, the Swiss FADP / nFADP and Geneva\u2019s LIPAD \u2014 and every instrument links out to its official source so you can verify the obligations, authority and effective dates yourself.'),
       el('p', { class: 'about-p' }, 'Only the internal policies compared against those rules in the sandbox are fabricated, so the comparison has something to check against. The register itself is the real thing, and is meant to be verified rather than trusted blindly.')),
     card('Synthetic demonstration data', { sub: 'Nexus \u00b7 Chain-Link \u00b7 Waterfall' },
-      el('p', { class: 'about-p' }, 'The corporate, crypto and insolvency modules run on synthetic demonstration data \u2014 realistic but entirely fictional entities, wallets and cases. This is a deliberate, responsible design choice: attaching a flight-risk, laundering or recovery score to a real, named party would be inappropriate and could defame someone, so no record here represents a real person or company. The one exception is deliberate and labelled: seven entity-directory rows carry the names of real, publicly-designated sanctioned parties so the screening demo produces genuine hits. Their names are real; no jurisdiction, relationship, asset or score is attached to them, and they are badged as screening fixtures wherever they appear.'),
+      el('p', { class: 'about-p' }, 'The corporate, crypto and insolvency modules run on synthetic demonstration data \u2014 realistic but fictional entities, wallets and cases, with two labelled exceptions. This is a deliberate, responsible design choice: attaching a flight-risk, laundering or recovery score to a real, named party would be inappropriate and could defame someone, so no record here represents a real person or company. Both exceptions are deliberate and labelled. Seven entity-directory rows carry the names of real, publicly-designated sanctioned parties so the screening demo produces genuine hits: their names are real; no jurisdiction, relationship, asset or score is attached to them, and they are badged as screening fixtures wherever they appear. And the typology lab cashes out to a real Tornado Cash address, formerly OFAC-listed (designated 8 August 2022; delisted 21 March 2025), labelled as such.'),
       el('p', { class: 'about-p' }, 'The engines, however, are real and deterministic. The scoring, the peel-chain simulation and the insolvency distribution are the same production logic you would run on real data \u2014 only the inputs are fictional.'))));
 
   // 5. Built & verified \u2014 capabilities, kept brief.
@@ -30467,8 +30493,8 @@ function buildShell() {
 
 function showSyntheticInfo() {
   modal({ title: 'Why "Synthetic Demo Data"?', body: (b) => b.append(
-    el('p', { class: 'about-p' }, 'Most of FRIS is fabricated for demonstration — the companies, people, wallets, transactions and cases are all invented. Regulatory Horizon is the exception: its regulations are real and link to official sources; only the internal policies compared against them are synthetic.'),
-    el('p', { class: 'about-p' }, 'No synthetic record refers to a real party, and the analytical scores are illustrative, not factual allegations — so the app can be shared and explored freely. One labelled exception: seven entity-directory rows carry the names of real, publicly-designated sanctioned parties so the screening demo produces genuine hits. Their names are real; no jurisdiction, relationship, asset or score attached to them is, and they are badged as screening fixtures wherever they appear.')),
+    el('p', { class: 'about-p' }, 'Most of FRIS is fabricated for demonstration — the companies, people, wallets, transactions and cases are invented, with two labelled exceptions, described below. Regulatory Horizon is the exception: its regulations are real and link to official sources; only the internal policies compared against them are synthetic.'),
+    el('p', { class: 'about-p' }, 'No synthetic record refers to a real party, and the analytical scores are illustrative, not factual allegations — so the app can be shared and explored freely. First exception: seven entity-directory rows carry the names of real, publicly-designated sanctioned parties so the screening demo produces genuine hits. Their names are real; no jurisdiction, relationship, asset or score attached to them is, and they are badged as screening fixtures wherever they appear. Second exception: the cash-out wallet in the typology lab is a real Tornado Cash address, formerly OFAC-listed (designated 8 August 2022; delisted 21 March 2025), and is labelled as such.')),
     actions: (close) => [el('button', { class: 'btn primary', onclick: close }, 'Got it')] });
 }
 

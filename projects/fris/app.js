@@ -142,8 +142,8 @@ function buildShell() {
 
 function showSyntheticInfo() {
   modal({ title: 'Why "Synthetic Demo Data"?', body: (b) => b.append(
-    el('p', { class: 'about-p' }, 'Most of FRIS is fabricated for demonstration — the companies, people, wallets, transactions and cases are all invented. Regulatory Horizon is the exception: its regulations are real and link to official sources; only the internal policies compared against them are synthetic.'),
-    el('p', { class: 'about-p' }, 'No synthetic record refers to a real party, and the analytical scores are illustrative, not factual allegations — so the app can be shared and explored freely. One labelled exception: seven entity-directory rows carry the names of real, publicly-designated sanctioned parties so the screening demo produces genuine hits. Their names are real; no jurisdiction, relationship, asset or score attached to them is, and they are badged as screening fixtures wherever they appear.')),
+    el('p', { class: 'about-p' }, 'Most of FRIS is fabricated for demonstration — the companies, people, wallets, transactions and cases are invented, with two labelled exceptions, described below. Regulatory Horizon is the exception: its regulations are real and link to official sources; only the internal policies compared against them are synthetic.'),
+    el('p', { class: 'about-p' }, 'No synthetic record refers to a real party, and the analytical scores are illustrative, not factual allegations — so the app can be shared and explored freely. First exception: seven entity-directory rows carry the names of real, publicly-designated sanctioned parties so the screening demo produces genuine hits. Their names are real; no jurisdiction, relationship, asset or score attached to them is, and they are badged as screening fixtures wherever they appear. Second exception: the cash-out wallet in the typology lab is a real Tornado Cash address, formerly OFAC-listed (designated 8 August 2022; delisted 21 March 2025), and is labelled as such.')),
     actions: (close) => [el('button', { class: 'btn primary', onclick: close }, 'Got it')] });
 }
 

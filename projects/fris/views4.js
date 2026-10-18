@@ -244,7 +244,7 @@ async function renderWatchlists(root) {
     ].filter(Boolean))) : null;
 
   panel.replaceChildren(
-    card('Public sanctions watchlist (dated subset)', { sub: `${data.version.entries} real public designations · snapshot ${snap || 'n/a'} · v${data.version.version}`, actions: el('span', { class: 'badge sq neutral', title: 'Real designations reproduced from official consolidated lists' }, 'Real · public source') },
+    card('Public sanctions watchlist (dated subset)', { sub: `${data.version.entries} real public designations${data.version.entries > (data.version.byList.sanctions || 0) ? ` (${data.version.entries - (data.version.byList.sanctions || 0)} since delisted)` : ''} · snapshot ${snap || 'n/a'} · v${data.version.version}`, actions: el('span', { class: 'badge sq neutral', title: 'Real designations reproduced from official consolidated lists' }, 'Real · public source') },
       el('div', { class: 'small muted', style: { marginBottom: '6px' } }, 'A dated, illustrative subset of real designations from OFAC (SDN), the UN Security Council and the EU consolidated lists. Sanctions lists change frequently — screen against the live official sources for operational use.'),
       sourcesLine,
       countsLine,
