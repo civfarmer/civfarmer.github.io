@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>A charity that lost its forecast — worked case</title>
+<meta name="description" content="Worked case from Nobody Else Is Coming, chapter 10: a charitable company with no cash forecast, a resigning finance manager and payroll in sixteen days. Thirteen weeks from the call to a signed going-concern basis. An illustration: the charity, its figures and its people are invented.">
+<meta name="author" content="Christopher I. V. Farmer">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230b0f17'/%3E%3Ctext x='32' y='43' font-family='Georgia,serif' font-size='27' font-weight='700' fill='%2343b3a6' text-anchor='middle'%3ECF%3C/text%3E%3C/svg%3E">
+<style>
+  @font-face{font-family:'Source Serif 4';font-style:normal;font-weight:400;src:url('../../assets/fonts/source-serif-4-latin-400-normal.woff2') format('woff2')}
+  @font-face{font-family:'Source Serif 4';font-style:italic;font-weight:400;src:url('../../assets/fonts/source-serif-4-latin-400-italic.woff2') format('woff2')}
+  @font-face{font-family:'Source Serif 4';font-style:normal;font-weight:600;src:url('../../assets/fonts/source-serif-4-latin-600-normal.woff2') format('woff2')}
+  @font-face{font-family:'Source Serif 4';font-style:normal;font-weight:700;src:url('../../assets/fonts/source-serif-4-latin-700-normal.woff2') format('woff2')}
+  @font-face{font-family:'Inter';font-style:normal;font-weight:400;src:url('../../assets/fonts/inter-latin-400-normal.woff2') format('woff2')}
+  @font-face{font-family:'Inter';font-style:normal;font-weight:600;src:url('../../assets/fonts/inter-latin-600-normal.woff2') format('woff2')}
+  @font-face{font-family:'Inter';font-style:normal;font-weight:700;src:url('../../assets/fonts/inter-latin-700-normal.woff2') format('woff2')}
+  @font-face{font-family:'IBM Plex Mono';font-style:normal;font-weight:400;src:url('../../assets/fonts/ibm-plex-mono-latin-400-normal.woff2') format('woff2')}
+  :root{--serif:'Source Serif 4',Georgia,'Times New Roman',serif;--sans:'Inter',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;--mono:'IBM Plex Mono',ui-monospace,Consolas,monospace;
+    --ink:#1c1a17;--ink2:#46423b;--muted:#6f685d;--line:#e3ddd2;--line2:#cfc7b9;--paper:#fff;--tint:#e7f1ee;
+    --acc:#0f6b5e;--acc2:#0b534a;--s1:#138c7c;--s2:#c47d10;--good:#0e7a52;--warn:#b7791f;--serious:#b23a3a}
+  *{box-sizing:border-box}
+  html{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  body{margin:0;font-family:var(--sans);color:var(--ink);font-size:10.1pt;line-height:1.48;-webkit-font-smoothing:antialiased}
+  p{margin:0 0 7pt}
+  a{color:var(--acc2)}
+  
+  body{background:#e9e5de;padding:0 0 48px}
+  .webbar{position:sticky;top:0;z-index:5;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;
+    padding:10px clamp(14px,3vw,28px);background:#1b1916;color:#f3efe7;font-size:13px}
+  .webbar a{color:#f3efe7;text-decoration:none;font-weight:600;display:inline-flex;align-items:center;gap:8px;padding:7px 12px;border:1px solid #4a453d;border-radius:9px}
+  .webbar a:hover{border-color:#bdb3a2}
+  .webbar .wb-title{font-family:var(--serif);font-size:15px;font-weight:600}
+  .webbar .wb-acts{display:flex;gap:8px;flex-wrap:wrap}
+  .webbar svg{width:15px;height:15px}
+  .page{width:min(100%,210mm);margin:18px auto 0;padding:clamp(18px,4vw,15mm) clamp(16px,4.5vw,17mm) clamp(16px,3vw,13mm);
+    background:#fff;box-shadow:0 10px 30px -18px rgba(0,0,0,.45);position:relative;display:flex;flex-direction:column;min-height:auto}
+  @media print{body{background:#fff;padding:0}.webbar{display:none}.page{box-shadow:none;margin:0;width:210mm;height:297mm;page-break-after:always;break-after:page}}
+
+  .page.cover{padding:0}
+  .run{display:flex;justify-content:space-between;align-items:baseline;gap:12px;white-space:nowrap;font-family:var(--mono);font-size:7.2pt;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);
+    border-bottom:1px solid var(--line);padding-bottom:6pt;margin-bottom:12pt}
+  .run b{color:var(--acc2);font-weight:400}
+  .foot{margin-top:auto;display:flex;justify-content:space-between;align-items:baseline;gap:12px;font-family:var(--mono);font-size:7.2pt;letter-spacing:.04em;color:var(--muted);
+    border-top:1px solid var(--line);padding-top:6pt}
+  .foot .pn{color:var(--ink2)}
+  h1,h2,h3,h4{font-family:var(--serif);font-weight:600;line-height:1.15;margin:0;color:var(--ink);letter-spacing:-.005em}
+  h2{font-size:19pt;margin:0 0 8pt}
+  h3{font-size:12.5pt;margin:12pt 0 5pt;color:var(--acc2)}
+  h4{font-family:var(--sans);font-size:9.6pt;font-weight:700;margin:0 0 3pt;color:var(--ink)}
+  .eyebrow{font-family:var(--mono);font-size:7.6pt;letter-spacing:.12em;text-transform:uppercase;color:var(--acc2);margin-bottom:5pt}
+  .lede{font-family:var(--serif);font-size:12pt;line-height:1.42;color:var(--ink2);margin:0 0 10pt}
+  .sec{margin-bottom:11pt}
+  .two{display:grid;grid-template-columns:1fr 1fr;gap:14pt}
+  .two.wide{grid-template-columns:1.35fr 1fr}
+  .tiles{display:grid;grid-template-columns:repeat(4,1fr);gap:8pt;margin:6pt 0 10pt}
+  .tiles.three{grid-template-columns:repeat(3,1fr)}
+  .tile{border:1px solid var(--line);border-radius:7pt;padding:8pt 9pt;background:#fff}
+  .tile .lab{font-family:var(--mono);font-size:7pt;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:3pt}
+  .tile .val{font-family:var(--sans);font-weight:600;font-size:17pt;line-height:1.1;color:var(--ink)}
+  .tile .val small{font-size:9.5pt;font-weight:600;color:var(--ink2);margin-left:2pt}
+  .tile .note{font-size:8.4pt;color:var(--ink2);margin-top:3pt;line-height:1.35}
+  .tile.acc{background:var(--tint);border-color:transparent}
+  .panel{background:var(--tint);border-radius:8pt;padding:10pt 12pt;margin:0 0 10pt}
+  .panel h4{color:var(--acc2)}
+  .callout{border-left:3pt solid var(--acc);padding:6pt 0 4pt 10pt;margin:0 0 10pt}
+  .callout.bad{border-left-color:var(--serious)}
+  .callout.gold{border-left-color:var(--warn)}
+  .callout.good{border-left-color:var(--good)}
+  .callout .tag{font-family:var(--mono);font-size:7pt;letter-spacing:.1em;text-transform:uppercase;display:inline-flex;align-items:center;gap:5pt;margin-bottom:3pt;color:var(--muted)}
+  .callout.bad .tag{color:var(--serious)} .callout.gold .tag{color:var(--warn)} .callout.good .tag{color:var(--good)}
+  .callout .tag svg{width:10pt;height:10pt}
+  .callout p{margin:0 0 4pt;font-size:9.4pt}
+  .callout p:last-child{margin:0}
+  .quote{font-family:var(--serif);font-size:13pt;line-height:1.35;color:var(--ink);margin:0 0 8pt}
+  ul.clean{list-style:none;padding:0;margin:0}
+  ul.clean li{position:relative;padding-left:14pt;margin:0 0 3.5pt;font-size:9.5pt}
+  ul.clean li::before{content:'';position:absolute;left:0;top:7pt;width:6pt;height:6pt;border-radius:50%;background:var(--acc)}
+  ul.check li::before{width:7pt;height:7pt;border-radius:2pt;background:var(--good)}
+  ol.steps{list-style:none;counter-reset:s;padding:0;margin:0}
+  ol.steps li{counter-increment:s;position:relative;padding-left:22pt;margin:0 0 5pt;font-size:9.5pt}
+  ol.steps li::before{content:counter(s);position:absolute;left:0;top:1pt;width:15pt;height:15pt;border-radius:50%;background:var(--acc);color:#fff;font-family:var(--mono);font-size:8pt;display:grid;place-items:center}
+  table{width:100%;border-collapse:collapse;font-size:9.2pt;margin:4pt 0 10pt}
+  th{text-align:left;font-family:var(--mono);font-size:7pt;letter-spacing:.08em;text-transform:uppercase;color:var(--acc2);background:var(--tint);padding:5pt 7pt;border-bottom:1px solid var(--line2)}
+  td{padding:5pt 7pt;border-bottom:1px solid var(--line);vertical-align:top;line-height:1.4}
+  td.k{font-weight:600;white-space:nowrap}
+  tr:last-child td{border-bottom:1px solid var(--line2)}
+  .pill{display:inline-block;font-family:var(--mono);font-size:7pt;letter-spacing:.08em;text-transform:uppercase;padding:2pt 6pt;border-radius:4pt;background:var(--tint);color:var(--acc2)}
+  .pill.good{background:#e6f3ec;color:var(--good)} .pill.warn{background:#f7eede;color:#8a5a0a} .pill.bad{background:#f6e4e4;color:var(--serious)}
+  .fig{margin:4pt 0 10pt}
+  .fig .cap{font-family:var(--mono);font-size:7.2pt;letter-spacing:.04em;color:var(--muted);margin-top:3pt;line-height:1.4}
+  .fig svg{width:100%;height:auto;display:block}
+  .legend{display:flex;gap:14pt;flex-wrap:wrap;font-size:8.4pt;color:var(--ink2);margin:2pt 0 4pt}
+  .legend span{display:inline-flex;align-items:center;gap:5pt}
+  .legend i{width:10pt;height:10pt;border-radius:3pt;display:inline-block}
+  .small{font-size:8.8pt;color:var(--ink2)}
+  .muted{color:var(--muted)}
+  .hero{font-family:var(--sans);font-weight:600;font-size:34pt;line-height:1;letter-spacing:-.02em;color:var(--ink)}
+  .kv{display:grid;grid-template-columns:auto 1fr;gap:3pt 10pt;font-size:9.3pt}
+  .kv b{font-family:var(--mono);font-size:7.2pt;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);font-weight:400;padding-top:2pt}
+  /* cover */
+  .cover .band{background:var(--acc);color:#fff;padding:15mm 17mm 12mm;position:relative;overflow:hidden}
+  .cover .band::after{content:'';position:absolute;right:-60mm;top:-60mm;width:150mm;height:150mm;border-radius:50%;background:rgba(255,255,255,.07)}
+  .cover .band .doc{font-family:var(--mono);font-size:7.6pt;letter-spacing:.14em;text-transform:uppercase;opacity:.85;margin-bottom:22mm}
+  .cover .band .doc b{font-weight:400;opacity:1}
+  .cover h1{color:#fff;font-size:34pt;font-weight:600;letter-spacing:-.01em;max-width:150mm;position:relative}
+  .cover .stand{font-family:var(--serif);font-size:13.5pt;line-height:1.4;color:rgba(255,255,255,.9);max-width:150mm;margin:7mm 0 0;position:relative}
+  .cover .body{padding:11mm 17mm 12mm;display:flex;flex-direction:column;flex:1}
+  .cover .illus{font-family:var(--serif);font-style:italic;font-size:10.5pt;color:var(--ink2);border-left:3pt solid var(--warn);padding-left:9pt;margin:0 0 9mm}
+  .cover .ctx{display:grid;grid-template-columns:1.2fr 1fr;gap:9mm;margin-bottom:8mm}
+  .cover .meta{margin-top:auto;border-top:1px solid var(--line);padding-top:6pt;display:grid;grid-template-columns:1fr 1fr 1fr;gap:10pt;font-size:8.6pt;color:var(--ink2)}
+  .cover .meta b{display:block;font-family:var(--mono);font-size:7pt;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:2pt;font-weight:400}
+  .cover .outc{background:var(--tint);border-radius:8pt;padding:10pt 12pt}
+  .cover .outc .lab{font-family:var(--mono);font-size:7pt;letter-spacing:.1em;text-transform:uppercase;color:var(--acc2);margin-bottom:5pt}
+  .cover .outc ul.clean li{font-size:9.6pt}
+  /* back page */
+  .back .cta{background:var(--acc);color:#fff;border-radius:10pt;padding:12pt 14pt;margin:6pt 0 10pt}
+  .back .cta h3{color:#fff;font-size:15pt;margin:0 0 4pt}
+  .back .cta p{color:rgba(255,255,255,.9);margin:0 0 6pt;font-size:9.4pt}
+  .back .cta a{color:#fff;font-weight:600}
+  .back .cta .btn{display:inline-block;margin-top:4pt;padding:6pt 10pt;border:1px solid rgba(255,255,255,.6);border-radius:7pt;text-decoration:none;font-size:9.4pt;margin-right:6pt}
+  .back .fine{font-size:8.2pt;color:var(--ink2);line-height:1.45}
+  .back .fine p{margin:0 0 5pt}
+  .copy{display:grid;grid-template-columns:1fr 1fr;gap:12pt}
+  .copy .col{border-top:2pt solid var(--good);padding-top:6pt}
+  .copy .col.no{border-top-color:var(--serious)}
+  .copy h4{margin-bottom:4pt}
+  .chip{display:inline-flex;align-items:center;gap:6pt;font-size:8.8pt;font-weight:600;color:var(--acc2);background:var(--tint);padding:4pt 9pt;border-radius:20pt;margin:0 0 8pt}
+  .chip svg{width:11pt;height:11pt}
+  .steps-row{display:grid;grid-template-columns:repeat(4,1fr);gap:6pt;margin:4pt 0 10pt}
+  .steps-row .st{border-top:2pt solid var(--acc);padding-top:5pt;font-size:8.8pt;line-height:1.35}
+  .steps-row .st b{display:block;font-family:var(--mono);font-size:7pt;letter-spacing:.08em;text-transform:uppercase;color:var(--acc2);font-weight:400;margin-bottom:2pt}
+  .svgtxt{font-family:var(--sans)}
+
+  @media (max-width:640px){
+    body{font-size:14px;line-height:1.5}
+    .run{white-space:normal;font-size:9px}
+    .tiles,.tiles.three{grid-template-columns:1fr 1fr}
+    .tiles[style]{grid-template-columns:1fr 1fr !important}
+    .two,.two.wide,.copy,.cover .ctx{grid-template-columns:1fr}
+    .cover .meta{grid-template-columns:1fr}
+    .steps-row,.steps-row[style]{grid-template-columns:1fr 1fr !important}
+    .cover h1{font-size:30px}.cover .stand{font-size:17px}
+    h2{font-size:22px}.lede{font-size:16px}
+    .tile .val{font-size:22px}
+    .back .cta .btn{display:block;margin:6px 0 0}
+  }
+</style>
+</head>
+<body class="web">
+<div class="webbar"><span class="wb-title">A charity that lost its forecast</span><span class="wb-acts"><a href="charity-that-lost-its-forecast.pdf" download><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 4v12"/><path d="M6 11l6 6 6-6"/><path d="M4 20h16"/></svg>PDF</a><a href="../manuscripts/nobody-else-is-coming-first-edition.pdf#page=33" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h6a3 3 0 0 1 3 3v13a2 2 0 0 0-2-2H4z"/><path d="M20 4h-6a3 3 0 0 0-3 3v13a2 2 0 0 1 2-2h7z"/></svg>Full case in the playbook</a><a href="../../index.html#warroom" target="_top"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 11l9-7 9 7"/><path d="M5 10v10h14V10"/></svg>Portfolio</a></span></div>
+
+<section class="page cover">
+  <div class="band">
+    <div class="doc">Board paper &nbsp;·&nbsp; crisis and cash &nbsp;·&nbsp; worked case <b>no. 1</b></div>
+    <h1>A charity that lost its forecast</h1>
+    <p class="stand">Thirteen weeks from a Tuesday phone call to a signed going-concern basis: how a charitable company with no cash forecast found its cash, its creditors and its decisions, in that order.</p>
+  </div>
+  <div class="body">
+    <p class="illus">An illustration. The charity, its figures and its people are invented, to show the method in use: a wrong turn, a dilemma the method did not settle, and what it cost.</p>
+    <div class="ctx">
+      <div>
+        <div class="eyebrow">The organisation</div>
+        <div class="kv">
+          <b>Form</b><span>A charitable company</span>
+          <b>Income</b><span>About £2.4 million, a third of it restricted</span>
+          <b>Funding</b><span>Local-authority contracts and grants</span>
+          <b>Services</b><span>Day services, a befriending scheme and a community-transport service</span>
+          <b>Reach</b><span>Two counties</span>
+          <b>Situation</b><span>A turnaround: the board knows it is in trouble, wants decisions, and will accept a tighter grip for a while</span>
+        </div>
+      </div>
+      <div class="outc">
+        <div class="lab">The shape of the outcome</div>
+        <ul class="clean">
+          <li>Run-rate deficit from about <b>£280,000</b> to about <b>£40,000</b> a year</li>
+          <li>Unrestricted cash at week thirteen covers about <b>three months</b> of payments</li>
+          <li>Accounts signed on a <b>going-concern basis</b>, with a material uncertainty disclosed</li>
+          <li><b>No formal process</b></li>
+        </ul>
+      </div>
+    </div>
+    <div class="tiles">
+      <div class="tile"><div class="lab">Payroll</div><div class="val">16<small>days</small></div><div class="note">from the call</div></div>
+      <div class="tile"><div class="lab">Transport contract</div><div class="val">7<small>weeks</small></div><div class="note">to renewal</div></div>
+      <div class="tile"><div class="lab">Structural deficit</div><div class="val">£280k</div><div class="note">a year</div></div>
+      <div class="tile"><div class="lab">Unrestricted cash</div><div class="val">5<small>wks</small></div><div class="note">on current receipts; 14 with the grant</div></div>
+    </div>
+    <div class="meta">
+      <div><b>Prepared by</b>Christopher I. V. Farmer · Geneva</div>
+      <div><b>Source</b><i>Nobody Else Is Coming</i>, first edition (October 2026), chapter 10, pp. 32–33</div>
+      <div><b>Reference</b>doi:10.5281/zenodo.23462160</div>
+    </div>
+  </div>
+</section>
+
+<section class="page">
+  <div class="run"><span><b>Board paper</b> &nbsp;·&nbsp; A charity that lost its forecast</span><span>An illustration</span></div>
+  <div class="eyebrow">1 · The call</div>
+  <h2>What was known on the Tuesday, and what “done” would mean</h2>
+  <p class="lede">The chair rings in March. The finance manager has resigned with a month’s notice; the chief executive, who had been covering much of the finance work herself, retires at the end of the quarter. Neither departure is anybody’s fault.</p>
+  <div class="two wide">
+    <div>
+      <p>The management accounts have shown a loss for each of the last four months, in a format the board stopped reading some time ago, and a trustee who looked at the bank statements over the weekend no longer believes the year will end on budget. The five opening questions produce a clock, a decision-maker, a route to the records and, after an hour, a definition of done.</p>
+      <div class="tiles" style="grid-template-columns:repeat(2,1fr)">
+        <div class="tile"><div class="lab">The clock</div><div class="val">16 days</div><div class="note">to payroll; the transport contract up for renewal in seven weeks</div></div>
+        <div class="tile"><div class="lab">The decision-maker</div><div class="val">The board</div><div class="note">and a finance committee that has not met since the autumn</div></div>
+        <div class="tile"><div class="lab">Access</div><div class="val">1 admin</div><div class="note">on the finance system, and she is leaving</div></div>
+        <div class="tile"><div class="lab">Kind of situation</div><div class="val">Turnaround</div><div class="note">decisions wanted; a tighter grip accepted for a while</div></div>
+      </div>
+      <h3>The first days</h3>
+      <ul class="clean">
+        <li>Three bank accounts. The <b>restricted balances reconcile to the bank</b>: the best news of the engagement, and the first thing the funders will ask about. Unrestricted cash covers this payroll and most of the next.</li>
+        <li>The law is a charitable company’s: Companies Act duties on the trustees, the creditor duty in prospect if the forecast confirms what the bank statements suggest, and the serious-incident guidance to be read <i>with</i> the forecast, not before it.</li>
+        <li>The finance manager, still working her notice, is the most useful person in the building. She is asked to stay an extra fortnight at a premium, and does.</li>
+        <li>A second administrator is added to the finance system on day one. A change of bank details on a supplier’s record, made a month earlier, is checked by phone and is genuine.</li>
+        <li>Staff, funders and the commissioner who manages the transport contract are told what is known.</li>
+      </ul>
+    </div>
+    <div>
+      <div class="panel">
+        <h4>Definition of done</h4>
+        <ul class="clean check">
+          <li>Payroll funded through the quarter</li>
+          <li>Restricted funds verified</li>
+          <li>A going-concern assessment the auditor can sign</li>
+          <li>Services maintained or transferred, not abandoned</li>
+          <li>No formal process unless the board chooses one</li>
+        </ul>
+      </div>
+      <div class="callout"><div class="tag">The order of work</div><p><b>Cash, law, people, reputation.</b> The order the engagement ran in, and the one to copy: the forecast first, then the duties it triggers, then the people, then what is said outside.</p></div>
+      <div class="callout bad"><div class="tag"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 9v4"/><path d="M12 17h.01"/><path d="M10.3 3.8L2.6 17a2 2 0 0 0 1.7 3h15.4a2 2 0 0 0 1.7-3L13.7 3.8a2 2 0 0 0-3.4 0z"/></svg>Before the operator arrived</div><p>Wanting to reassure, the chair told the staff that payroll was “safe through the summer”. The forecast at the end of week one would show five weeks.</p></div>
+    </div>
+  </div>
+  <div class="foot"><span>Prepared by Christopher I. V. Farmer · from <i>Nobody Else Is Coming</i> (2026), chapter 10</span><span class="pn">2 / 6</span></div>
+</section>
+
+<section class="page">
+  <div class="run"><span><b>Board paper</b> &nbsp;·&nbsp; A charity that lost its forecast</span><span>An illustration</span></div>
+  <div class="eyebrow">2 · Diagnosis</div>
+  <h2>A deficit with a plain cause, and no forecast to see it by</h2>
+  <div class="callout"><div class="tag">The decisive constraint</div><p class="quote">No one can say what the cash position will be in six weeks, so every decision is being taken in the dark.</p></div>
+  <div class="tiles three">
+    <div class="tile acc"><div class="lab">Structural deficit</div><div class="val">£280k</div><div class="note">a year, once the service lines are separated</div></div>
+    <div class="tile"><div class="lab">Restricted funds</div><div class="val">Intact</div><div class="note">reconciled to the bank in the first days</div></div>
+    <div class="tile"><div class="lab">Forecast</div><div class="val">None</div><div class="note">the thirteen-week forecast built in week one is the first the board has seen</div></div>
+  </div>
+  <div class="two">
+    <div>
+      <h3>Where the deficit comes from</h3>
+      <p>Once the service lines are separated, the cause is no mystery.</p>
+      <ol class="steps">
+        <li><b>The transport contract</b> was re-let the previous spring at a price that does not cover its overheads.</li>
+        <li><b>The largest grant</b>, which had paid quarterly in advance for six years, moved to payment in arrears in the autumn.</li>
+      </ol>
+    </div>
+    <div>
+      <h3>The three risks</h3>
+      <ol class="steps">
+        <li><b>Payroll in week seven</b> on the downside case.</li>
+        <li><b>The transport renewal</b> on the same terms as before.</li>
+        <li><b>A finance assistant</b>, told to “keep everything paid”, drawing on restricted money without realising it.</li>
+      </ol>
+      <div class="callout gold"><div class="tag"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 3v18"/><path d="M5 7h14"/><path d="M5 7l-3 7a3 3 0 0 0 6 0z"/><path d="M19 7l-3 7a3 3 0 0 0 6 0z"/></svg>The grant</div><p>The same money, later. The largest grant had paid quarterly in advance for six years; from the autumn it pays in arrears, and the first payment on the new terms is the one the forecast turns on.</p></div>
+    </div>
+  </div>
+  <h3>Unrestricted cash from week one: two cases, one plan</h3>
+  <div class="fig">
+    <div class="legend"><span><i style="background:#138c7c"></i>Current receipts only</span><span><i style="background:#c47d10"></i>Aged debts collected and the grant arrives in week 5</span></div>
+    <svg viewBox="0 0 660 114" xmlns="http://www.w3.org/2000/svg" role="img"><line x1="215.0" y1="8" x2="215.0" y2="74" stroke="#e3ddd2" stroke-width="1"/><text x="215.0" y="104.0" font-family="IBM Plex Mono,monospace" font-size="8" letter-spacing=".06em" text-anchor="middle" fill="#6f685d">wk 0</text><line x1="308.8" y1="8" x2="308.8" y2="74" stroke="#e3ddd2" stroke-width="1"/><text x="308.8" y="104.0" font-family="IBM Plex Mono,monospace" font-size="8" letter-spacing=".06em" text-anchor="middle" fill="#6f685d">wk 4</text><line x1="402.5" y1="8" x2="402.5" y2="74" stroke="#e3ddd2" stroke-width="1"/><text x="402.5" y="104.0" font-family="IBM Plex Mono,monospace" font-size="8" letter-spacing=".06em" text-anchor="middle" fill="#6f685d">wk 8</text><line x1="496.2" y1="8" x2="496.2" y2="74" stroke="#e3ddd2" stroke-width="1"/><text x="496.2" y="104.0" font-family="IBM Plex Mono,monospace" font-size="8" letter-spacing=".06em" text-anchor="middle" fill="#6f685d">wk 12</text><line x1="590.0" y1="8" x2="590.0" y2="74" stroke="#e3ddd2" stroke-width="1"/><text x="590.0" y="104.0" font-family="IBM Plex Mono,monospace" font-size="8" letter-spacing=".06em" text-anchor="middle" fill="#6f685d">wk 16</text><text x="205.0" y="23.0" font-family="Inter,system-ui,sans-serif" font-size="10.5" text-anchor="end" fill="#1c1a17" font-weight="600" >Current receipts only</text><path d="M215,8 h113.2 a4,4 0 0 1 4,4 v14 a4,4 0 0 1 -4,4 h-113.2 z" fill="#138c7c"/><text x="340.2" y="23.0" font-family="Inter,system-ui,sans-serif" font-size="10.5" text-anchor="start" fill="#1c1a17" font-weight="600" >5 weeks</text><text x="205.0" y="61.0" font-family="Inter,system-ui,sans-serif" font-size="10.5" text-anchor="end" fill="#1c1a17" font-weight="600" >Debts collected, grant in week 5</text><path d="M215,46 h324.1 a4,4 0 0 1 4,4 v14 a4,4 0 0 1 -4,4 h-324.1 z" fill="#c47d10"/><text x="551.1" y="61.0" font-family="Inter,system-ui,sans-serif" font-size="10.5" text-anchor="start" fill="#1c1a17" font-weight="600" >14 weeks</text><line x1="379.1" y1="4" x2="379.1" y2="76" stroke="#b23a3a" stroke-width="1.5" stroke-dasharray="3 3"/><text x="379.1" y="88.0" font-family="IBM Plex Mono,monospace" font-size="8" letter-spacing=".06em" text-anchor="middle" fill="#b23a3a">payroll, week 7 (downside)</text><line x1="519.7" y1="4" x2="519.7" y2="76" stroke="#b23a3a" stroke-width="1.5" stroke-dasharray="3 3"/><text x="519.7" y="88.0" font-family="IBM Plex Mono,monospace" font-size="8" letter-spacing=".06em" text-anchor="middle" fill="#b23a3a">week 13</text></svg>
+    <div class="cap">Weeks of unrestricted cash from the first thirteen-week forecast, built in week one from the bank and the actual terms of each contract. The plan was built so that the base case would not have to come true.</div>
+  </div>
+  <div class="foot"><span>Prepared by Christopher I. V. Farmer · from <i>Nobody Else Is Coming</i> (2026), chapter 10</span><span class="pn">3 / 6</span></div>
+</section>
+
+<section class="page">
+  <div class="run"><span><b>Board paper</b> &nbsp;·&nbsp; A charity that lost its forecast</span><span>An illustration</span></div>
+  <div class="eyebrow">3 · Stabilise</div>
+  <h2>The thirteen weeks</h2>
+  <div class="fig">
+    <svg viewBox="0 0 660 240" xmlns="http://www.w3.org/2000/svg" role="img"><line x1="44.0" y1="24" x2="44.0" y2="226" stroke="#ece7de" stroke-width="1"/><line x1="90.2" y1="24" x2="90.2" y2="226" stroke="#ece7de" stroke-width="1"/><line x1="136.3" y1="24" x2="136.3" y2="226" stroke="#ece7de" stroke-width="1"/><line x1="182.5" y1="24" x2="182.5" y2="226" stroke="#ece7de" stroke-width="1"/><line x1="228.6" y1="24" x2="228.6" y2="226" stroke="#ece7de" stroke-width="1"/><line x1="274.8" y1="24" x2="274.8" y2="226" stroke="#ece7de" stroke-width="1"/><line x1="320.9" y1="24" x2="320.9" y2="226" stroke="#ece7de" stroke-width="1"/><line x1="367.1" y1="24" x2="367.1" y2="226" stroke="#ece7de" stroke-width="1"/><line x1="413.2" y1="24" x2="413.2" y2="226" stroke="#ece7de" stroke-width="1"/><line x1="459.4" y1="24" x2="459.4" y2="226" stroke="#ece7de" stroke-width="1"/><line x1="505.5" y1="24" x2="505.5" y2="226" stroke="#ece7de" stroke-width="1"/><line x1="551.7" y1="24" x2="551.7" y2="226" stroke="#ece7de" stroke-width="1"/><line x1="597.8" y1="24" x2="597.8" y2="226" stroke="#ece7de" stroke-width="1"/><line x1="644.0" y1="24" x2="644.0" y2="226" stroke="#ece7de" stroke-width="1"/><text x="67.1" y="18.0" font-family="IBM Plex Mono,monospace" font-size="8.2" letter-spacing=".06em" text-anchor="middle" fill="#6f685d">1</text><text x="113.2" y="18.0" font-family="IBM Plex Mono,monospace" font-size="8.2" letter-spacing=".06em" text-anchor="middle" fill="#6f685d">2</text><text x="159.4" y="18.0" font-family="IBM Plex Mono,monospace" font-size="8.2" letter-spacing=".06em" text-anchor="middle" fill="#6f685d">3</text><text x="205.5" y="18.0" font-family="IBM Plex Mono,monospace" font-size="8.2" letter-spacing=".06em" text-anchor="middle" fill="#6f685d">4</text><text x="251.7" y="18.0" font-family="IBM Plex Mono,monospace" font-size="8.2" letter-spacing=".06em" text-anchor="middle" fill="#6f685d">5</text><text x="297.8" y="18.0" font-family="IBM Plex Mono,monospace" font-size="8.2" letter-spacing=".06em" text-anchor="middle" fill="#6f685d">6</text><text x="344.0" y="18.0" font-family="IBM Plex Mono,monospace" font-size="8.2" letter-spacing=".06em" text-anchor="middle" fill="#6f685d">7</text><text x="390.2" y="18.0" font-family="IBM Plex Mono,monospace" font-size="8.2" letter-spacing=".06em" text-anchor="middle" fill="#6f685d">8</text><text x="436.3" y="18.0" font-family="IBM Plex Mono,monospace" font-size="8.2" letter-spacing=".06em" text-anchor="middle" fill="#6f685d">9</text><text x="482.5" y="18.0" font-family="IBM Plex Mono,monospace" font-size="8.2" letter-spacing=".06em" text-anchor="middle" fill="#6f685d">10</text><text x="528.6" y="18.0" font-family="IBM Plex Mono,monospace" font-size="8.2" letter-spacing=".06em" text-anchor="middle" fill="#6f685d">11</text><text x="574.8" y="18.0" font-family="IBM Plex Mono,monospace" font-size="8.2" letter-spacing=".06em" text-anchor="middle" fill="#6f685d">12</text><text x="620.9" y="18.0" font-family="IBM Plex Mono,monospace" font-size="8.2" letter-spacing=".06em" text-anchor="middle" fill="#6f685d">13</text><text x="38.0" y="18.0" font-family="IBM Plex Mono,monospace" font-size="7.6" letter-spacing=".06em" text-anchor="end" fill="#6f685d">Week</text><line x1="44" y1="42.0" x2="644" y2="42.0" stroke="#f1ede6" stroke-width="1"/><circle cx="67.1" cy="42.0" r="5.5" fill="var(--acc)" stroke="#fff" stroke-width="2"/><text x="78.1" y="45.6" font-family="Inter,system-ui,sans-serif" font-size="9.6" text-anchor="start" fill="#1c1a17" font-weight="500" >Thirteen-week forecast built from the bank and the contracts</text><line x1="44" y1="66.0" x2="644" y2="66.0" stroke="#f1ede6" stroke-width="1"/><circle cx="67.1" cy="66.0" r="5.5" fill="var(--acc)" stroke="#fff" stroke-width="2"/><text x="78.1" y="69.6" font-family="Inter,system-ui,sans-serif" font-size="9.6" text-anchor="start" fill="#1c1a17" font-weight="500" >Payment schedule replaces the old authorisation limits; the treasurer is its second key</text><line x1="44" y1="90.0" x2="644" y2="90.0" stroke="#f1ede6" stroke-width="1"/><circle cx="251.7" cy="90.0" r="5.5" fill="var(--acc)" stroke="#fff" stroke-width="2"/><text x="262.7" y="93.6" font-family="Inter,system-ui,sans-serif" font-size="9.6" text-anchor="start" fill="#1c1a17" font-weight="500" >Options appraisal to the board, with the same columns for every option</text><line x1="44" y1="114.0" x2="644" y2="114.0" stroke="#f1ede6" stroke-width="1"/><circle cx="251.7" cy="114.0" r="5.5" fill="#0e7a52" stroke="#fff" stroke-width="2"/><text x="262.7" y="117.6" font-family="Inter,system-ui,sans-serif" font-size="9.6" text-anchor="start" fill="#1c1a17" font-weight="500" >The grant’s first payment in arrears arrives</text><line x1="44" y1="138.0" x2="644" y2="138.0" stroke="#f1ede6" stroke-width="1"/><circle cx="344.0" cy="138.0" r="5.5" fill="#b23a3a" stroke="#fff" stroke-width="2"/><text x="355.0" y="141.6" font-family="Inter,system-ui,sans-serif" font-size="9.6" text-anchor="start" fill="#1c1a17" font-weight="500" >Payroll at risk on the downside case</text><line x1="44" y1="162.0" x2="644" y2="162.0" stroke="#f1ede6" stroke-width="1"/><circle cx="344.0" cy="162.0" r="5.5" fill="#b23a3a" stroke="#fff" stroke-width="2"/><text x="355.0" y="165.6" font-family="Inter,system-ui,sans-serif" font-size="9.6" text-anchor="start" fill="#1c1a17" font-weight="500" >LGPS exit payment discovered: more than a year’s deficit</text><line x1="44" y1="186.0" x2="644" y2="186.0" stroke="#f1ede6" stroke-width="1"/><circle cx="528.6" cy="186.0" r="5.5" fill="#0e7a52" stroke="#fff" stroke-width="2"/><text x="517.6" y="189.6" font-family="Inter,system-ui,sans-serif" font-size="9.6" text-anchor="end" fill="#1c1a17" font-weight="500" >New finance manager and interim chief executive in post</text><line x1="44" y1="210.0" x2="644" y2="210.0" stroke="#f1ede6" stroke-width="1"/><circle cx="620.9" cy="210.0" r="5.5" fill="#0e7a52" stroke="#fff" stroke-width="2"/><text x="609.9" y="213.6" font-family="Inter,system-ui,sans-serif" font-size="9.6" text-anchor="end" fill="#1c1a17" font-weight="500" >Handover document to the chair</text></svg>
+    <div class="cap">Dated events in the case. In week five the board resolved to offer the commissioner a transfer of the transport service; the transfer went ahead after a three-month delay, outside this window.</div>
+  </div>
+  <div class="two">
+    <div>
+      <h3>Creditors, handled by class</h3>
+      <table>
+        <tr><th>Class</th><th>What was done</th></tr>
+        <tr><td class="k">The bank</td><td>First, with the forecast.</td></tr>
+        <tr><td class="k">HMRC</td><td>A request for time to pay on a month’s PAYE, made before the due date, and granted.</td></tr>
+        <tr><td class="k">The landlord</td><td>Of the day centre; agrees to monthly rent.</td></tr>
+        <tr><td class="k">Critical suppliers</td><td>The fuel-card provider and the minibus lessor: paid on terms, with the reason logged.</td></tr>
+        <tr><td class="k">Trade creditors</td><td>The largest individually.</td></tr>
+      </table>
+    </div>
+    <div>
+      <h3>Controls that held</h3>
+      <ul class="clean">
+        <li>The scenario matrix and its <b>triggers are minuted</b>, so the board knows in advance what each number means.</li>
+        <li>The <b>payment schedule</b> replaces the old authorisation limits. The treasurer, who has signed payments for eleven years and regards the schedule as a slight on the staff, is asked to be its second key, and becomes its most reliable one.</li>
+        <li>Once the forecast confirms that the charity’s ability to operate is at risk, <b>the Commission is told</b>, with the plan.</li>
+        <li>Nothing is said to staff or funders beyond what is known.</li>
+      </ul>
+      <div class="callout good"><div class="tag"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12l4 4 10-10"/></svg>What held it together</div><p>A forecast the board had never had, a second key on every payment, and creditors spoken to before the due date rather than after it.</p></div>
+    </div>
+  </div>
+  <div class="foot"><span>Prepared by Christopher I. V. Farmer · from <i>Nobody Else Is Coming</i> (2026), chapter 10</span><span class="pn">4 / 6</span></div>
+</section>
+
+<section class="page">
+  <div class="run"><span><b>Board paper</b> &nbsp;·&nbsp; A charity that lost its forecast</span><span>An illustration</span></div>
+  <div class="eyebrow">4 · Restructure, embed, leave</div>
+  <h2>The options appraisal, and what the board left in place</h2>
+  <p class="lede">The appraisal goes to the board in week five with the same columns for every option, so that nothing is compared with anything on different terms.</p>
+  <div class="steps-row" style="grid-template-columns:repeat(5,1fr)">
+    <div class="st"><b>Column 1</b>Impact</div><div class="st"><b>Column 2</b>Legality</div><div class="st"><b>Column 3</b>Dependencies</div><div class="st"><b>Column 4</b>Evidence required</div><div class="st"><b>Column 5</b>Recommendation</div>
+  </div>
+  <table>
+    <tr><th style="width:34%">Option that survived</th><th style="width:30%">What it changes</th><th>Decision</th></tr>
+    <tr><td class="k" style="white-space:normal">Reprice the transport contract at renewal, or hand it back</td><td>The contract that does not cover its overheads stops losing money, one way or the other.</td><td><span class="pill good">Resolved</span> The board offers the commissioner a transfer of the service, with its four staff, to another provider.</td></tr>
+    <tr><td class="k" style="white-space:normal">Move the befriending scheme to a volunteer-led model</td><td>One paid coordinator in place of three.</td><td><span class="pill warn">Kept, smaller</span> See the dilemma overleaf.</td></tr>
+    <tr><td class="k" style="white-space:normal">Consolidate two offices into one</td><td>At the lease break.</td><td><span class="pill">Survived the appraisal</span></td></tr>
+  </table>
+  <div class="two">
+    <div>
+      <h3>Embed and leave</h3>
+      <ul class="clean">
+        <li>The <b>going-concern pack</b> is with the auditor before the auditor asks: the forecast, the sensitivities, the principal risks, the post-balance-sheet events log, and the minute setting out the basis, with a material uncertainty disclosed.</li>
+        <li>The one-page pack becomes the board’s <b>standing finance report</b>.</li>
+        <li>The <b>payment schedule stays</b>, at a higher threshold.</li>
+        <li>A <b>reserves policy</b> with a target is adopted, with a three-year plan to reach it.</li>
+        <li>A new finance manager and an interim chief executive are in post by week eleven; the handover document goes to the chair in week thirteen.</li>
+      </ul>
+    </div>
+    <div>
+      <div class="callout bad"><div class="tag"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 9v4"/><path d="M12 17h.01"/><path d="M10.3 3.8L2.6 17a2 2 0 0 0 1.7 3h15.4a2 2 0 0 0 1.7-3L13.7 3.8a2 2 0 0 0-3.4 0z"/></svg>The blank line</div><p>The options appraisal had a legality column whose <b>pensions line was left blank</b>. The four transport staff were the charity’s only remaining members of the Local Government Pension Scheme; transferring them would have made the charity an exiting employer, and the fund’s actuary put the exit payment at <b>more than a year’s deficit</b>.</p><p>The board found out in week seven. The transfer went ahead only after the fund agreed a deferred debt agreement under which the charity keeps paying contributions: a three-month delay, and a liability that will sit in the accounts for years.</p></div>
+    </div>
+  </div>
+  <div class="foot"><span>Prepared by Christopher I. V. Farmer · from <i>Nobody Else Is Coming</i> (2026), chapter 10</span><span class="pn">5 / 6</span></div>
+</section>
+
+<section class="page back">
+  <div class="run"><span><b>Board paper</b> &nbsp;·&nbsp; A charity that lost its forecast</span><span>An illustration</span></div>
+  <div class="eyebrow">5 · What it cost, and what to take from it</div>
+  <h2>The wrong turn, the dilemma, and the shape of the outcome</h2>
+  <div class="two">
+    <div>
+      <div class="callout bad"><div class="tag"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 9v4"/><path d="M12 17h.01"/><path d="M10.3 3.8L2.6 17a2 2 0 0 0 1.7 3h15.4a2 2 0 0 0 1.7-3L13.7 3.8a2 2 0 0 0-3.4 0z"/></svg>What went wrong</div><p>On the morning of the call, before the operator had arrived, the chair told the staff that payroll was “safe through the summer”. The forecast at the end of week one showed five weeks. <b>Correcting it cost more trust than the bad news would have</b>, and two of the best coordinators left the following month. The rule, say only what is known, was right, and had been broken before anyone thought to apply it.</p></div>
+      <div class="callout gold"><div class="tag"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 3v18"/><path d="M5 7h14"/><path d="M5 7l-3 7a3 3 0 0 0 6 0z"/><path d="M19 7l-3 7a3 3 0 0 0 6 0z"/></svg>The dilemma the method did not settle</div><p>Whether to keep the befriending scheme at all. It lost money; it was the service the charity was founded to run; and its volunteers were the charity’s best ambassadors. The numbers said close it. The purposes said keep it.</p><p>The board kept it in a smaller form, funded from unrestricted reserves for two years with a review at eighteen months, and two trustees recorded their dissent. The method could only make sure the decision was taken knowingly and written down.</p></div>
+    </div>
+    <div>
+      <div class="fig">
+        <svg viewBox="0 0 330 94" xmlns="http://www.w3.org/2000/svg" role="img"><text x="46.0" y="20.2" font-family="Inter,system-ui,sans-serif" font-size="10.5" text-anchor="end" fill="#1c1a17" font-weight="600" >Before</text><path d="M56,8 h164.0 a4,4 0 0 1 4,4 v10 a4,4 0 0 1 -4,4 h-164.0 z" fill="#c47d10"/><text x="232.0" y="20.2" font-family="Inter,system-ui,sans-serif" font-size="10.5" text-anchor="start" fill="#1c1a17" font-weight="600" >about £280k a year</text><text x="46.0" y="48.2" font-family="Inter,system-ui,sans-serif" font-size="10.5" text-anchor="end" fill="#1c1a17" font-weight="600" >After</text><path d="M56,36 h20.0 a4,4 0 0 1 4,4 v10 a4,4 0 0 1 -4,4 h-20.0 z" fill="#138c7c"/><text x="88.0" y="48.2" font-family="Inter,system-ui,sans-serif" font-size="10.5" text-anchor="start" fill="#1c1a17" font-weight="600" >about £40k a year</text></svg>
+        <div class="cap">Run-rate deficit. Unrestricted cash at week thirteen covers about three months of payments. These figures are invented to show the shape of an outcome, not to describe one.</div>
+      </div>
+      <div class="copy">
+        <div class="col"><h4>Copy</h4><ul class="clean"><li>The order: cash, law, people, reputation</li><li>A payment schedule whose second key is its sharpest sceptic</li><li>Creditors by class, reasons logged</li><li>An options appraisal whose legality line someone fills in</li><li>Saying only what is known</li></ul></div>
+        <div class="col no"><h4>Do not copy</h4><ul class="clean"><li>The numbers, thresholds or timetable: they belong to this charity’s size and funding mix</li><li>The base case: this board got its grant in week five, and the plan was built so that it would not have mattered if it had not</li></ul></div>
+      </div>
+    </div>
+  </div>
+  <div class="cta">
+    <h3>Read the full case in the playbook</h3>
+    <p>This brief follows the worked case at the end of chapter 10, “Crisis and cash”, of <i>Nobody Else Is Coming: An Operator’s Playbook for Crisis, Compliance and Capital</i> (first edition, October 2026), pp. 32–33. The chapter sets out the method the case applies: the creditor duty after <i>Sequana</i>, the thirteen-week forecast, the levers that close the gap, creditors by class, pensions and exits.</p>
+    <a class="btn" href="../manuscripts/nobody-else-is-coming-first-edition.pdf#page=33">Open chapter 10 at the case ›</a><a class="btn" href="https://doi.org/10.5281/zenodo.23462160">doi:10.5281/zenodo.23462160</a><a class="btn" href="charity-that-lost-its-forecast.pdf">This brief as a PDF</a>
+  </div>
+  <div class="fine">
+    <p><b>Status.</b> An illustration: the charity, its figures and its people are invented, and no former employer’s, client’s or funder’s information appears in it. Not legal, financial or investment advice. The law is stated as at October 2026 for England and Wales, as in the playbook. <b>Licence</b> CC BY-NC 4.0, as for the playbook; commercial use needs a licence from the author. <b>Author</b> Christopher I. V. Farmer, LL.M. (University of Worcester), independent researcher, Geneva · https://civfarmer.github.io/</p>
+  </div>
+  <div class="foot"><span>Prepared by Christopher I. V. Farmer · from <i>Nobody Else Is Coming</i> (2026), chapter 10</span><span class="pn">6 / 6</span></div>
+</section>
+<script>if(window.self!==window.top){var a=document.querySelector('.webbar a[href$="#warroom"]');if(a)a.style.display='none';}</script>
+</body>
+</html>

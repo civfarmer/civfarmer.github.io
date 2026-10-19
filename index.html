@@ -207,6 +207,9 @@
   .wcard.ex button.go{align-self:flex-start;background:none;border:0;padding:0;margin:0;font:inherit;font-size:12.5px;font-weight:600;
     color:var(--accent-ink);cursor:pointer}
   .wcard.ex button.go:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:4px}
+  .wcard .wacts{display:flex;flex-direction:column;gap:7px;align-items:flex-start}
+  .wcard .go.alt{font-weight:500;color:var(--ink2);font-size:12px}
+  .wcard .go.alt:hover{color:var(--accent-ink);text-decoration:underline}
 
   /* Generic cards */
   .grid2{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:24px}
@@ -989,32 +992,41 @@ html[data-theme="light"] .skyline-canvas.cf-fixed{opacity:.38}
       <div class="wrap pad">
         <div class="eyebrow">War Room — governance, finance &amp; crisis operations</div>
         <h2 class="h-sec">The playbook I work from</h2>
-        <p class="lead" style="margin-top:12px"><i>Nobody Else Is Coming</i> — an operator's playbook for crisis, compliance and capital in organisations too small to have a department for it. First edition, October 2026 (<a href="https://doi.org/10.5281/zenodo.23462160" target="_blank" rel="noopener">doi:10.5281/zenodo.23462160</a>): a method in nine chapters, three domains with the law stated as at October 2026, and a worked case at the end of each.</p>
+        <p class="lead" style="margin-top:12px"><i>Nobody Else Is Coming</i> — an operator's playbook for crisis, compliance and capital in organisations too small to have a department for it. First edition, October 2026 (<a href="https://doi.org/10.5281/zenodo.23462160" target="_blank" rel="noopener">doi:10.5281/zenodo.23462160</a>): a method in nine chapters, three domains with the law stated as at October 2026, and a worked case at the end of each. The three cases are set out below as six-page case studies, each with a link to the chapter it comes from.</p>
         <div class="callout">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M12 8v5"/><path d="M12 16h.01"/></svg>
           <p><b>Illustrations, not records.</b> The playbook's worked cases are built on invented organisations and figures to show the method in use — a wrong turn, a dilemma the method did not settle, and what it cost. They are not redacted real matters, and no former employer's, client's or funder's information appears in them.</p>
         </div>
         <div class="wgrid">
-          <div class="wcard" tabindex="0" role="button" aria-haspopup="dialog" aria-label="Crisis and cash — open the playbook" onclick="openDoc('publications/manuscripts/nobody-else-is-coming-first-edition.pdf','Nobody Else Is Coming — first edition')">
-            <div class="wic c"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M3 3v18h18"/><path d="M7 15l4-4 3 3 5-6"/></svg></div>
-            <div class="scen">Chapter 10 · crisis and cash</div>
+          <div class="wcard ex" tabindex="0" role="button" aria-haspopup="dialog" aria-label="A charity that lost its forecast — open the case study" onclick="openDoc('publications/cases/charity-that-lost-its-forecast.html','A charity that lost its forecast — worked case')">
+            <img class="exthumb" src="publications/cases/charity-that-lost-its-forecast.webp" alt="" width="640" height="926" loading="lazy" decoding="async">
+            <div class="scen">Chapter 10 · crisis and cash · case study, 6 pages</div>
             <h3>A charity that lost its forecast</h3>
-            <p>The creditor duty after <i>Sequana</i>, wrongful trading and the moratorium; restricted funds and serious incidents; the thirteen-week cash flow, the levers that close the gap, a decision tree, creditors by class, pensions and exits.</p>
-            <span class="go">Open the playbook <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14"/><path d="M13 6l6 6-6 6"/></svg></span>
+            <p>A charitable company with no cash forecast, a resigning finance manager and payroll in sixteen days. Thirteen weeks to a signed going-concern basis: the thirteen-week forecast, creditors by class, an options appraisal with a blank pensions line, and the dilemma the method did not settle.</p>
+            <div class="wacts">
+              <button type="button" class="go">Open the case study <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14"/><path d="M13 6l6 6-6 6"/></svg></button>
+              <a class="go alt" href="publications/manuscripts/nobody-else-is-coming-first-edition.pdf#page=33" onclick="event.stopPropagation();openDoc('publications/manuscripts/nobody-else-is-coming-first-edition.pdf#page=33','Nobody Else Is Coming — chapter 10, the case');return false;">Read it in the playbook, pp. 32–33</a>
+            </div>
           </div>
-          <div class="wcard" tabindex="0" role="button" aria-haspopup="dialog" aria-label="Compliance architecture — open the playbook" onclick="openDoc('publications/manuscripts/nobody-else-is-coming-first-edition.pdf','Nobody Else Is Coming — first edition')">
-            <div class="wic b"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg></div>
-            <div class="scen">Chapter 11 · compliance architecture</div>
+          <div class="wcard ex" tabindex="0" role="button" aria-haspopup="dialog" aria-label="Four weeks to prove what it delivered — open the case study" onclick="openDoc('publications/cases/four-weeks-to-prove-what-it-delivered.html','Four weeks to prove what it delivered — worked case')">
+            <img class="exthumb" src="publications/cases/four-weeks-to-prove-what-it-delivered.webp" alt="" width="640" height="926" loading="lazy" decoding="async">
+            <div class="scen">Chapter 11 · compliance architecture · case study, 6 pages</div>
             <h3>Four weeks to prove what it delivered</h3>
-            <p>A compliance operating model for a small regulated organisation: culture, the obligations pipeline, AI behind a human gate, funding assurance, data protection after the 2025 Act, safeguarding and speak-up.</p>
-            <span class="go">Open the playbook <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14"/><path d="M13 6l6 6-6 6"/></svg></span>
+            <p>A training provider given four weeks’ notice of a funding assurance review, with a third of its learners taught by subcontractors and no one owning their evidence. The self-test, the written instruction that nothing is created after the event, a chatbot in the progress reviews, and an attestation rate that measured clicking.</p>
+            <div class="wacts">
+              <button type="button" class="go">Open the case study <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14"/><path d="M13 6l6 6-6 6"/></svg></button>
+              <a class="go alt" href="publications/manuscripts/nobody-else-is-coming-first-edition.pdf#page=44" onclick="event.stopPropagation();openDoc('publications/manuscripts/nobody-else-is-coming-first-edition.pdf#page=44','Nobody Else Is Coming — chapter 11, the case');return false;">Read it in the playbook, pp. 43–44</a>
+            </div>
           </div>
-          <div class="wcard" tabindex="0" role="button" aria-haspopup="dialog" aria-label="Capital and structure — open the playbook" onclick="openDoc('publications/manuscripts/nobody-else-is-coming-first-edition.pdf','Nobody Else Is Coming — first edition')">
-            <div class="wic a"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 3l8 4v5c0 5-3.5 8-8 10-4.5-2-8-5-8-10V7z"/><path d="M9 12l2 2 4-4"/></svg></div>
-            <div class="scen">Chapter 12 · capital and structure</div>
-            <h3>A founder who nearly sold the plant</h3>
-            <p>Venture or asset; the three numbers behind a technical claim; the project vehicle, the lease and the risk table; debt sizing and a financing menu for a small project; integrity as a condition of the capital.</p>
-            <span class="go">Open the playbook <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14"/><path d="M13 6l6 6-6 6"/></svg></span>
+          <div class="wcard ex" tabindex="0" role="button" aria-haspopup="dialog" aria-label="A founder who nearly sold the plant to build it — open the case study" onclick="openDoc('publications/cases/founder-who-nearly-sold-the-plant.html','A founder who nearly sold the plant to build it — worked case')">
+            <img class="exthumb" src="publications/cases/founder-who-nearly-sold-the-plant.webp" alt="" width="640" height="926" loading="lazy" decoding="async">
+            <div class="scen">Chapter 12 · capital and structure · case study, 6 pages</div>
+            <h3>A founder who nearly sold the plant to build it</h3>
+            <p>A 3 MW solar project in Mindanao, a venture fund offering USD 3.4 million for 55 per cent, and a deck promising “81 per cent efficiency”. Venture or asset; the three numbers behind the claim; the structure that let the founders keep control; the ninety-nine-year lease that nearly stopped the bank.</p>
+            <div class="wacts">
+              <button type="button" class="go">Open the case study <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14"/><path d="M13 6l6 6-6 6"/></svg></button>
+              <a class="go alt" href="publications/manuscripts/nobody-else-is-coming-first-edition.pdf#page=54" onclick="event.stopPropagation();openDoc('publications/manuscripts/nobody-else-is-coming-first-edition.pdf#page=54','Nobody Else Is Coming — chapter 12, the case');return false;">Read it in the playbook, pp. 53–54</a>
+            </div>
           </div>
         </div>
         <div class="exrow">

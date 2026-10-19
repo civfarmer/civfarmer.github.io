@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Four weeks to prove what it delivered — worked case</title>
+<meta name="description" content="Worked case from Nobody Else Is Coming, chapter 11: a training provider given four weeks’ notice of a funding assurance review, with a third of its learners taught by subcontractors and no one owning their evidence. An illustration: the provider, its figures and its people are invented.">
+<meta name="author" content="Christopher I. V. Farmer">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230b0f17'/%3E%3Ctext x='32' y='43' font-family='Georgia,serif' font-size='27' font-weight='700' fill='%2343b3a6' text-anchor='middle'%3ECF%3C/text%3E%3C/svg%3E">
+<style>
+  @font-face{font-family:'Source Serif 4';font-style:normal;font-weight:400;src:url('../../assets/fonts/source-serif-4-latin-400-normal.woff2') format('woff2')}
+  @font-face{font-family:'Source Serif 4';font-style:italic;font-weight:400;src:url('../../assets/fonts/source-serif-4-latin-400-italic.woff2') format('woff2')}
+  @font-face{font-family:'Source Serif 4';font-style:normal;font-weight:600;src:url('../../assets/fonts/source-serif-4-latin-600-normal.woff2') format('woff2')}
+  @font-face{font-family:'Source Serif 4';font-style:normal;font-weight:700;src:url('../../assets/fonts/source-serif-4-latin-700-normal.woff2') format('woff2')}
+  @font-face{font-family:'Inter';font-style:normal;font-weight:400;src:url('../../assets/fonts/inter-latin-400-normal.woff2') format('woff2')}
+  @font-face{font-family:'Inter';font-style:normal;font-weight:600;src:url('../../assets/fonts/inter-latin-600-normal.woff2') format('woff2')}
+  @font-face{font-family:'Inter';font-style:normal;font-weight:700;src:url('../../assets/fonts/inter-latin-700-normal.woff2') format('woff2')}
+  @font-face{font-family:'IBM Plex Mono';font-style:normal;font-weight:400;src:url('../../assets/fonts/ibm-plex-mono-latin-400-normal.woff2') format('woff2')}
+  :root{--serif:'Source Serif 4',Georgia,'Times New Roman',serif;--sans:'Inter',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;--mono:'IBM Plex Mono',ui-monospace,Consolas,monospace;
+    --ink:#1c1a17;--ink2:#46423b;--muted:#6f685d;--line:#e3ddd2;--line2:#cfc7b9;--paper:#fff;--tint:#e9eef7;
+    --acc:#1e3f74;--acc2:#17315c;--s1:#2e5fae;--s2:#cf5d2a;--good:#0e7a52;--warn:#b7791f;--serious:#b23a3a}
+  *{box-sizing:border-box}
+  html{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  body{margin:0;font-family:var(--sans);color:var(--ink);font-size:10.1pt;line-height:1.48;-webkit-font-smoothing:antialiased}
+  p{margin:0 0 7pt}
+  a{color:var(--acc2)}
+  
+  body{background:#e9e5de;padding:0 0 48px}
+  .webbar{position:sticky;top:0;z-index:5;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;
+    padding:10px clamp(14px,3vw,28px);background:#1b1916;color:#f3efe7;font-size:13px}
+  .webbar a{color:#f3efe7;text-decoration:none;font-weight:600;display:inline-flex;align-items:center;gap:8px;padding:7px 12px;border:1px solid #4a453d;border-radius:9px}
+  .webbar a:hover{border-color:#bdb3a2}
+  .webbar .wb-title{font-family:var(--serif);font-size:15px;font-weight:600}
+  .webbar .wb-acts{display:flex;gap:8px;flex-wrap:wrap}
+  .webbar svg{width:15px;height:15px}
+  .page{width:min(100%,210mm);margin:18px auto 0;padding:clamp(18px,4vw,15mm) clamp(16px,4.5vw,17mm) clamp(16px,3vw,13mm);
+    background:#fff;box-shadow:0 10px 30px -18px rgba(0,0,0,.45);position:relative;display:flex;flex-direction:column;min-height:auto}
+  @media print{body{background:#fff;padding:0}.webbar{display:none}.page{box-shadow:none;margin:0;width:210mm;height:297mm;page-break-after:always;break-after:page}}
+
+  .page.cover{padding:0}
+  .run{display:flex;justify-content:space-between;align-items:baseline;gap:12px;white-space:nowrap;font-family:var(--mono);font-size:7.2pt;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);
+    border-bottom:1px solid var(--line);padding-bottom:6pt;margin-bottom:12pt}
+  .run b{color:var(--acc2);font-weight:400}
+  .foot{margin-top:auto;display:flex;justify-content:space-between;align-items:baseline;gap:12px;font-family:var(--mono);font-size:7.2pt;letter-spacing:.04em;color:var(--muted);
+    border-top:1px solid var(--line);padding-top:6pt}
+  .foot .pn{color:var(--ink2)}
+  h1,h2,h3,h4{font-family:var(--serif);font-weight:600;line-height:1.15;margin:0;color:var(--ink);letter-spacing:-.005em}
+  h2{font-size:19pt;margin:0 0 8pt}
+  h3{font-size:12.5pt;margin:12pt 0 5pt;color:var(--acc2)}
+  h4{font-family:var(--sans);font-size:9.6pt;font-weight:700;margin:0 0 3pt;color:var(--ink)}
+  .eyebrow{font-family:var(--mono);font-size:7.6pt;letter-spacing:.12em;text-transform:uppercase;color:var(--acc2);margin-bottom:5pt}
+  .lede{font-family:var(--serif);font-size:12pt;line-height:1.42;color:var(--ink2);margin:0 0 10pt}
+  .sec{margin-bottom:11pt}
+  .two{display:grid;grid-template-columns:1fr 1fr;gap:14pt}
+  .two.wide{grid-template-columns:1.35fr 1fr}
+  .tiles{display:grid;grid-template-columns:repeat(4,1fr);gap:8pt;margin:6pt 0 10pt}
+  .tiles.three{grid-template-columns:repeat(3,1fr)}
+  .tile{border:1px solid var(--line);border-radius:7pt;padding:8pt 9pt;background:#fff}
+  .tile .lab{font-family:var(--mono);font-size:7pt;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:3pt}
+  .tile .val{font-family:var(--sans);font-weight:600;font-size:17pt;line-height:1.1;color:var(--ink)}
+  .tile .val small{font-size:9.5pt;font-weight:600;color:var(--ink2);margin-left:2pt}
+  .tile .note{font-size:8.4pt;color:var(--ink2);margin-top:3pt;line-height:1.35}
+  .tile.acc{background:var(--tint);border-color:transparent}
+  .panel{background:var(--tint);border-radius:8pt;padding:10pt 12pt;margin:0 0 10pt}
+  .panel h4{color:var(--acc2)}
+  .callout{border-left:3pt solid var(--acc);padding:6pt 0 4pt 10pt;margin:0 0 10pt}
+  .callout.bad{border-left-color:var(--serious)}
+  .callout.gold{border-left-color:var(--warn)}
+  .callout.good{border-left-color:var(--good)}
+  .callout .tag{font-family:var(--mono);font-size:7pt;letter-spacing:.1em;text-transform:uppercase;display:inline-flex;align-items:center;gap:5pt;margin-bottom:3pt;color:var(--muted)}
+  .callout.bad .tag{color:var(--serious)} .callout.gold .tag{color:var(--warn)} .callout.good .tag{color:var(--good)}
+  .callout .tag svg{width:10pt;height:10pt}
+  .callout p{margin:0 0 4pt;font-size:9.4pt}
+  .callout p:last-child{margin:0}
+  .quote{font-family:var(--serif);font-size:13pt;line-height:1.35;color:var(--ink);margin:0 0 8pt}
+  ul.clean{list-style:none;padding:0;margin:0}
+  ul.clean li{position:relative;padding-left:14pt;margin:0 0 3.5pt;font-size:9.5pt}
+  ul.clean li::before{content:'';position:absolute;left:0;top:7pt;width:6pt;height:6pt;border-radius:50%;background:var(--acc)}
+  ul.check li::before{width:7pt;height:7pt;border-radius:2pt;background:var(--good)}
+  ol.steps{list-style:none;counter-reset:s;padding:0;margin:0}
+  ol.steps li{counter-increment:s;position:relative;padding-left:22pt;margin:0 0 5pt;font-size:9.5pt}
+  ol.steps li::before{content:counter(s);position:absolute;left:0;top:1pt;width:15pt;height:15pt;border-radius:50%;background:var(--acc);color:#fff;font-family:var(--mono);font-size:8pt;display:grid;place-items:center}
+  table{width:100%;border-collapse:collapse;font-size:9.2pt;margin:4pt 0 10pt}
+  th{text-align:left;font-family:var(--mono);font-size:7pt;letter-spacing:.08em;text-transform:uppercase;color:var(--acc2);background:var(--tint);padding:5pt 7pt;border-bottom:1px solid var(--line2)}
+  td{padding:5pt 7pt;border-bottom:1px solid var(--line);vertical-align:top;line-height:1.4}
+  td.k{font-weight:600;white-space:nowrap}
+  tr:last-child td{border-bottom:1px solid var(--line2)}
+  .pill{display:inline-block;font-family:var(--mono);font-size:7pt;letter-spacing:.08em;text-transform:uppercase;padding:2pt 6pt;border-radius:4pt;background:var(--tint);color:var(--acc2)}
+  .pill.good{background:#e6f3ec;color:var(--good)} .pill.warn{background:#f7eede;color:#8a5a0a} .pill.bad{background:#f6e4e4;color:var(--serious)}
+  .fig{margin:4pt 0 10pt}
+  .fig .cap{font-family:var(--mono);font-size:7.2pt;letter-spacing:.04em;color:var(--muted);margin-top:3pt;line-height:1.4}
+  .fig svg{width:100%;height:auto;display:block}
+  .legend{display:flex;gap:14pt;flex-wrap:wrap;font-size:8.4pt;color:var(--ink2);margin:2pt 0 4pt}
+  .legend span{display:inline-flex;align-items:center;gap:5pt}
+  .legend i{width:10pt;height:10pt;border-radius:3pt;display:inline-block}
+  .small{font-size:8.8pt;color:var(--ink2)}
+  .muted{color:var(--muted)}
+  .hero{font-family:var(--sans);font-weight:600;font-size:34pt;line-height:1;letter-spacing:-.02em;color:var(--ink)}
+  .kv{display:grid;grid-template-columns:auto 1fr;gap:3pt 10pt;font-size:9.3pt}
+  .kv b{font-family:var(--mono);font-size:7.2pt;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);font-weight:400;padding-top:2pt}
+  /* cover */
+  .cover .band{background:var(--acc);color:#fff;padding:15mm 17mm 12mm;position:relative;overflow:hidden}
+  .cover .band::after{content:'';position:absolute;right:-60mm;top:-60mm;width:150mm;height:150mm;border-radius:50%;background:rgba(255,255,255,.07)}
+  .cover .band .doc{font-family:var(--mono);font-size:7.6pt;letter-spacing:.14em;text-transform:uppercase;opacity:.85;margin-bottom:22mm}
+  .cover .band .doc b{font-weight:400;opacity:1}
+  .cover h1{color:#fff;font-size:34pt;font-weight:600;letter-spacing:-.01em;max-width:150mm;position:relative}
+  .cover .stand{font-family:var(--serif);font-size:13.5pt;line-height:1.4;color:rgba(255,255,255,.9);max-width:150mm;margin:7mm 0 0;position:relative}
+  .cover .body{padding:11mm 17mm 12mm;display:flex;flex-direction:column;flex:1}
+  .cover .illus{font-family:var(--serif);font-style:italic;font-size:10.5pt;color:var(--ink2);border-left:3pt solid var(--warn);padding-left:9pt;margin:0 0 9mm}
+  .cover .ctx{display:grid;grid-template-columns:1.2fr 1fr;gap:9mm;margin-bottom:8mm}
+  .cover .meta{margin-top:auto;border-top:1px solid var(--line);padding-top:6pt;display:grid;grid-template-columns:1fr 1fr 1fr;gap:10pt;font-size:8.6pt;color:var(--ink2)}
+  .cover .meta b{display:block;font-family:var(--mono);font-size:7pt;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:2pt;font-weight:400}
+  .cover .outc{background:var(--tint);border-radius:8pt;padding:10pt 12pt}
+  .cover .outc .lab{font-family:var(--mono);font-size:7pt;letter-spacing:.1em;text-transform:uppercase;color:var(--acc2);margin-bottom:5pt}
+  .cover .outc ul.clean li{font-size:9.6pt}
+  /* back page */
+  .back .cta{background:var(--acc);color:#fff;border-radius:10pt;padding:12pt 14pt;margin:6pt 0 10pt}
+  .back .cta h3{color:#fff;font-size:15pt;margin:0 0 4pt}
+  .back .cta p{color:rgba(255,255,255,.9);margin:0 0 6pt;font-size:9.4pt}
+  .back .cta a{color:#fff;font-weight:600}
+  .back .cta .btn{display:inline-block;margin-top:4pt;padding:6pt 10pt;border:1px solid rgba(255,255,255,.6);border-radius:7pt;text-decoration:none;font-size:9.4pt;margin-right:6pt}
+  .back .fine{font-size:8.2pt;color:var(--ink2);line-height:1.45}
+  .back .fine p{margin:0 0 5pt}
+  .copy{display:grid;grid-template-columns:1fr 1fr;gap:12pt}
+  .copy .col{border-top:2pt solid var(--good);padding-top:6pt}
+  .copy .col.no{border-top-color:var(--serious)}
+  .copy h4{margin-bottom:4pt}
+  .chip{display:inline-flex;align-items:center;gap:6pt;font-size:8.8pt;font-weight:600;color:var(--acc2);background:var(--tint);padding:4pt 9pt;border-radius:20pt;margin:0 0 8pt}
+  .chip svg{width:11pt;height:11pt}
+  .steps-row{display:grid;grid-template-columns:repeat(4,1fr);gap:6pt;margin:4pt 0 10pt}
+  .steps-row .st{border-top:2pt solid var(--acc);padding-top:5pt;font-size:8.8pt;line-height:1.35}
+  .steps-row .st b{display:block;font-family:var(--mono);font-size:7pt;letter-spacing:.08em;text-transform:uppercase;color:var(--acc2);font-weight:400;margin-bottom:2pt}
+  .svgtxt{font-family:var(--sans)}
+
+  @media (max-width:640px){
+    body{font-size:14px;line-height:1.5}
+    .run{white-space:normal;font-size:9px}
+    .tiles,.tiles.three{grid-template-columns:1fr 1fr}
+    .tiles[style]{grid-template-columns:1fr 1fr !important}
+    .two,.two.wide,.copy,.cover .ctx{grid-template-columns:1fr}
+    .cover .meta{grid-template-columns:1fr}
+    .steps-row,.steps-row[style]{grid-template-columns:1fr 1fr !important}
+    .cover h1{font-size:30px}.cover .stand{font-size:17px}
+    h2{font-size:22px}.lede{font-size:16px}
+    .tile .val{font-size:22px}
+    .back .cta .btn{display:block;margin:6px 0 0}
+  }
+</style>
+</head>
+<body class="web">
+<div class="webbar"><span class="wb-title">Four weeks to prove what it delivered</span><span class="wb-acts"><a href="four-weeks-to-prove-what-it-delivered.pdf" download><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 4v12"/><path d="M6 11l6 6 6-6"/><path d="M4 20h16"/></svg>PDF</a><a href="../manuscripts/nobody-else-is-coming-first-edition.pdf#page=44" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h6a3 3 0 0 1 3 3v13a2 2 0 0 0-2-2H4z"/><path d="M20 4h-6a3 3 0 0 0-3 3v13a2 2 0 0 1 2-2h7z"/></svg>Full case in the playbook</a><a href="../../index.html#warroom" target="_top"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 11l9-7 9 7"/><path d="M5 10v10h14V10"/></svg>Portfolio</a></span></div>
+
+<section class="page cover">
+  <div class="band">
+    <div class="doc">Readiness pack &nbsp;·&nbsp; compliance architecture &nbsp;·&nbsp; worked case <b>no. 2</b></div>
+    <h1>Four weeks to prove what it delivered</h1>
+    <p class="stand">A funding assurance review lands on a provider that believes it is fine. Four weeks to find out whether the record can prove what the learners achieved, without creating a single file after the event.</p>
+  </div>
+  <div class="body">
+    <p class="illus">An illustration. The provider, its figures and its people are invented, to show the method in use: a wrong turn, a dilemma the method did not settle, and what it cost.</p>
+    <div class="ctx">
+      <div>
+        <div class="eyebrow">The organisation</div>
+        <div class="kv">
+          <b>Form</b><span>A company limited by guarantee</span>
+          <b>Income</b><span>About £4 million</span>
+          <b>Delivery</b><span>Apprenticeships and adult skills from four centres in the north of England</span>
+          <b>Subcontracting</b><span>A third of its learners taught by two subcontractors</span>
+          <b>Standing</b><span>A good last inspection; learners achieve, employers renew</span>
+          <b>Situation</b><span>A realignment under a deadline. The risk is disbelief, not panic.</span>
+        </div>
+      </div>
+      <div class="outc">
+        <div class="lab">The shape of the outcome</div>
+        <ul class="clean">
+          <li>The sample comes back <b>satisfactory, under the five-per-cent line</b>, with findings on off-the-job evidence at the subcontractor; the specific errors are recovered by offset</li>
+          <li>A complete learner file in <b>minutes</b> for directly taught learners, and <b>within the day</b> for subcontracted ones</li>
+          <li>The rerun comprehension check passes <b>nine in ten</b></li>
+        </ul>
+      </div>
+    </div>
+    <div class="tiles">
+      <div class="tile"><div class="lab">Fieldwork</div><div class="val">4<small>weeks</small></div><div class="note">from the notice, third week of September 2026</div></div>
+      <div class="tile"><div class="lab">Self-test</div><div class="val"><small>approx.</small> 8%</div><div class="note">projected error rate on the subcontracted trade</div></div>
+      <div class="tile"><div class="lab">The line</div><div class="val">5%</div><div class="note">the error rate the review turns on</div></div>
+      <div class="tile"><div class="lab">Mid-programme</div><div class="val">40</div><div class="note">apprentices at the subcontractor</div></div>
+    </div>
+    <div class="meta">
+      <div><b>Prepared by</b>Christopher I. V. Farmer · Geneva</div>
+      <div><b>Source</b><i>Nobody Else Is Coming</i>, first edition (October 2026), chapter 11, pp. 43–44</div>
+      <div><b>Reference</b>doi:10.5281/zenodo.23462160</div>
+    </div>
+  </div>
+</section>
+
+<section class="page">
+  <div class="run"><span><b>Readiness pack</b> &nbsp;·&nbsp; Four weeks to prove what it delivered</span><span>An illustration</span></div>
+  <div class="eyebrow">1 · The notice</div>
+  <h2>“Presumably this is fine”</h2>
+  <p class="lede">The notice arrives in the third week of September 2026: a funding assurance review, fieldwork in four weeks, the sample to follow a week or two before it. The managing director forwards it to the new compliance manager, three weeks into the job.</p>
+  <div class="two wide">
+    <div>
+      <p>The provider is succeeding by its own measures. Learners achieve, employers renew, the inspector was kind, and the board believes the review is a formality. The five opening questions find a clock, a decision-maker, a scattered record and a definition of done that reaches past the review itself.</p>
+      <div class="tiles" style="grid-template-columns:repeat(2,1fr)">
+        <div class="tile"><div class="lab">The clock</div><div class="val">4 weeks</div><div class="note">to fieldwork; the last learner-data return for the year shortly after</div></div>
+        <div class="tile"><div class="lab">The decision-maker</div><div class="val">The MD</div><div class="note">and a board of five, two of them the founders</div></div>
+        <div class="tile"><div class="lab">Access</div><div class="val">3 systems</div><div class="note">that do not talk to each other, two subcontractors’ filing cabinets, and a great many inboxes</div></div>
+        <div class="tile"><div class="lab">Kind of situation</div><div class="val">Realignment</div><div class="note">under a deadline; the risk is disbelief, not panic</div></div>
+      </div>
+      <h3>The first week: the self-test</h3>
+      <p>The operator does not wait for the sample. Using the department’s published list of common findings as a checklist, the team tests every learner who started in the last funding year on the five fields the findings name most often (overleaf). Two things surface in the first week.</p>
+    </div>
+    <div>
+      <div class="panel">
+        <h4>Definition of done</h4>
+        <ul class="clean check">
+          <li>A satisfactory result on the sample</li>
+          <li>No file created after the event</li>
+          <li>The subcontractors’ evidence brought inside the provider’s own record</li>
+          <li>A system that would pass the same review next year without a four-week sprint</li>
+        </ul>
+      </div>
+      <div class="callout bad"><div class="tag"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 9v4"/><path d="M12 17h.01"/><path d="M10.3 3.8L2.6 17a2 2 0 0 0 1.7 3h15.4a2 2 0 0 0 1.7-3L13.7 3.8a2 2 0 0 0-3.4 0z"/></svg>Found in week one</div><p>One subcontractor’s files for apprentices in one trade have <b>off-the-job training records that do not reconcile</b> to the hours claimed.</p><p>The same subcontractor has <b>no data-processing agreement</b> with the provider at all, although it holds the learners’ personal data on the provider’s behalf.</p></div>
+    </div>
+  </div>
+  <div class="foot"><span>Prepared by Christopher I. V. Farmer · from <i>Nobody Else Is Coming</i> (2026), chapter 11</span><span class="pn">2 / 6</span></div>
+</section>
+
+<section class="page">
+  <div class="run"><span><b>Readiness pack</b> &nbsp;·&nbsp; Four weeks to prove what it delivered</span><span>An illustration</span></div>
+  <div class="eyebrow">2 · Diagnosis</div>
+  <h2>The record is the constraint</h2>
+  <div class="callout"><div class="tag">The decisive constraint</div><p class="quote">The provider cannot produce a complete learner file in less than a day, and no one owns the subcontractors’ evidence.</p></div>
+  <h3 style="margin-top:4pt">The five fields the self-test checked, from the department’s published list of common findings</h3>
+  <div class="steps-row" style="grid-template-columns:repeat(5,1fr)">
+    <div class="st"><b>Field 1</b>Start dates, with evidence of learning</div>
+    <div class="st"><b>Field 2</b>Breaks in learning</div>
+    <div class="st"><b>Field 3</b>Planned hours</div>
+    <div class="st"><b>Field 4</b>Eligibility and prior attainment</div>
+    <div class="st"><b>Field 5</b>Learning support, with monthly evidence of the adjustments made</div>
+  </div>
+  <div class="two">
+    <div>
+      <h3>The three risks</h3>
+      <ol class="steps">
+        <li><b>The off-the-job shortfall</b> pushing the error rate over the five-per-cent line.</li>
+        <li><b>The missing processing agreement</b>: personal data held on the provider’s behalf with nothing governing it.</li>
+        <li><b>Staff who, under pressure, might complete files after the event</b>, which would turn a funding error into something much worse.</li>
+      </ol>
+      <h3>The arithmetic that persuaded the managing director</h3>
+      <p>The managing director regards compliance as the department of no. He is persuaded by arithmetic, not argument: the self-test projects an error rate of around eight per cent on the subcontracted trade, and an unsatisfactory result would cost more in recovered funding and self-audit than the subcontract earns in a year.</p>
+      <div class="callout gold"><div class="tag"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 3v18"/><path d="M5 7h14"/><path d="M5 7l-3 7a3 3 0 0 0 6 0z"/><path d="M19 7l-3 7a3 3 0 0 0 6 0z"/></svg>Why disbelief is the risk</div><p>A provider that is succeeding by its own measures does not expect its record to fail. The review does not retest the teaching; it asks whether the evidence of it can be produced, field by field, on the day.</p></div>
+    </div>
+    <div>
+      <div class="fig">
+        <svg viewBox="0 0 360 200" xmlns="http://www.w3.org/2000/svg" role="img"><line x1="44" y1="164.0" x2="346" y2="164.0" stroke="#ece7de" stroke-width="1"/><text x="38.0" y="167.0" font-family="IBM Plex Mono,monospace" font-size="8" letter-spacing=".06em" text-anchor="end" fill="#6f685d">0%</text><line x1="44" y1="126.5" x2="346" y2="126.5" stroke="#ece7de" stroke-width="1"/><text x="38.0" y="129.5" font-family="IBM Plex Mono,monospace" font-size="8" letter-spacing=".06em" text-anchor="end" fill="#6f685d">2.5%</text><line x1="44" y1="89.0" x2="346" y2="89.0" stroke="#ece7de" stroke-width="1"/><text x="38.0" y="92.0" font-family="IBM Plex Mono,monospace" font-size="8" letter-spacing=".06em" text-anchor="end" fill="#6f685d">5%</text><line x1="44" y1="51.5" x2="346" y2="51.5" stroke="#ece7de" stroke-width="1"/><text x="38.0" y="54.5" font-family="IBM Plex Mono,monospace" font-size="8" letter-spacing=".06em" text-anchor="end" fill="#6f685d">7.5%</text><line x1="44" y1="14.0" x2="346" y2="14.0" stroke="#ece7de" stroke-width="1"/><text x="38.0" y="17.0" font-family="IBM Plex Mono,monospace" font-size="8" letter-spacing=".06em" text-anchor="end" fill="#6f685d">10%</text><path d="M183.0,164.0 v-116.0 a4,4 0 0 1 4,-4 h16.0 a4,4 0 0 1 4,4 v116.0 z" fill="#cf5d2a"/><text x="195.0" y="39.0" font-family="Inter,system-ui,sans-serif" font-size="9.6" text-anchor="middle" fill="#1c1a17" font-weight="600" >8%</text><text x="195.0" y="186.0" font-family="Inter,system-ui,sans-serif" font-size="9.4" text-anchor="middle" fill="#46423b" font-weight="400" >Subcontracted trade, projected from the self-test</text><line x1="44" y1="89.0" x2="346" y2="89.0" stroke="#b23a3a" stroke-width="1.5" stroke-dasharray="4 3"/><text x="344.0" y="84.0" font-family="Inter,system-ui,sans-serif" font-size="8.8" text-anchor="end" fill="#b23a3a" font-weight="600" >the 5% line</text></svg>
+        <div class="cap">Error rate on the subcontracted trade, projected from the week-one self-test, against the five-per-cent line the review turns on. The review’s sample later came back under the line. Figures invented.</div>
+      </div>
+      <div class="tiles" style="grid-template-columns:1fr 1fr;margin-top:0">
+        <div class="tile acc"><div class="lab">A complete learner file</div><div class="val">A day<small>or more</small></div><div class="note">to produce, before the sprint</div></div>
+        <div class="tile acc"><div class="lab">Owner of the subcontractors’ evidence</div><div class="val">None</div><div class="note">before the sprint</div></div>
+      </div>
+    </div>
+  </div>
+  <div class="foot"><span>Prepared by Christopher I. V. Farmer · from <i>Nobody Else Is Coming</i> (2026), chapter 11</span><span class="pn">3 / 6</span></div>
+</section>
+
+<section class="page">
+  <div class="run"><span><b>Readiness pack</b> &nbsp;·&nbsp; Four weeks to prove what it delivered</span><span>An illustration</span></div>
+  <div class="eyebrow">3 · Stabilise, then build</div>
+  <h2>Nothing created after the event</h2>
+  <div class="fig">
+    <svg viewBox="0 0 660 216" xmlns="http://www.w3.org/2000/svg" role="img"><line x1="44.0" y1="24" x2="44.0" y2="202" stroke="#ece7de" stroke-width="1"/><line x1="104.0" y1="24" x2="104.0" y2="202" stroke="#ece7de" stroke-width="1"/><line x1="164.0" y1="24" x2="164.0" y2="202" stroke="#ece7de" stroke-width="1"/><line x1="224.0" y1="24" x2="224.0" y2="202" stroke="#ece7de" stroke-width="1"/><line x1="284.0" y1="24" x2="284.0" y2="202" stroke="#ece7de" stroke-width="1"/><line x1="344.0" y1="24" x2="344.0" y2="202" stroke="#ece7de" stroke-width="1"/><line x1="404.0" y1="24" x2="404.0" y2="202" stroke="#ece7de" stroke-width="1"/><line x1="464.0" y1="24" x2="464.0" y2="202" stroke="#ece7de" stroke-width="1"/><line x1="524.0" y1="24" x2="524.0" y2="202" stroke="#ece7de" stroke-width="1"/><line x1="584.0" y1="24" x2="584.0" y2="202" stroke="#ece7de" stroke-width="1"/><line x1="644.0" y1="24" x2="644.0" y2="202" stroke="#ece7de" stroke-width="1"/><text x="74.0" y="18.0" font-family="IBM Plex Mono,monospace" font-size="8.2" letter-spacing=".06em" text-anchor="middle" fill="#6f685d">1</text><text x="134.0" y="18.0" font-family="IBM Plex Mono,monospace" font-size="8.2" letter-spacing=".06em" text-anchor="middle" fill="#6f685d">2</text><text x="194.0" y="18.0" font-family="IBM Plex Mono,monospace" font-size="8.2" letter-spacing=".06em" text-anchor="middle" fill="#6f685d">3</text><text x="254.0" y="18.0" font-family="IBM Plex Mono,monospace" font-size="8.2" letter-spacing=".06em" text-anchor="middle" fill="#6f685d">4</text><text x="314.0" y="18.0" font-family="IBM Plex Mono,monospace" font-size="8.2" letter-spacing=".06em" text-anchor="middle" fill="#6f685d">5</text><text x="374.0" y="18.0" font-family="IBM Plex Mono,monospace" font-size="8.2" letter-spacing=".06em" text-anchor="middle" fill="#6f685d">6</text><text x="434.0" y="18.0" font-family="IBM Plex Mono,monospace" font-size="8.2" letter-spacing=".06em" text-anchor="middle" fill="#6f685d">7</text><text x="494.0" y="18.0" font-family="IBM Plex Mono,monospace" font-size="8.2" letter-spacing=".06em" text-anchor="middle" fill="#6f685d">8</text><text x="554.0" y="18.0" font-family="IBM Plex Mono,monospace" font-size="8.2" letter-spacing=".06em" text-anchor="middle" fill="#6f685d">9</text><text x="614.0" y="18.0" font-family="IBM Plex Mono,monospace" font-size="8.2" letter-spacing=".06em" text-anchor="middle" fill="#6f685d">10</text><text x="38.0" y="18.0" font-family="IBM Plex Mono,monospace" font-size="7.6" letter-spacing=".06em" text-anchor="end" fill="#6f685d">Week</text><line x1="44" y1="42.0" x2="644" y2="42.0" stroke="#f1ede6" stroke-width="1"/><circle cx="74.0" cy="42.0" r="5.5" fill="var(--acc)" stroke="#fff" stroke-width="2"/><text x="85.0" y="45.6" font-family="Inter,system-ui,sans-serif" font-size="9.6" text-anchor="start" fill="#1c1a17" font-weight="500" >Notice; self-test against the published common findings; two findings surface</text><line x1="44" y1="66.0" x2="644" y2="66.0" stroke="#f1ede6" stroke-width="1"/><circle cx="74.0" cy="66.0" r="5.5" fill="#0e7a52" stroke="#fff" stroke-width="2"/><text x="85.0" y="69.6" font-family="Inter,system-ui,sans-serif" font-size="9.6" text-anchor="start" fill="#1c1a17" font-weight="500" >Written instruction: correct, record what is missing, create nothing from the past</text><line x1="44" y1="90.0" x2="644" y2="90.0" stroke="#f1ede6" stroke-width="1"/><circle cx="74.0" cy="90.0" r="5.5" fill="#b23a3a" stroke="#fff" stroke-width="2"/><text x="85.0" y="93.6" font-family="Inter,system-ui,sans-serif" font-size="9.6" text-anchor="start" fill="#1c1a17" font-weight="500" >A dozen chatbot-written progress reviews found; breach logged that day, reported within 72 hours</text><line x1="44" y1="114.0" x2="644" y2="114.0" stroke="#f1ede6" stroke-width="1"/><circle cx="134.0" cy="114.0" r="5.5" fill="#0e7a52" stroke="#fff" stroke-width="2"/><text x="145.0" y="117.6" font-family="Inter,system-ui,sans-serif" font-size="9.6" text-anchor="start" fill="#1c1a17" font-weight="500" >Data-processing agreement signed; subcontractor’s access restricted until it was</text><line x1="44" y1="138.0" x2="644" y2="138.0" stroke="#f1ede6" stroke-width="1"/><circle cx="314.0" cy="138.0" r="5.5" fill="var(--acc)" stroke="#fff" stroke-width="2"/><text x="325.0" y="141.6" font-family="Inter,system-ui,sans-serif" font-size="9.6" text-anchor="start" fill="#1c1a17" font-weight="500" >Fieldwork, four weeks from the notice</text><line x1="44" y1="162.0" x2="644" y2="162.0" stroke="#f1ede6" stroke-width="1"/><circle cx="314.0" cy="162.0" r="5.5" fill="#b23a3a" stroke="#fff" stroke-width="2"/><text x="325.0" y="165.6" font-family="Inter,system-ui,sans-serif" font-size="9.6" text-anchor="start" fill="#1c1a17" font-weight="500" >Attestation workflow automated before the policy library was merged</text><line x1="44" y1="186.0" x2="644" y2="186.0" stroke="#f1ede6" stroke-width="1"/><circle cx="554.0" cy="186.0" r="5.5" fill="#b23a3a" stroke="#fff" stroke-width="2"/><text x="543.0" y="189.6" font-family="Inter,system-ui,sans-serif" font-size="9.6" text-anchor="end" fill="#1c1a17" font-weight="500" >Comprehension check a month later: barely six in ten</text></svg>
+    <div class="cap">Dated events in the case, from the week the notice arrived. The library merge and the rerun attestations followed the comprehension check; the obligations pipeline was run by hand for six weeks after the review and then automated.</div>
+  </div>
+  <div class="two">
+    <div>
+      <h3>Stabilise: before the sample</h3>
+      <ul class="clean">
+        <li>The first instruction to the whole team, in writing, is the one that matters most: <b>correct the learner data where the data is wrong, record what is missing, and create nothing that pretends to be from the past.</b></li>
+        <li>The <b>evidence pack</b> is defined for every funding stream and indexed.</li>
+        <li>Errors that can properly be corrected in the learner data before the hard close are corrected, <b>each one logged and approved</b>.</li>
+        <li>The <b>processing agreement</b> is signed in week two, and the subcontractor’s access to the provider’s systems is restricted until it is.</li>
+      </ul>
+    </div>
+    <div>
+      <h3>Build: after the review, not before</h3>
+      <ul class="clean">
+        <li><b>Validation at the point of entry.</b></li>
+        <li>A <b>weekly exception report</b>.</li>
+        <li>A <b>quarterly file sample</b> of each subcontractor.</li>
+        <li>The <b>obligations pipeline</b>, run by hand for six weeks and then automated, with the operator as the named decision-maker.</li>
+        <li>An <b>AI rule</b>: a review is the tutor’s own account of what the learner did, signed by the tutor, and drafted in an approved tool if drafted in one at all.</li>
+      </ul>
+      <div class="callout good"><div class="tag"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12l4 4 10-10"/></svg>What would make next year’s review ordinary</div><p>Validation where the data is entered, an exception report that runs every week, and a sample of the subcontractors’ files every quarter, so that the sprint would not be needed again.</p></div>
+    </div>
+  </div>
+  <div class="panel" style="margin-top:4pt">
+    <div class="eyebrow">The instruction that mattered most, in writing, to the whole team</div>
+    <p class="quote" style="margin:0">Correct the learner data where the data is wrong, record what is missing, and create nothing that pretends to be from the past.</p>
+  </div>
+  <div class="foot"><span>Prepared by Christopher I. V. Farmer · from <i>Nobody Else Is Coming</i> (2026), chapter 11</span><span class="pn">4 / 6</span></div>
+</section>
+
+<section class="page">
+  <div class="run"><span><b>Readiness pack</b> &nbsp;·&nbsp; Four weeks to prove what it delivered</span><span>An illustration</span></div>
+  <div class="eyebrow">4 · The AI episode, and the wrong turn</div>
+  <h2>Clicking is not understanding</h2>
+  <div class="two">
+    <div>
+      <div class="callout bad"><div class="tag"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 9v4"/><path d="M12 17h.01"/><path d="M10.3 3.8L2.6 17a2 2 0 0 0 1.7 3h15.4a2 2 0 0 0 1.7-3L13.7 3.8a2 2 0 0 0-3.4 0z"/></svg>Found in the self-test</div><p>A dozen progress reviews, written by a busy tutor with a public chatbot, that read beautifully, contain the learners’ names and employers, and describe progress the learners’ own records do not show.</p><p>Because the tool’s terms let it keep and use what was typed into it, the episode was logged that day as a <b>personal-data breach</b> and reported to the regulator <b>within seventy-two hours</b> of being found. The reviews were withdrawn and redone with the learners; the tutor was retrained, not dismissed.</p></div>
+      <div class="panel"><h4>The AI rule, as adopted</h4><p style="margin:0">A review is the tutor’s own account of what the learner did, signed by the tutor, and drafted in an approved tool if drafted in one at all.</p></div>
+      <div class="callout bad"><div class="tag"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 9v4"/><path d="M12 17h.01"/><path d="M10.3 3.8L2.6 17a2 2 0 0 0 1.7 3h15.4a2 2 0 0 0 1.7-3L13.7 3.8a2 2 0 0 0-3.4 0z"/></svg>What went wrong</div><p>The operator automated the policy-attestation workflow in week five, before the policy library had been merged. Staff received <b>forty-one attestation requests in a fortnight</b>. Completion reached ninety-eight per cent; the comprehension check a month later found that barely six in ten could answer the basic questions on the safeguarding policy they had attested.</p><p><b>The attestation rate had measured clicking.</b> The library was merged into nine policies, the attestations were rerun, and the operator added a line about fixing the process before automating it to her own notes: a rule she had, after all, been taught.</p></div>
+    </div>
+    <div>
+      <div class="fig">
+        <div class="legend"><span><i style="background:#cf5d2a"></i>Before the library was merged</span><span><i style="background:#2e5fae"></i>After the merge and rerun</span></div>
+        <svg viewBox="0 0 400 210" xmlns="http://www.w3.org/2000/svg" role="img"><line x1="44" y1="174.0" x2="386" y2="174.0" stroke="#ece7de" stroke-width="1"/><text x="38.0" y="177.0" font-family="IBM Plex Mono,monospace" font-size="8" letter-spacing=".06em" text-anchor="end" fill="#6f685d">0%</text><line x1="44" y1="134.0" x2="386" y2="134.0" stroke="#ece7de" stroke-width="1"/><text x="38.0" y="137.0" font-family="IBM Plex Mono,monospace" font-size="8" letter-spacing=".06em" text-anchor="end" fill="#6f685d">25%</text><line x1="44" y1="94.0" x2="386" y2="94.0" stroke="#ece7de" stroke-width="1"/><text x="38.0" y="97.0" font-family="IBM Plex Mono,monospace" font-size="8" letter-spacing=".06em" text-anchor="end" fill="#6f685d">50%</text><line x1="44" y1="54.0" x2="386" y2="54.0" stroke="#ece7de" stroke-width="1"/><text x="38.0" y="57.0" font-family="IBM Plex Mono,monospace" font-size="8" letter-spacing=".06em" text-anchor="end" fill="#6f685d">75%</text><line x1="44" y1="14.0" x2="386" y2="14.0" stroke="#ece7de" stroke-width="1"/><text x="38.0" y="17.0" font-family="IBM Plex Mono,monospace" font-size="8" letter-spacing=".06em" text-anchor="end" fill="#6f685d">100%</text><path d="M117.5,174.0 v-152.8 a4,4 0 0 1 4,-4 h16.0 a4,4 0 0 1 4,4 v152.8 z" fill="#cf5d2a"/><text x="129.5" y="12.2" font-family="Inter,system-ui,sans-serif" font-size="9.6" text-anchor="middle" fill="#1c1a17" font-weight="600" >98%</text><text x="129.5" y="196.0" font-family="Inter,system-ui,sans-serif" font-size="9.4" text-anchor="middle" fill="#46423b" font-weight="400" >Attestations completed</text><path d="M275.5,174.0 v-92.0 a4,4 0 0 1 4,-4 h16.0 a4,4 0 0 1 4,4 v92.0 z" fill="#cf5d2a"/><text x="287.5" y="73.0" font-family="Inter,system-ui,sans-serif" font-size="9.6" text-anchor="middle" fill="#1c1a17" font-weight="600" >60%</text><path d="M301.5,174.0 v-140.0 a4,4 0 0 1 4,-4 h16.0 a4,4 0 0 1 4,4 v140.0 z" fill="#2e5fae"/><text x="313.5" y="25.0" font-family="Inter,system-ui,sans-serif" font-size="9.6" text-anchor="middle" fill="#1c1a17" font-weight="600" >90%</text><text x="300.5" y="196.0" font-family="Inter,system-ui,sans-serif" font-size="9.4" text-anchor="middle" fill="#46423b" font-weight="400" >Could answer the basic questions</text></svg>
+        <div class="cap">Completion against comprehension on the safeguarding policy: ninety-eight per cent completed; barely six in ten could answer the basic questions a month later; nine in ten after the rerun. Figures invented to show the shape of the finding.</div>
+      </div>
+      <div class="tiles" style="grid-template-columns:1fr 1fr;margin-top:0">
+        <div class="tile acc"><div class="lab">Attestation requests</div><div class="val">41</div><div class="note">in a fortnight, in week five</div></div>
+        <div class="tile acc"><div class="lab">Policies after the merge</div><div class="val">9</div><div class="note">from a library that had never been merged</div></div>
+      </div>
+    </div>
+  </div>
+  <h3>The breach, step by step</h3>
+  <div class="steps-row" style="grid-template-columns:repeat(5,1fr)">
+    <div class="st"><b>In the first week</b>A dozen reviews found in the self-test, written with a public chatbot</div>
+    <div class="st"><b>The same day</b>Logged as a personal-data breach: the tool’s terms let it keep and use what was typed in</div>
+    <div class="st"><b>Within 72 hours</b>Reported to the regulator</div>
+    <div class="st"><b>Then</b>Reviews withdrawn and redone with the learners</div>
+    <div class="st"><b>The tutor</b>Retrained, not dismissed; the AI rule adopted</div>
+  </div>
+  <div class="foot"><span>Prepared by Christopher I. V. Farmer · from <i>Nobody Else Is Coming</i> (2026), chapter 11</span><span class="pn">5 / 6</span></div>
+</section>
+
+<section class="page back">
+  <div class="run"><span><b>Readiness pack</b> &nbsp;·&nbsp; Four weeks to prove what it delivered</span><span>An illustration</span></div>
+  <div class="eyebrow">5 · The dilemma, the outcome, and what to take from it</div>
+  <h2>Whether to end the subcontract</h2>
+  <div class="two">
+    <div>
+      <div class="callout gold"><div class="tag"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 3v18"/><path d="M5 7h14"/><path d="M5 7l-3 7a3 3 0 0 0 6 0z"/><path d="M19 7l-3 7a3 3 0 0 0 6 0z"/></svg>The dilemma the method did not settle</div><p>The evidence at the subcontractor was weak and the board’s instinct was to terminate. But <b>forty apprentices were mid-programme</b> with employers who had chosen that subcontractor for its trade expertise, and ending it would have harmed the learners for a failing that was the provider’s as much as the subcontractor’s.</p><p>The board chose a <b>remediation plan with a deadline</b>, a full file check at six months and termination as the stated consequence of missing it, and recorded the minority view that it should have ended there and then. The method made the choice visible and the reasons durable. It could not make the choice.</p></div>
+      <div class="panel">
+        <h4>The shape of the outcome</h4>
+        <ul class="clean">
+          <li>The sample comes back satisfactory, under the five-per-cent line, with findings on off-the-job evidence at the subcontractor; the specific errors are recovered by offset.</li>
+          <li>Complete files can be produced in minutes for directly taught learners and within the day for subcontracted ones.</li>
+          <li>The rerun comprehension check passes nine in ten.</li>
+        </ul>
+        <p class="small" style="margin:4pt 0 0">These figures are invented to show the shape of an outcome, not to describe one.</p>
+      </div>
+    </div>
+    <div>
+      <div class="copy">
+        <div class="col"><h4>Copy</h4><ul class="clean"><li>The self-test against the published findings, before the sample arrives</li><li>The written instruction that nothing is created after the event</li><li>Processing agreements before data moves</li><li>The AI rule</li><li>Measuring comprehension as well as completion</li></ul></div>
+        <div class="col no"><h4>Do not copy</h4><ul class="clean"><li>The tools, the thresholds or the timetable</li><li>Waiting for a review notice to find out whether you could pass one</li></ul></div>
+      </div>
+    </div>
+  </div>
+  <div class="cta">
+    <h3>Read the full case in the playbook</h3>
+    <p>This brief follows the worked case at the end of chapter 11, “Compliance architecture”, of <i>Nobody Else Is Coming: An Operator’s Playbook for Crisis, Compliance and Capital</i> (first edition, October 2026), pp. 43–44. The chapter sets out the operating model the case applies: culture, the obligations pipeline, AI behind a human gate, funding assurance, data protection after the 2025 Act, safeguarding and speak-up.</p>
+    <a class="btn" href="../manuscripts/nobody-else-is-coming-first-edition.pdf#page=44">Open chapter 11 at the case ›</a><a class="btn" href="https://doi.org/10.5281/zenodo.23462160">doi:10.5281/zenodo.23462160</a><a class="btn" href="four-weeks-to-prove-what-it-delivered.pdf">This brief as a PDF</a>
+  </div>
+  <div class="fine">
+    <p><b>Status.</b> An illustration: the provider, its figures and its people are invented, and no former employer’s, client’s or funder’s information appears in it. Not legal advice. The law and guidance are stated as at October 2026 for England, as in the playbook. <b>Licence</b> CC BY-NC 4.0, as for the playbook; commercial use needs a licence from the author. <b>Author</b> Christopher I. V. Farmer, LL.M. (University of Worcester), independent researcher, Geneva · https://civfarmer.github.io/</p>
+  </div>
+  <div class="foot"><span>Prepared by Christopher I. V. Farmer · from <i>Nobody Else Is Coming</i> (2026), chapter 11</span><span class="pn">6 / 6</span></div>
+</section>
+<script>if(window.self!==window.top){var a=document.querySelector('.webbar a[href$="#warroom"]');if(a)a.style.display='none';}</script>
+</body>
+</html>

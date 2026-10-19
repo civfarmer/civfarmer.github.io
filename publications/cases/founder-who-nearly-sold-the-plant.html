@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>A founder who nearly sold the plant to build it — worked case</title>
+<meta name="description" content="Worked case from Nobody Else Is Coming, chapter 12: a 3 MW solar project in Mindanao, a venture fund offering USD 3.4 million for 55 per cent, and the question that decides everything downstream: is this a venture or an asset? An illustration: the project, its figures and its people are invented.">
+<meta name="author" content="Christopher I. V. Farmer">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230b0f17'/%3E%3Ctext x='32' y='43' font-family='Georgia,serif' font-size='27' font-weight='700' fill='%2343b3a6' text-anchor='middle'%3ECF%3C/text%3E%3C/svg%3E">
+<style>
+  @font-face{font-family:'Source Serif 4';font-style:normal;font-weight:400;src:url('../../assets/fonts/source-serif-4-latin-400-normal.woff2') format('woff2')}
+  @font-face{font-family:'Source Serif 4';font-style:italic;font-weight:400;src:url('../../assets/fonts/source-serif-4-latin-400-italic.woff2') format('woff2')}
+  @font-face{font-family:'Source Serif 4';font-style:normal;font-weight:600;src:url('../../assets/fonts/source-serif-4-latin-600-normal.woff2') format('woff2')}
+  @font-face{font-family:'Source Serif 4';font-style:normal;font-weight:700;src:url('../../assets/fonts/source-serif-4-latin-700-normal.woff2') format('woff2')}
+  @font-face{font-family:'Inter';font-style:normal;font-weight:400;src:url('../../assets/fonts/inter-latin-400-normal.woff2') format('woff2')}
+  @font-face{font-family:'Inter';font-style:normal;font-weight:600;src:url('../../assets/fonts/inter-latin-600-normal.woff2') format('woff2')}
+  @font-face{font-family:'Inter';font-style:normal;font-weight:700;src:url('../../assets/fonts/inter-latin-700-normal.woff2') format('woff2')}
+  @font-face{font-family:'IBM Plex Mono';font-style:normal;font-weight:400;src:url('../../assets/fonts/ibm-plex-mono-latin-400-normal.woff2') format('woff2')}
+  :root{--serif:'Source Serif 4',Georgia,'Times New Roman',serif;--sans:'Inter',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;--mono:'IBM Plex Mono',ui-monospace,Consolas,monospace;
+    --ink:#1c1a17;--ink2:#46423b;--muted:#6f685d;--line:#e3ddd2;--line2:#cfc7b9;--paper:#fff;--tint:#f6efe2;
+    --acc:#8a5a0a;--acc2:#6e4708;--s1:#b9780e;--s2:#3d6ea9;--good:#0e7a52;--warn:#b7791f;--serious:#b23a3a}
+  *{box-sizing:border-box}
+  html{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  body{margin:0;font-family:var(--sans);color:var(--ink);font-size:10.1pt;line-height:1.48;-webkit-font-smoothing:antialiased}
+  p{margin:0 0 7pt}
+  a{color:var(--acc2)}
+  
+  body{background:#e9e5de;padding:0 0 48px}
+  .webbar{position:sticky;top:0;z-index:5;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;
+    padding:10px clamp(14px,3vw,28px);background:#1b1916;color:#f3efe7;font-size:13px}
+  .webbar a{color:#f3efe7;text-decoration:none;font-weight:600;display:inline-flex;align-items:center;gap:8px;padding:7px 12px;border:1px solid #4a453d;border-radius:9px}
+  .webbar a:hover{border-color:#bdb3a2}
+  .webbar .wb-title{font-family:var(--serif);font-size:15px;font-weight:600}
+  .webbar .wb-acts{display:flex;gap:8px;flex-wrap:wrap}
+  .webbar svg{width:15px;height:15px}
+  .page{width:min(100%,210mm);margin:18px auto 0;padding:clamp(18px,4vw,15mm) clamp(16px,4.5vw,17mm) clamp(16px,3vw,13mm);
+    background:#fff;box-shadow:0 10px 30px -18px rgba(0,0,0,.45);position:relative;display:flex;flex-direction:column;min-height:auto}
+  @media print{body{background:#fff;padding:0}.webbar{display:none}.page{box-shadow:none;margin:0;width:210mm;height:297mm;page-break-after:always;break-after:page}}
+
+  .page.cover{padding:0}
+  .run{display:flex;justify-content:space-between;align-items:baseline;gap:12px;white-space:nowrap;font-family:var(--mono);font-size:7.2pt;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);
+    border-bottom:1px solid var(--line);padding-bottom:6pt;margin-bottom:12pt}
+  .run b{color:var(--acc2);font-weight:400}
+  .foot{margin-top:auto;display:flex;justify-content:space-between;align-items:baseline;gap:12px;font-family:var(--mono);font-size:7.2pt;letter-spacing:.04em;color:var(--muted);
+    border-top:1px solid var(--line);padding-top:6pt}
+  .foot .pn{color:var(--ink2)}
+  h1,h2,h3,h4{font-family:var(--serif);font-weight:600;line-height:1.15;margin:0;color:var(--ink);letter-spacing:-.005em}
+  h2{font-size:19pt;margin:0 0 8pt}
+  h3{font-size:12.5pt;margin:12pt 0 5pt;color:var(--acc2)}
+  h4{font-family:var(--sans);font-size:9.6pt;font-weight:700;margin:0 0 3pt;color:var(--ink)}
+  .eyebrow{font-family:var(--mono);font-size:7.6pt;letter-spacing:.12em;text-transform:uppercase;color:var(--acc2);margin-bottom:5pt}
+  .lede{font-family:var(--serif);font-size:12pt;line-height:1.42;color:var(--ink2);margin:0 0 10pt}
+  .sec{margin-bottom:11pt}
+  .two{display:grid;grid-template-columns:1fr 1fr;gap:14pt}
+  .two.wide{grid-template-columns:1.35fr 1fr}
+  .tiles{display:grid;grid-template-columns:repeat(4,1fr);gap:8pt;margin:6pt 0 10pt}
+  .tiles.three{grid-template-columns:repeat(3,1fr)}
+  .tile{border:1px solid var(--line);border-radius:7pt;padding:8pt 9pt;background:#fff}
+  .tile .lab{font-family:var(--mono);font-size:7pt;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:3pt}
+  .tile .val{font-family:var(--sans);font-weight:600;font-size:17pt;line-height:1.1;color:var(--ink)}
+  .tile .val small{font-size:9.5pt;font-weight:600;color:var(--ink2);margin-left:2pt}
+  .tile .note{font-size:8.4pt;color:var(--ink2);margin-top:3pt;line-height:1.35}
+  .tile.acc{background:var(--tint);border-color:transparent}
+  .panel{background:var(--tint);border-radius:8pt;padding:10pt 12pt;margin:0 0 10pt}
+  .panel h4{color:var(--acc2)}
+  .callout{border-left:3pt solid var(--acc);padding:6pt 0 4pt 10pt;margin:0 0 10pt}
+  .callout.bad{border-left-color:var(--serious)}
+  .callout.gold{border-left-color:var(--warn)}
+  .callout.good{border-left-color:var(--good)}
+  .callout .tag{font-family:var(--mono);font-size:7pt;letter-spacing:.1em;text-transform:uppercase;display:inline-flex;align-items:center;gap:5pt;margin-bottom:3pt;color:var(--muted)}
+  .callout.bad .tag{color:var(--serious)} .callout.gold .tag{color:var(--warn)} .callout.good .tag{color:var(--good)}
+  .callout .tag svg{width:10pt;height:10pt}
+  .callout p{margin:0 0 4pt;font-size:9.4pt}
+  .callout p:last-child{margin:0}
+  .quote{font-family:var(--serif);font-size:13pt;line-height:1.35;color:var(--ink);margin:0 0 8pt}
+  ul.clean{list-style:none;padding:0;margin:0}
+  ul.clean li{position:relative;padding-left:14pt;margin:0 0 3.5pt;font-size:9.5pt}
+  ul.clean li::before{content:'';position:absolute;left:0;top:7pt;width:6pt;height:6pt;border-radius:50%;background:var(--acc)}
+  ul.check li::before{width:7pt;height:7pt;border-radius:2pt;background:var(--good)}
+  ol.steps{list-style:none;counter-reset:s;padding:0;margin:0}
+  ol.steps li{counter-increment:s;position:relative;padding-left:22pt;margin:0 0 5pt;font-size:9.5pt}
+  ol.steps li::before{content:counter(s);position:absolute;left:0;top:1pt;width:15pt;height:15pt;border-radius:50%;background:var(--acc);color:#fff;font-family:var(--mono);font-size:8pt;display:grid;place-items:center}
+  table{width:100%;border-collapse:collapse;font-size:9.2pt;margin:4pt 0 10pt}
+  th{text-align:left;font-family:var(--mono);font-size:7pt;letter-spacing:.08em;text-transform:uppercase;color:var(--acc2);background:var(--tint);padding:5pt 7pt;border-bottom:1px solid var(--line2)}
+  td{padding:5pt 7pt;border-bottom:1px solid var(--line);vertical-align:top;line-height:1.4}
+  td.k{font-weight:600;white-space:nowrap}
+  tr:last-child td{border-bottom:1px solid var(--line2)}
+  .pill{display:inline-block;font-family:var(--mono);font-size:7pt;letter-spacing:.08em;text-transform:uppercase;padding:2pt 6pt;border-radius:4pt;background:var(--tint);color:var(--acc2)}
+  .pill.good{background:#e6f3ec;color:var(--good)} .pill.warn{background:#f7eede;color:#8a5a0a} .pill.bad{background:#f6e4e4;color:var(--serious)}
+  .fig{margin:4pt 0 10pt}
+  .fig .cap{font-family:var(--mono);font-size:7.2pt;letter-spacing:.04em;color:var(--muted);margin-top:3pt;line-height:1.4}
+  .fig svg{width:100%;height:auto;display:block}
+  .legend{display:flex;gap:14pt;flex-wrap:wrap;font-size:8.4pt;color:var(--ink2);margin:2pt 0 4pt}
+  .legend span{display:inline-flex;align-items:center;gap:5pt}
+  .legend i{width:10pt;height:10pt;border-radius:3pt;display:inline-block}
+  .small{font-size:8.8pt;color:var(--ink2)}
+  .muted{color:var(--muted)}
+  .hero{font-family:var(--sans);font-weight:600;font-size:34pt;line-height:1;letter-spacing:-.02em;color:var(--ink)}
+  .kv{display:grid;grid-template-columns:auto 1fr;gap:3pt 10pt;font-size:9.3pt}
+  .kv b{font-family:var(--mono);font-size:7.2pt;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);font-weight:400;padding-top:2pt}
+  /* cover */
+  .cover .band{background:var(--acc);color:#fff;padding:15mm 17mm 12mm;position:relative;overflow:hidden}
+  .cover .band::after{content:'';position:absolute;right:-60mm;top:-60mm;width:150mm;height:150mm;border-radius:50%;background:rgba(255,255,255,.07)}
+  .cover .band .doc{font-family:var(--mono);font-size:7.6pt;letter-spacing:.14em;text-transform:uppercase;opacity:.85;margin-bottom:22mm}
+  .cover .band .doc b{font-weight:400;opacity:1}
+  .cover h1{color:#fff;font-size:34pt;font-weight:600;letter-spacing:-.01em;max-width:150mm;position:relative}
+  .cover .stand{font-family:var(--serif);font-size:13.5pt;line-height:1.4;color:rgba(255,255,255,.9);max-width:150mm;margin:7mm 0 0;position:relative}
+  .cover .body{padding:11mm 17mm 12mm;display:flex;flex-direction:column;flex:1}
+  .cover .illus{font-family:var(--serif);font-style:italic;font-size:10.5pt;color:var(--ink2);border-left:3pt solid var(--warn);padding-left:9pt;margin:0 0 9mm}
+  .cover .ctx{display:grid;grid-template-columns:1.2fr 1fr;gap:9mm;margin-bottom:8mm}
+  .cover .meta{margin-top:auto;border-top:1px solid var(--line);padding-top:6pt;display:grid;grid-template-columns:1fr 1fr 1fr;gap:10pt;font-size:8.6pt;color:var(--ink2)}
+  .cover .meta b{display:block;font-family:var(--mono);font-size:7pt;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:2pt;font-weight:400}
+  .cover .outc{background:var(--tint);border-radius:8pt;padding:10pt 12pt}
+  .cover .outc .lab{font-family:var(--mono);font-size:7pt;letter-spacing:.1em;text-transform:uppercase;color:var(--acc2);margin-bottom:5pt}
+  .cover .outc ul.clean li{font-size:9.6pt}
+  /* back page */
+  .back .cta{background:var(--acc);color:#fff;border-radius:10pt;padding:12pt 14pt;margin:6pt 0 10pt}
+  .back .cta h3{color:#fff;font-size:15pt;margin:0 0 4pt}
+  .back .cta p{color:rgba(255,255,255,.9);margin:0 0 6pt;font-size:9.4pt}
+  .back .cta a{color:#fff;font-weight:600}
+  .back .cta .btn{display:inline-block;margin-top:4pt;padding:6pt 10pt;border:1px solid rgba(255,255,255,.6);border-radius:7pt;text-decoration:none;font-size:9.4pt;margin-right:6pt}
+  .back .fine{font-size:8.2pt;color:var(--ink2);line-height:1.45}
+  .back .fine p{margin:0 0 5pt}
+  .copy{display:grid;grid-template-columns:1fr 1fr;gap:12pt}
+  .copy .col{border-top:2pt solid var(--good);padding-top:6pt}
+  .copy .col.no{border-top-color:var(--serious)}
+  .copy h4{margin-bottom:4pt}
+  .chip{display:inline-flex;align-items:center;gap:6pt;font-size:8.8pt;font-weight:600;color:var(--acc2);background:var(--tint);padding:4pt 9pt;border-radius:20pt;margin:0 0 8pt}
+  .chip svg{width:11pt;height:11pt}
+  .steps-row{display:grid;grid-template-columns:repeat(4,1fr);gap:6pt;margin:4pt 0 10pt}
+  .steps-row .st{border-top:2pt solid var(--acc);padding-top:5pt;font-size:8.8pt;line-height:1.35}
+  .steps-row .st b{display:block;font-family:var(--mono);font-size:7pt;letter-spacing:.08em;text-transform:uppercase;color:var(--acc2);font-weight:400;margin-bottom:2pt}
+  .svgtxt{font-family:var(--sans)}
+
+  @media (max-width:640px){
+    body{font-size:14px;line-height:1.5}
+    .run{white-space:normal;font-size:9px}
+    .tiles,.tiles.three{grid-template-columns:1fr 1fr}
+    .tiles[style]{grid-template-columns:1fr 1fr !important}
+    .two,.two.wide,.copy,.cover .ctx{grid-template-columns:1fr}
+    .cover .meta{grid-template-columns:1fr}
+    .steps-row,.steps-row[style]{grid-template-columns:1fr 1fr !important}
+    .cover h1{font-size:30px}.cover .stand{font-size:17px}
+    h2{font-size:22px}.lede{font-size:16px}
+    .tile .val{font-size:22px}
+    .back .cta .btn{display:block;margin:6px 0 0}
+  }
+</style>
+</head>
+<body class="web">
+<div class="webbar"><span class="wb-title">A founder who nearly sold the plant to build it</span><span class="wb-acts"><a href="founder-who-nearly-sold-the-plant.pdf" download><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 4v12"/><path d="M6 11l6 6 6-6"/><path d="M4 20h16"/></svg>PDF</a><a href="../manuscripts/nobody-else-is-coming-first-edition.pdf#page=54" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h6a3 3 0 0 1 3 3v13a2 2 0 0 0-2-2H4z"/><path d="M20 4h-6a3 3 0 0 0-3 3v13a2 2 0 0 1 2-2h7z"/></svg>Full case in the playbook</a><a href="../../index.html#warroom" target="_top"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 11l9-7 9 7"/><path d="M5 10v10h14V10"/></svg>Portfolio</a></span></div>
+
+<section class="page cover">
+  <div class="band">
+    <div class="doc">Investment memorandum &nbsp;·&nbsp; capital and structure &nbsp;·&nbsp; worked case <b>no. 3</b></div>
+    <h1>A founder who nearly sold the plant to build it</h1>
+    <p class="stand">A term sheet with three weeks on it, a deck that promised “81 per cent efficiency”, and a twenty-year contracted asset being priced as a start-up. The structure that let the founders keep control, and the lease that nearly stopped the bank.</p>
+  </div>
+  <div class="body">
+    <p class="illus">An illustration. The project, its figures and its people are invented, to show the method in use: a wrong turn, a dilemma the method did not settle, and what it cost.</p>
+    <div class="ctx">
+      <div>
+        <div class="eyebrow">The project</div>
+        <div class="kv">
+          <b>Plant</b><span>3 MW of solar, the first phase of a planned 12 MW</span>
+          <b>Where</b><span>A province in Mindanao, Philippines</span>
+          <b>Offtaker</b><span>The local electric cooperative, under a supply agreement</span>
+          <b>Founders</b><span>A Filipino engineer, and a British investor who runs their Singapore holding company and holds most of the money and most of the legal exposure</span>
+          <b>Situation</b><span>A start-up: no fire, a deadline, and a structure to build from nothing. The danger is borrowed urgency.</span>
+        </div>
+      </div>
+      <div class="outc">
+        <div class="lab">The shape of the outcome</div>
+        <ul class="clean">
+          <li>The founders <b>keep control</b></li>
+          <li>A domestic bank <b>lends on phase one</b></li>
+          <li>Financial close about <b>nine months later</b> than the fund would have closed, on terms the founders can live with for twenty years</li>
+        </ul>
+      </div>
+    </div>
+    <div class="tiles">
+      <div class="tile"><div class="lab">The offer</div><div class="val">USD 3.4m</div><div class="note">for 55 per cent of the holding company</div></div>
+      <div class="tile"><div class="lab">Term sheet</div><div class="val">3<small>weeks</small></div><div class="note">to expiry; the cooperative’s board in six</div></div>
+      <div class="tile"><div class="lab">The claim</div><div class="val">81%</div><div class="note">“system efficiency”: in fact the performance ratio</div></div>
+      <div class="tile"><div class="lab">Capacity factor</div><div class="val">17% / 21%</div><div class="note">on the DC rating and on the AC</div></div>
+    </div>
+    <div class="meta">
+      <div><b>Prepared by</b>Christopher I. V. Farmer · Geneva</div>
+      <div><b>Source</b><i>Nobody Else Is Coming</i>, first edition (October 2026), chapter 12, pp. 53–54</div>
+      <div><b>Reference</b>doi:10.5281/zenodo.23462160</div>
+    </div>
+  </div>
+</section>
+
+<section class="page">
+  <div class="run"><span><b>Investment memorandum</b> &nbsp;·&nbsp; A founder who nearly sold the plant to build it</span><span>An illustration</span></div>
+  <div class="eyebrow">1 · The call</div>
+  <h2>Help with the deck, and an introduction to a fund</h2>
+  <p class="lede">The founder wants an introduction to a venture fund and help with the deck. The fund has offered USD 3.4 million for 55 per cent of the holding company, with a term sheet that expires in three weeks; the deck promises “a system efficiency of 81 per cent”.</p>
+  <div class="two wide">
+    <div>
+      <div class="tiles" style="grid-template-columns:repeat(2,1fr);margin-top:0">
+        <div class="tile"><div class="lab">The clock</div><div class="val">3 weeks</div><div class="note">on the term sheet; the cooperative’s board meets in six to consider the supply agreement</div></div>
+        <div class="tile"><div class="lab">The decision-makers</div><div class="val">Two</div><div class="note">the founder, and the partner who holds most of the money and, as a British citizen, most of the legal exposure</div></div>
+        <div class="tile"><div class="lab">Access</div><div class="val">4 files</div><div class="note">a financial model, a draft supply agreement, a signed lease, a permitting file</div></div>
+        <div class="tile"><div class="lab">Kind of situation</div><div class="val">Start-up</div><div class="note">no fire, a deadline, a structure to build from nothing</div></div>
+      </div>
+      <h3>Diagnosis</h3>
+      <div class="callout"><div class="tag">The decisive constraint</div><p class="quote">The founder is describing an infrastructure asset as a start-up.</p><p>Twenty years of contracted cash flow against a known cost is a debt instrument waiting for a lender. The fund is pricing it as a venture, with venture discounts for execution risk, and asking for the equity those discounts imply.</p></div>
+      <h3>The three risks</h3>
+      <ol class="steps">
+        <li><b>The technical claim</b> failing diligence.</li>
+        <li><b>The capital structure</b> diluting the founders out of their own project.</li>
+        <li><b>An integrity exposure</b> in the project’s relationships stopping institutional money before either of the first two matters.</li>
+      </ol>
+    </div>
+    <div>
+      <div class="panel">
+        <h4>Definition of done</h4>
+        <p style="margin:0;font-family:var(--serif);font-size:11pt;line-height:1.4">A financing structure under which the founders keep control, a lender can lend, and the integrity exposure is managed before money moves.</p>
+        <p class="small" style="margin:5pt 0 0">Agreed after some resistance.</p>
+      </div>
+      <div class="callout gold"><div class="tag"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 3v18"/><path d="M5 7h14"/><path d="M5 7l-3 7a3 3 0 0 0 6 0z"/><path d="M19 7l-3 7a3 3 0 0 0 6 0z"/></svg>Borrowed urgency</div><p>The term sheet’s three weeks were setting the pace of decisions that deserved three months.</p></div>
+      <div class="callout"><div class="tag">The founder’s resistance</div><p>He likes the fund. It is fast, its partners are charming, and it does not ask about typhoons. The operator names the resistance rather than arguing with it: <b>“the fund is selling you speed, and the price is control.”</b></p></div>
+    </div>
+  </div>
+  <div class="foot"><span>Prepared by Christopher I. V. Farmer · from <i>Nobody Else Is Coming</i> (2026), chapter 12</span><span class="pn">2 / 6</span></div>
+</section>
+
+<section class="page">
+  <div class="run"><span><b>Investment memorandum</b> &nbsp;·&nbsp; A founder who nearly sold the plant to build it</span><span>An illustration</span></div>
+  <div class="eyebrow">2 · Venture or asset</div>
+  <h2>The question that decides everything downstream</h2>
+  <table>
+    <tr><th style="width:34%"></th><th style="width:28%">Venture raise</th><th>Debt-led structure</th></tr>
+    <tr><td class="k">Founders’ share after the raise</td><td>45 per cent</td><td>Retained, with a minority equity partner in the project company</td></tr>
+    <tr><td class="k">Cost of capital</td><td>High</td><td>Lower; secured; amortising</td></tr>
+    <tr><td class="k">Fit to a twenty-year contracted asset</td><td>Poor</td><td>Strong</td></tr>
+    <tr><td class="k">Speed</td><td>Weeks</td><td>Months; heavy diligence</td></tr>
+  </table>
+  <p class="small" style="margin:-4pt 0 10pt">The comparison the operator put in front of the founder. He let the term sheet lapse in week three, with a clear conscience and a polite letter.</p>
+  <h3>The structure that was built</h3>
+  <div class="fig">
+    <svg viewBox="0 0 660 290" xmlns="http://www.w3.org/2000/svg" role="img"><defs><marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#8a5a0a"/></marker></defs><rect x="30" y="14" width="190" height="64" rx="8" fill="#f6efe2" stroke="#8a5a0a" stroke-width="1.4"/><text x="125.0" y="36.0" font-family="Inter,system-ui,sans-serif" font-size="11" text-anchor="middle" fill="#1c1a17" font-weight="600" >The founders</text><text x="125.0" y="52.0" font-family="Inter,system-ui,sans-serif" font-size="9" text-anchor="middle" fill="#46423b" font-weight="400" >a Filipino engineer and a</text><text x="125.0" y="65.0" font-family="Inter,system-ui,sans-serif" font-size="9" text-anchor="middle" fill="#46423b" font-weight="400" >British investor</text><rect x="30" y="112" width="190" height="56" rx="8" fill="#fff" stroke="#8a5a0a" stroke-width="1.4"/><text x="125.0" y="134.0" font-family="Inter,system-ui,sans-serif" font-size="11" text-anchor="middle" fill="#1c1a17" font-weight="600" >Singapore holding company</text><text x="125.0" y="150.0" font-family="Inter,system-ui,sans-serif" font-size="9" text-anchor="middle" fill="#46423b" font-weight="400" >run by the investor partner</text><rect x="440" y="14" width="190" height="64" rx="8" fill="#f6efe2" stroke="#8a5a0a" stroke-width="1.4"/><text x="535.0" y="36.0" font-family="Inter,system-ui,sans-serif" font-size="11" text-anchor="middle" fill="#1c1a17" font-weight="600" >A provincial investor</text><text x="535.0" y="52.0" font-family="Inter,system-ui,sans-serif" font-size="9" text-anchor="middle" fill="#46423b" font-weight="400" >brings part of the equity</text><rect x="222" y="200" width="190" height="68" rx="8" fill="#f6efe2" stroke="#8a5a0a" stroke-width="1.4"/><text x="317.0" y="222.0" font-family="Inter,system-ui,sans-serif" font-size="11" text-anchor="middle" fill="#1c1a17" font-weight="600" >Project company</text><text x="317.0" y="238.0" font-family="Inter,system-ui,sans-serif" font-size="9" text-anchor="middle" fill="#46423b" font-weight="400" >owns and runs the 3 MW plant</text><text x="317.0" y="251.0" font-family="Inter,system-ui,sans-serif" font-size="9" text-anchor="middle" fill="#46423b" font-weight="400" >borrows in pesos</text><rect x="472" y="200" width="178" height="68" rx="8" fill="#fff" stroke="#8a5a0a" stroke-width="1.4"/><text x="561.0" y="222.0" font-family="Inter,system-ui,sans-serif" font-size="11" text-anchor="middle" fill="#1c1a17" font-weight="600" >The electric cooperative</text><text x="561.0" y="238.0" font-family="Inter,system-ui,sans-serif" font-size="9" text-anchor="middle" fill="#46423b" font-weight="400" >buys the output under a</text><text x="561.0" y="251.0" font-family="Inter,system-ui,sans-serif" font-size="9" text-anchor="middle" fill="#46423b" font-weight="400" >supply agreement at 3 MW</text><rect x="12" y="200" width="180" height="68" rx="8" fill="#fff" stroke="#8a5a0a" stroke-width="1.4"/><text x="102.0" y="222.0" font-family="Inter,system-ui,sans-serif" font-size="11" text-anchor="middle" fill="#1c1a17" font-weight="600" >Domestic bank</text><text x="102.0" y="238.0" font-family="Inter,system-ui,sans-serif" font-size="9" text-anchor="middle" fill="#46423b" font-weight="400" >peso loan of about 70% of phase one,</text><text x="102.0" y="251.0" font-family="Inter,system-ui,sans-serif" font-size="9" text-anchor="middle" fill="#46423b" font-weight="400" >1.30× cover on the P50 case</text><line x1="125" y1="78" x2="125" y2="110" stroke="#8a5a0a" stroke-width="1.6" marker-end="url(#ah)"/><line x1="150" y1="168" x2="275" y2="198" stroke="#8a5a0a" stroke-width="1.6" marker-end="url(#ah)"/><text x="196.0" y="176.0" font-family="IBM Plex Mono,monospace" font-size="8" letter-spacing=".06em" text-anchor="middle" fill="#6e4708">80%</text><line x1="520" y1="78" x2="380" y2="198" stroke="#8a5a0a" stroke-width="1.6" marker-end="url(#ah)"/><text x="466.0" y="132.0" font-family="IBM Plex Mono,monospace" font-size="8" letter-spacing=".06em" text-anchor="middle" fill="#6e4708">20%</text><line x1="192" y1="234" x2="220" y2="234" stroke="#8a5a0a" stroke-width="1.6" marker-end="url(#ah)"/><text x="206.0" y="224.0" font-family="IBM Plex Mono,monospace" font-size="8" letter-spacing=".06em" text-anchor="middle" fill="#6e4708">loan</text><line x1="414" y1="234" x2="470" y2="234" stroke="#8a5a0a" stroke-width="1.6" stroke-dasharray="3 3" marker-end="url(#ah)" marker-start="url(#ah)"/><text x="442.0" y="222.0" font-family="IBM Plex Mono,monospace" font-size="7.2" letter-spacing=".06em" text-anchor="middle" fill="#6f685d">supply</text><text x="442.0" y="254.0" font-family="IBM Plex Mono,monospace" font-size="7.2" letter-spacing=".06em" text-anchor="middle" fill="#6f685d">agreement</text></svg>
+    <div class="cap">Ownership and the main contracts. The project company is four-fifths owned by the holding company and one-fifth by a provincial investor; a domestic bank lends in pesos, the currency of the revenue. Solid arrows are ownership and lending; the dashed arrow is the supply agreement.</div>
+  </div>
+  <div class="two">
+    <div>
+      <div class="callout"><div class="tag">Financing, in sequence</div><p><b>1.</b> A bridge from the partners for development. <b>2.</b> A peso loan from a domestic bank for about seventy per cent of the phase-one cost, sized at 1.30 times cover on the P50 case. <b>3.</b> Refinancing into term project debt once the plant has a year of operation behind it.</p></div>
+    </div>
+    <div>
+      <div class="callout gold"><div class="tag"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 3v18"/><path d="M5 7h14"/><path d="M5 7l-3 7a3 3 0 0 0 6 0z"/><path d="M19 7l-3 7a3 3 0 0 0 6 0z"/></svg>Phase two, redrawn</div><p>At 3 MW the supply agreement falls inside the 2025 exemption and goes straight to the regulator. Adding 9 MW later “under the same contract” would take the cooperative over the ten-megawatt line, so phase two is redrawn around the competitive process or the right-of-first-refusal route.</p></div>
+    </div>
+  </div>
+  <div class="foot"><span>Prepared by Christopher I. V. Farmer · from <i>Nobody Else Is Coming</i> (2026), chapter 12</span><span class="pn">3 / 6</span></div>
+</section>
+
+<section class="page">
+  <div class="run"><span><b>Investment memorandum</b> &nbsp;·&nbsp; A founder who nearly sold the plant to build it</span><span>An illustration</span></div>
+  <div class="eyebrow">3 · The technical claim</div>
+  <h2>Three numbers behind “81 per cent”</h2>
+  <p class="lede">The “81 per cent” turns out to be the performance ratio, not an efficiency. The capacity factor in the founder’s own model is what a lender will ask for, and the Global Solar Atlas value for the site supports it.</p>
+  <div class="two">
+    <div>
+      <div class="tiles three" style="margin-top:0">
+        <div class="tile acc"><div class="lab">Modules</div><div class="val">3.75<small>MWp</small></div><div class="note">DC rating</div></div>
+        <div class="tile acc"><div class="lab">Inverters</div><div class="val">3<small>MW</small></div><div class="note">AC rating</div></div>
+        <div class="tile acc"><div class="lab">Yield</div><div class="val"><small>approx.</small> 5,600<small>MWh</small></div><div class="note">a year, from the founder’s model</div></div>
+      </div>
+      <div class="fig">
+        <svg viewBox="0 0 360 200" xmlns="http://www.w3.org/2000/svg" role="img"><line x1="44" y1="164.0" x2="346" y2="164.0" stroke="#ece7de" stroke-width="1"/><text x="38.0" y="167.0" font-family="IBM Plex Mono,monospace" font-size="8" letter-spacing=".06em" text-anchor="end" fill="#6f685d">0%</text><line x1="44" y1="126.5" x2="346" y2="126.5" stroke="#ece7de" stroke-width="1"/><text x="38.0" y="129.5" font-family="IBM Plex Mono,monospace" font-size="8" letter-spacing=".06em" text-anchor="end" fill="#6f685d">7.5%</text><line x1="44" y1="89.0" x2="346" y2="89.0" stroke="#ece7de" stroke-width="1"/><text x="38.0" y="92.0" font-family="IBM Plex Mono,monospace" font-size="8" letter-spacing=".06em" text-anchor="end" fill="#6f685d">15%</text><line x1="44" y1="51.5" x2="346" y2="51.5" stroke="#ece7de" stroke-width="1"/><text x="38.0" y="54.5" font-family="IBM Plex Mono,monospace" font-size="8" letter-spacing=".06em" text-anchor="end" fill="#6f685d">22.5%</text><line x1="44" y1="14.0" x2="346" y2="14.0" stroke="#ece7de" stroke-width="1"/><text x="38.0" y="17.0" font-family="IBM Plex Mono,monospace" font-size="8" letter-spacing=".06em" text-anchor="end" fill="#6f685d">30%</text><path d="M107.5,164.0 v-81.0 a4,4 0 0 1 4,-4 h16.0 a4,4 0 0 1 4,4 v81.0 z" fill="#b9780e"/><text x="119.5" y="74.0" font-family="Inter,system-ui,sans-serif" font-size="9.6" text-anchor="middle" fill="#1c1a17" font-weight="600" >17%</text><text x="119.5" y="186.0" font-family="Inter,system-ui,sans-serif" font-size="9.4" text-anchor="middle" fill="#46423b" font-weight="400" >On the DC rating (3.75 MWp)</text><path d="M258.5,164.0 v-101.0 a4,4 0 0 1 4,-4 h16.0 a4,4 0 0 1 4,4 v101.0 z" fill="#3d6ea9"/><text x="270.5" y="54.0" font-family="Inter,system-ui,sans-serif" font-size="9.6" text-anchor="middle" fill="#1c1a17" font-weight="600" >21%</text><text x="270.5" y="186.0" font-family="Inter,system-ui,sans-serif" font-size="9.4" text-anchor="middle" fill="#46423b" font-weight="400" >On the AC rating (3 MW)</text></svg>
+        <div class="cap">Capacity factor implied by the model: about 17 per cent on the DC rating and 21 on the AC. The same plant, two honest numbers, neither of them 81.</div>
+      </div>
+    </div>
+    <div>
+      <h3>What the lender’s adviser asked for</h3>
+      <ul class="clean">
+        <li>The site’s <b>typhoon design basis</b>, which the first EPC design did not have. The racking is redesigned, at about <b>four per cent of capital cost</b>.</li>
+      </ul>
+      <h3>The discipline the case applies</h3>
+      <ul class="clean">
+        <li><b>Three numbers, not one</b>, for any technical claim: the module efficiency, the performance ratio and the capacity factor, each quoted with its source. Separate the physical efficiency, the system losses and the utilisation.</li>
+        <li><b>The risk table before the model.</b> For every risk: who bears it, through which contract or instrument, what is left over, and what the lender will ask.</li>
+      </ul>
+      <div class="callout good"><div class="tag"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12l4 4 10-10"/></svg>Two ratios that are not the same thing</div><p>A <b>performance ratio</b> says how much of the energy the sunlight on the modules could have produced the plant actually delivered. A <b>capacity factor</b> says how much of the year the plant was, in effect, running at full rating. A lender sizes debt on the second; the deck quoted the first.</p></div>
+      <div class="tiles" style="grid-template-columns:1fr 1fr;margin-top:0">
+        <div class="tile"><div class="lab">Racking redesign</div><div class="val"><small>approx.</small> 4%</div><div class="note">of capital cost, for the typhoon design basis</div></div>
+        <div class="tile"><div class="lab">Debt sizing</div><div class="val">1.30×</div><div class="note">cover on the P50 case; about 70% of phase-one cost</div></div>
+      </div>
+    </div>
+  </div>
+  <div class="foot"><span>Prepared by Christopher I. V. Farmer · from <i>Nobody Else Is Coming</i> (2026), chapter 12</span><span class="pn">4 / 6</span></div>
+</section>
+
+<section class="page">
+  <div class="run"><span><b>Investment memorandum</b> &nbsp;·&nbsp; A founder who nearly sold the plant to build it</span><span>An illustration</span></div>
+  <div class="eyebrow">4 · What went wrong, and what the method did not settle</div>
+  <h2>The lease, and the land next door</h2>
+  <div class="two">
+    <div>
+      <div class="callout bad"><div class="tag"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 9v4"/><path d="M12 17h.01"/><path d="M10.3 3.8L2.6 17a2 2 0 0 0 1.7 3h15.4a2 2 0 0 0 1.7-3L13.7 3.8a2 2 0 0 0-3.4 0z"/></svg>What went wrong</div><p>The founder had already signed a lease, on the site the project would eventually use: <b>for ninety-nine years, at a premium</b>, because a friend had told him the longest lease was the safest.</p><p>The bank’s counsel did not want ninety-nine years. It wanted the right to take the lease as security, to step in, and to assign it on enforcement, none of which the signed lease allowed. Renegotiating with the landowner took <b>two months and a fee</b>, and the landowner, now aware that the lease mattered, priced the change accordingly.</p><p><b>The lesson:</b> size the lease to the need, and put the lender’s requirements into the draft before anyone signs it.</p></div>
+      <div class="panel">
+        <h4>What a lender wants from a lease</h4>
+        <ul class="clean">
+          <li>To take it as security</li>
+          <li>To step in</li>
+          <li>To assign it on enforcement</li>
+        </ul>
+      </div>
+    </div>
+    <div>
+      <div class="callout gold"><div class="tag"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 3v18"/><path d="M5 7h14"/><path d="M5 7l-3 7a3 3 0 0 0 6 0z"/><path d="M19 7l-3 7a3 3 0 0 0 6 0z"/></svg>The dilemma the method did not settle</div><p>Site diligence turned up better-placed land nearby, about <b>three per cent more yield</b>, and integrity diligence produced the finding every provincial project should expect to look for: the family that owned it included the <b>spouse of a member of the cooperative’s board</b>, which would be asked to approve the supply agreement.</p><p>Two lawful courses were open. <b>Switch</b> to the better land, disclosing the relationship to the cooperative and the lender, with the board member recused and the land priced on an independent valuation, which the lender said it would accept. Or <b>stay</b> on the land already leased, with the lower yield.</p><p>The founders stayed. The method made the choice explicit, documented both options and showed the lender why either would do. It could not tell the founders which risk they would rather live with.</p></div>
+      <table>
+        <tr><th>Course</th><th>Yield</th><th>Condition</th></tr>
+        <tr><td class="k">Switch</td><td>+3%</td><td>Disclosure to the cooperative and the lender; the board member recused; an independent valuation</td></tr>
+        <tr><td class="k">Stay</td><td>as leased</td><td>On the land already leased, with the lower yield</td></tr>
+      </table>
+    </div>
+  </div>
+  <h3>The time it took</h3>
+  <div class="steps-row" style="grid-template-columns:repeat(4,1fr)">
+    <div class="st"><b>Week three</b>The term sheet lapses, with a clear conscience and a polite letter</div>
+    <div class="st"><b>Two months</b>Renegotiating the lease to the lender’s terms, with a fee</div>
+    <div class="st"><b>One year of operation</b>Planned before refinancing into term project debt</div>
+    <div class="st"><b>About nine months</b>Later to financial close than the fund would have been</div>
+  </div>
+  <div class="foot"><span>Prepared by Christopher I. V. Farmer · from <i>Nobody Else Is Coming</i> (2026), chapter 12</span><span class="pn">5 / 6</span></div>
+</section>
+
+<section class="page back">
+  <div class="run"><span><b>Investment memorandum</b> &nbsp;·&nbsp; A founder who nearly sold the plant to build it</span><span>An illustration</span></div>
+  <div class="eyebrow">5 · The outcome, and what to take from it</div>
+  <h2>Nine months later than the fund, on terms that last twenty years</h2>
+  <div class="two">
+    <div>
+      <div class="panel">
+        <h4>The shape of the outcome</h4>
+        <ul class="clean">
+          <li>The founders keep control.</li>
+          <li>A domestic bank lends on phase one.</li>
+          <li>Financial close comes about nine months later than the fund would have closed, on terms the founders can live with for twenty years.</li>
+        </ul>
+        <p class="small" style="margin:4pt 0 0">These figures are invented to show the shape of an outcome, not to describe one.</p>
+      </div>
+    </div>
+    <div>
+      <div class="copy">
+        <div class="col"><h4>Copy</h4><ul class="clean"><li>The first question: is this a venture or an asset?</li><li>The three-number discipline for any technical claim</li><li>A lease sized to the need, with the lender’s clauses in the draft</li><li>Borrowing in the currency of the revenue</li><li>The risk table before the model</li><li>Integrity diligence before structuring</li></ul></div>
+        <div class="col no"><h4>Do not copy</h4><ul class="clean"><li>The tariff, the capital cost or the yield</li><li>The foreign-ownership position, for any technology other than the ones it was decided for</li></ul></div>
+      </div>
+    </div>
+  </div>
+  <div class="tiles three" style="margin-top:0">
+    <div class="tile"><div class="lab">Founders’ share</div><div class="val">Kept</div><div class="note">a minority partner in the project company, instead of 55 per cent of the holding company gone</div></div>
+    <div class="tile"><div class="lab">Lender</div><div class="val">Domestic</div><div class="note">a peso loan on phase one, in the currency of the revenue</div></div>
+    <div class="tile"><div class="lab">To financial close</div><div class="val">+9<small>months</small></div><div class="note">against the fund’s timetable, on terms that last twenty years</div></div>
+  </div>
+  <div class="cta">
+    <h3>Read the full case in the playbook</h3>
+    <p>This brief follows the worked case at the end of chapter 12, “Capital and structure”, of <i>Nobody Else Is Coming: An Operator’s Playbook for Crisis, Compliance and Capital</i> (first edition, October 2026), pp. 53–54. The chapter sets out the method the case applies: venture or asset; the three numbers behind a technical claim; the project vehicle, the lease and the risk table; debt sizing and a financing menu for a small project; integrity as a condition of the capital.</p>
+    <a class="btn" href="../manuscripts/nobody-else-is-coming-first-edition.pdf#page=54">Open chapter 12 at the case ›</a><a class="btn" href="https://doi.org/10.5281/zenodo.23462160">doi:10.5281/zenodo.23462160</a><a class="btn" href="founder-who-nearly-sold-the-plant.pdf">This brief as a PDF</a>
+  </div>
+  <div class="fine">
+    <p><b>Status.</b> An illustration: the project, its figures and its people are invented, and no client’s information appears in it. Not legal, financial or investment advice. The law is stated as at October 2026 for the Philippines, as in the playbook. <b>Licence</b> CC BY-NC 4.0, as for the playbook; commercial use needs a licence from the author. <b>Author</b> Christopher I. V. Farmer, LL.M. (University of Worcester), independent researcher, Geneva · https://civfarmer.github.io/</p>
+  </div>
+  <div class="foot"><span>Prepared by Christopher I. V. Farmer · from <i>Nobody Else Is Coming</i> (2026), chapter 12</span><span class="pn">6 / 6</span></div>
+</section>
+<script>if(window.self!==window.top){var a=document.querySelector('.webbar a[href$="#warroom"]');if(a)a.style.display='none';}</script>
+</body>
+</html>
