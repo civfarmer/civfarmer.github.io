@@ -14,7 +14,7 @@ The Treaty on Principles Governing the Activities of States in the Exploration a
 
 **Keywords:** Outer Space Treaty; Article IV; peaceful purposes; anti-satellite weapons; orbital denial; weaponisation of space; PAROS; PPWT; responsible behaviours; space debris; Kessler syndrome; Liability Convention; Registration Convention; economic warfare; targeted measures; Magnitsky model.
 
-**Suggested citation:** Christopher I. V. Farmer, 'Orbital Denial and the Limits of the Outer Space Treaty: The Contested Legal Status of Kinetic and Conventional Space Systems' (preprint, version 1.1, October 2026) &lt;<https://civfarmer.github.io/publications/phase2-theory/space-law-orbital-kinetic-systems.html>&gt;. DOI to be assigned on deposit.
+**Suggested citation:** Christopher I. V. Farmer, 'Orbital Denial and the Limits of the Outer Space Treaty: The Contested Legal Status of Kinetic and Conventional Space Systems' (preprint, version 1.1, October 2026) &lt;<https://civfarmer.github.io/publications/phase2-theory/space-law-orbital-kinetic-systems.html>&gt;. &lt;<https://doi.org/10.5281/zenodo.23462138>&gt;.
 
 **Licence:** Creative Commons Attribution 4.0 International (CC BY 4.0). Law and facts are stated as at 16 October 2026.
 
@@ -212,7 +212,7 @@ The policy machinery has understood this, in its way. Having failed for forty ye
 
 [^1]: Treaty on Principles Governing the Activities of States in the Exploration and Use of Outer Space, including the Moon and Other Celestial Bodies (adopted 19 December 1966, opened for signature 27 January 1967, entered into force 10 October 1967) 610 UNTS 205 ("Outer Space Treaty" or "OST"). Its amendment provision (art XV) has never been used to modernise the substantive regime.
 
-[^2]: Christopher I V Farmer, 'The Magnitsky Model for AI: Localized Legislative Cascades as a Response to AI-Driven Circumvention of International Law' (preprint, version 1.1, October 2026) pt 2.2, citing OST (n 1) and characterising it as the paradigm of treaty ossification. The present paper takes up that characterisation as its subject.
+[^2]: Christopher I V Farmer, 'The Magnitsky Model for AI: Localized Legislative Cascades as a Response to AI-Driven Circumvention of International Law' (preprint, version 1.1, October 2026) pt 2.2 &lt;<https://doi.org/10.5281/zenodo.23462144>&gt;, citing OST (n 1) and characterising it as the paradigm of treaty ossification. The present paper takes up that characterisation as its subject.
 
 [^3]: OST (n 1) art IV.
 
@@ -350,7 +350,7 @@ The policy machinery has understood this, in its way. Having failed for forty ye
 
 [^70]: The concentration of launch, manufacturing, insurance/reinsurance, ground-segment, data-services, and space-finance capacity in a small number of jurisdictions and providers is the analogue, in the space economy, of the hub-and-spoke topology of the financial system on which the sanctions cascade depends (n 69).
 
-[^71]: OST (n 1) art VI (international responsibility for national activities, including those of non-governmental entities, which "shall require authorization and continuing supervision by the appropriate State Party"). This provision is the doctrinal anchor of the proposal: the mechanism operates through a jurisdiction the Treaty affirmatively requires each State Party to exercise. On the limits of art VI as a basis for the export, procurement, insurance and financial measures proposed below, see Christopher I V Farmer, 'Conventional Counterspace Conduct and the Outer Space Treaty: Article VI Supervision, Responsible Behaviour and Nationally Anchored Market Conditionality' (working draft v1.2.0, October 2026) ss 5 and 8 &lt;<https://civfarmer.github.io/publications/drafts/Counterspace_Conduct_and_Outer_Space_Treaty_v1.2.0.pdf>&gt;.
+[^71]: OST (n 1) art VI (international responsibility for national activities, including those of non-governmental entities, which "shall require authorization and continuing supervision by the appropriate State Party"). This provision is the doctrinal anchor of the proposal: the mechanism operates through a jurisdiction the Treaty affirmatively requires each State Party to exercise. On the limits of art VI as a basis for the export, procurement, insurance and financial measures proposed below, see Christopher I V Farmer, 'Conventional Counterspace Conduct and the Outer Space Treaty: Article VI Supervision, Responsible Behaviour and Nationally Anchored Market Conditionality' (working draft v1.2.0, October 2026) ss 5 and 8 &lt;<https://doi.org/10.5281/zenodo.23462140>&gt; &lt;<https://civfarmer.github.io/publications/drafts/Counterspace_Conduct_and_Outer_Space_Treaty_v1.2.0.pdf>&gt;.
 
 [^72]: The enumerated predicate would draw on the content of the destructive-testing moratorium (nn 62–64), the debris-mitigation and long-term-sustainability guidelines (n 51), and the due-regard and consultation duties of OST art IX (n 45). The predicate is defined by *conduct* (the irresponsible externality), not by *capability*, to avoid the definitional problems that defeated the PPWT (n 55).
 
@@ -415,7 +415,7 @@ The policy machinery has understood this, in its way. Having failed for forty ye
 - European Space Agency, Space Debris Office, 'Space Debris by the Numbers' (last updated 14 October 2026).
 - Farmer C I V, 'Conventional Counterspace Conduct and the Outer Space Treaty: Article VI Supervision, Responsible Behaviour and Nationally Anchored Market Conditionality' (working draft v1.2.0, October 2026).
 - Farmer C I V, 'Economic Warfare: The Unregulated War' (LLM dissertation, University of Worcester 2024).
-- Farmer C I V, 'The Magnitsky Model for AI: Localized Legislative Cascades as a Response to AI-Driven Circumvention of International Law' (preprint, version 1.1, October 2026).
+- Farmer C I V, 'The Magnitsky Model for AI: Localized Legislative Cascades as a Response to AI-Driven Circumvention of International Law' (preprint, version 1.1, October 2026) &lt;<https://doi.org/10.5281/zenodo.23462144>&gt;.
 - Farrell H and Newman A L, 'Weaponized Interdependence: How Global Economic Networks Shape State Coercion' (2019) 44(1) International Security 42.
 - Foust J, 'United Nations General Assembly Approves ASAT Test Ban Resolution' (SpaceNews, December 2022).
 - Gandenberger M, 'Russia and China Table New Draft Treaty to Prevent Weapons in Space' (Reaching Critical Will, CD report, 10 June 2014).

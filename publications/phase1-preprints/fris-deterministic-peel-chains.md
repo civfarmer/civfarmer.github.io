@@ -4,6 +4,10 @@
 
 *Preprint; not yet peer reviewed. Version 1.1, October 2026.* This document describes a working reference implementation, the *Forensic & Regulatory Intelligence Suite* (FRIS). All private-party data used to exercise the system is synthetic and labelled as such; the regulatory, sanctions and enforcement reference data are real, dated and source-linked, as described in §6.
 
+**DOI:** https://doi.org/10.5281/zenodo.23462154
+
+**Licence:** Creative Commons Attribution-NonCommercial 4.0 International (CC BY-NC 4.0). Commercial use needs a licence from the author: civfarmer@gmail.com.
+
 ---
 
 ## Abstract

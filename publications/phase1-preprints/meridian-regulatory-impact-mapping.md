@@ -6,6 +6,10 @@
 
 *Subject classes: cs.CY (Computers and Society); cs.DB (Databases); q-fin.GN (General Finance).*
 
+**DOI:** <https://doi.org/10.5281/zenodo.23462156>
+
+**Licence:** Creative Commons Attribution-NonCommercial 4.0 International (CC BY-NC 4.0). Commercial use needs a licence from the author: civfarmer@gmail.com.
+
 ---
 
 ## Abstract

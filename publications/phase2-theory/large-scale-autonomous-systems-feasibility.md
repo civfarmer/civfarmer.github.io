@@ -4,7 +4,7 @@
 
 *Preprint; not yet peer reviewed. Methodology paper. Version 1.1, October 2026.*
 
-*Suggested citation:* Christopher I. V. Farmer, 'Strategic Procurement and Feasibility Modelling for Large-Scale Autonomous Systems' (version 1.1, 2026) preprint. ORCID [0009-0009-4995-2516](https://orcid.org/0009-0009-4995-2516). *Licence:* Creative Commons Attribution 4.0 International (CC BY 4.0).
+*Suggested citation:* Christopher I. V. Farmer, 'Strategic Procurement and Feasibility Modelling for Large-Scale Autonomous Systems' (version 1.1, 2026) preprint. <https://doi.org/10.5281/zenodo.23462150>. ORCID [0009-0009-4995-2516](https://orcid.org/0009-0009-4995-2516). *Licence:* Creative Commons Attribution-NonCommercial 4.0 International (CC BY-NC 4.0). Commercial use needs a licence from the author: civfarmer@gmail.com.
 
 > **Scope note.** This is a domain-general systems-engineering methodology paper. It presents transferable modelling techniques for estimating cost, schedule, and risk on very large, capital-intensive autonomous and infrastructure programmes — for example large renewable-energy build-outs, hyperscale data-centre programmes, autonomous logistics networks, and space infrastructure. The worked illustration is a generic, de-identified civilian autonomous-freight programme. All numerical values in the illustration are notional and clearly labelled as such; they are not empirical estimates for any real programme.
 

@@ -4,6 +4,8 @@
 
 *Positioning note; not peer reviewed. Version 1.1, October 2026. Companion to the Sentinel readiness assessor. Law stated as-of 16 October 2026. Decision-support, not legal advice.*
 
+*DOI:* <https://doi.org/10.5281/zenodo.23462152>
+
 > **Scope note.** This note explains what Sentinel is, how it reaches its conclusions, and — just as importantly — what it is *not*. Sentinel is an offline decision-support instrument, not a legal adviser and not an official export-control authority. Every position it takes is dated and labelled; none of it should be relied upon without confirming the current primary sources.
 
 ---
@@ -45,4 +47,4 @@ Sentinel is **decision-support, not legal advice**, and nothing it returns is an
 
 — *Christopher I. V. Farmer, LL.M. (University of Worcester) · Independent Researcher · civfarmer@gmail.com*
 
-*Suggested citation:* Christopher I. V. Farmer, 'Sentinel — A Methods & Positioning Note' (positioning note, version 1.1, October 2026) &lt;<https://civfarmer.github.io/publications/sentinel-positioning-note.html>&gt;. *Licence:* Creative Commons Attribution 4.0 International (CC BY 4.0).
+*Suggested citation:* Christopher I. V. Farmer, 'Sentinel — A Methods & Positioning Note' (positioning note, version 1.1, October 2026) &lt;<https://civfarmer.github.io/publications/sentinel-positioning-note.html>&gt;. &lt;<https://doi.org/10.5281/zenodo.23462152>&gt;. *Licence:* Creative Commons Attribution-NonCommercial 4.0 International (CC BY-NC 4.0). Commercial use needs a licence from the author: civfarmer@gmail.com.

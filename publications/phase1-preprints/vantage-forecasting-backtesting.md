@@ -4,6 +4,10 @@
 
 *Preprint; not yet peer reviewed. Version 1.1, October 2026.*
 
+**DOI:** https://doi.org/10.5281/zenodo.23462158
+
+**Licence:** Creative Commons Attribution-NonCommercial 4.0 International (CC BY-NC 4.0). Commercial use needs a licence from the author: civfarmer@gmail.com.
+
 ---
 
 ## Abstract

@@ -12,7 +12,7 @@ International law's enforcement architecture is state-centric and treaty-mediate
 
 **Keywords:** economic warfare; Magnitsky Act; targeted sanctions; artificial intelligence governance; extraterritoriality; the Brussels effect; corporate veil; responsibility gap; treaty rigidity; legislative cascade.
 
-**Suggested citation:** Christopher I. V. Farmer, 'The Magnitsky Model for AI: Localized Legislative Cascades as a Response to AI-Driven Circumvention of International Law' (preprint, version 1.1, October 2026) &lt;<https://civfarmer.github.io/publications/phase2-theory/magnitsky-model-for-ai.html>&gt;. DOI to be assigned on deposit.
+**Suggested citation:** Christopher I. V. Farmer, 'The Magnitsky Model for AI: Localized Legislative Cascades as a Response to AI-Driven Circumvention of International Law' (preprint, version 1.1, October 2026) &lt;<https://civfarmer.github.io/publications/phase2-theory/magnitsky-model-for-ai.html>&gt;. &lt;<https://doi.org/10.5281/zenodo.23462144>&gt;.
 
 **Licence:** Creative Commons Attribution 4.0 International (CC BY 4.0). Law and facts are stated as at 16 October 2026.
 
@@ -180,7 +180,7 @@ This is not a claim that designation is a panacea. Part 7 conceded its coerciven
 
 ## Notes
 
-[^1]: Christopher I V Farmer, 'Economic Warfare: The Unregulated War' (LLM dissertation, University of Worcester 2024) chs 1–2 (on indirect, third-party warfare conducted in the interstices of a state-centric legal order) &lt;<https://civfarmer.github.io/publications/economic-warfare/00-economic-warfare-the-unregulated-war-2024-dissertation.pdf>&gt; accessed 16 October 2026. Cited hereafter as Farmer, *Unregulated War*; chapter and section references are to the dissertation as submitted in January 2024.
+[^1]: Christopher I V Farmer, 'Economic Warfare: The Unregulated War' (LLM dissertation, University of Worcester 2024) chs 1–2 (on indirect, third-party warfare conducted in the interstices of a state-centric legal order) &lt;<https://doi.org/10.5281/zenodo.23462116>&gt; &lt;<https://civfarmer.github.io/publications/economic-warfare/00-economic-warfare-the-unregulated-war-2024-dissertation.pdf>&gt; accessed 16 October 2026. Cited hereafter as Farmer, *Unregulated War*; chapter and section references are to the dissertation as submitted in January 2024.
 
 [^2]: ibid ch 1(3)(1) (PMSCs), ch 1(4) (the individual and the state), ch 2 (multinational corporations in conflict-affected regions), ch 3 (cyber-mercenaries) and ch 7(2) (the "democratisation" of economic-warfare capability among ultra-wealthy individuals, multinational corporations and non-state actors).
 
